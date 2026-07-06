@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-bg3: var(--bg3);
+  --color-fg: var(--fg);
+  --color-fg2: var(--fg2);
+  --color-fg3: var(--fg3);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent2);
+  --color-accent-muted: var(--accent-muted);
+  --color-border: var(--border);
+  --color-border-accent: var(--border-accent);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-nav-bg: var(--nav-bg);
+
+  --font-syne: "Syne", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #080808;
+  --bg2: #0f0f0f;
+  --bg3: #161616;
+  --fg: #f4f2ee;
+  --fg2: #888880;
+  --fg3: #2a2a26;
+  --accent: #00e87a;
+  --accent2: #00b85e;
+  --accent-muted: #0a2918;
+  --border: rgba(244, 242, 238, 0.08);
+  --border-accent: rgba(0, 232, 122, 0.22);
+  --card: rgba(255, 255, 255, 0.025);
+  --card-hover: rgba(0, 232, 122, 0.04);
+  --nav-bg: rgba(8, 8, 8, 0.86);
+}
+[data-theme="white"] {
+  --bg: #ffffff;
+  --bg2: #f8f8f6;
+  --bg3: #f0eeea;
+  --fg: #0a0a0a;
+  --fg2: #555550;
+  --fg3: #e0deda;
+  --accent: #0a0a0a;
+  --accent2: #333;
+  --accent-muted: #ebebeb;
+  --border: rgba(0, 0, 0, 0.09);
+  --border-accent: rgba(0, 0, 0, 0.25);
+  --card: rgba(0, 0, 0, 0.03);
+  --card-hover: rgba(0, 0, 0, 0.05);
+  --nav-bg: rgba(255, 255, 255, 0.92);
+}
+[data-theme="blue"] {
+  --bg: #060d1f;
+  --bg2: #091227;
+  --bg3: #0d1830;
+  --fg: #e4eeff;
+  --fg2: #6a7a9e;
+  --fg3: #142050;
+  --accent: #4f9eff;
+  --accent2: #2d7fe0;
+  --accent-muted: #091530;
+  --border: rgba(79, 158, 255, 0.12);
+  --border-accent: rgba(79, 158, 255, 0.38);
+  --card: rgba(79, 158, 255, 0.04);
+  --card-hover: rgba(79, 158, 255, 0.09);
+  --nav-bg: rgba(6, 13, 31, 0.9);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  transition:
+    background 0.4s,
+    color 0.4s;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}
+
+/* Driven by IntersectionObserver toggling a plain DOM class (useReveal.js) — not React
+   state, so it can't be expressed as conditional Tailwind classes in JSX. */
+.reveal {
+  @apply translate-y-5.5 opacity-0 transition-[opacity,transform] duration-650 ease-in-out;
+}
+.reveal.visible {
+  @apply translate-y-0 opacity-100;
+}
