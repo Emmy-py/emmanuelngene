@@ -3,9 +3,10 @@ const FOOTER_LINKS = [
   { href: "https://www.linkedin.com/in/emmanuel-ngene-708337263", label: "LinkedIn" },
   { href: "https://x.com/_devemmy", label: "Twitter" },
   { href: "https://www.tiktok.com/@_devemmy?_r=1&_t=ZS-948NFvLYoey", label: "TikTok" },
-  { href: "https://byway1.netlify.app", label: "Byway" },
   { href: "https://letsdap.com", label: "LetDap" },
   { href: "https://greenverify.com.ng", label: "GreenVerify" },
+  { href: "https://crypto-traccker.netlify.app/", label: "CryptoTracker" },
+  { href: "https://forever-buy-ecommerce.vercel.app/", label: "ForeverBuy" },
 ];
 
 export default function Footer() {
