@@ -45,6 +45,12 @@ Here are some key projects showcasing my work:
    - **Role**: Full-stack (frontend and backend)  
    - **Live (early)**: [greenverify.com.ng](https://greenverify.com.ng)
 
+4. **Edge Logistics – Shipping & Freight Website**  
+   Website for a logistics company I imagined and own on paper, offering express delivery, freight shipping, customs clearance and warehousing. Built from a Figma design with Home, About, Contact, Get a Quote and Track Shipment pages, validated forms with success popups, a shipment tracking demo, and scroll-driven animations, responsive across phone, iPad and desktop.  
+   - **Tech**: Next.js, React, TypeScript, Tailwind CSS  
+   - **Role**: Design-to-code, frontend  
+   - **Live**: [edge-logistics.vercel.app](https://edge-logistics.vercel.app/)
+
 More projects and experiments → [Full GitHub Profile](https://github.com/Emmy-py?tab=repositories)
 
 ## 🌐 Live Portfolio
