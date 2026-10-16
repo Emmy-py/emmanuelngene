@@ -3,6 +3,7 @@ import letdapLogo from "../assets/letdap-logo.jpg";
 import greenverifyLogo from "../assets/greenverify-logo.jpg";
 import cryptotrackerLogo from "../assets/cryptotracker.png";
 import foreverbuyLogo from "../assets/foreverbuy-logo.png";
+import learnableLogo from "../assets/learnable-logo.png";
 import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
@@ -73,30 +74,41 @@ const PROJECTS = [
       {
         tagClass:
           "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "KYC",
+        label: "KYC & Compliance",
+      },
+      {
+        tagClass:
+          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
+        label: "Full-Stack",
       },
     ],
-    title: "GreenVerify Digital Verification Platform",
+    title: "GreenVerify Identity & Business Compliance Platform",
     description: (
       <>
-        Organizations need a reliable, secure way to verify customer identities (KYC) and reduce
-        fraud without slow, manual compliance processes.
+        GreenVerify is a one-stop platform for identity verification and business compliance in
+        Nigeria. Individuals and businesses can verify NIN, BVN and phone records, print NIN
+        slips and request NIN modifications. They can also register businesses and companies with
+        CAC, handle post-incorporation filings, get EFCC SCUML certification, register
+        trademarks, sort out Tax ID and TaxPro Max, and pay bills and airtime from one wallet.
         <br />
         <br />
-        I'm leading the full backend architecture: encrypted data storage, multi-step
-        verification workflow APIs, and AI-powered identity verification. Every layer is built
-        with compliance and data privacy as non-negotiables.
+        I'm building GreenVerify full-stack: the React frontend (user dashboards, service request
+        and tracking flows, and an admin console for requests, pricing and teams) and the backend
+        architecture, with encrypted data storage, verification workflow APIs, a developer API,
+        and AI-powered identity verification. Every layer is built with compliance and data
+        privacy as non-negotiables.
       </>
     ),
     links: [{ href: "https://greenverify.com.ng", label: "View Site →", primary: true }],
-    outcomeLabel: "// In Progress",
+    outcomeLabel: "// Services Delivered",
     outcomes: [
-      "Scalable infrastructure for high-volume verifications",
-      "Encrypted storage & secure APIs for sensitive personal data",
-      "AI integration roadmap for enhanced verification accuracy",
-      "Audit-ready architecture for fintech & regulatory clients",
+      "NIN, BVN, phone & demographics verification, NIN slips and modifications",
+      "CAC business name & company registration, plus post-incorporation filings",
+      "EFCC SCUML registration and trademark & IP registration",
+      "Tax ID / TaxPro Max, bills & airtime (VTU), and a developer verification API",
+      "Wallet payments, request tracking, and an admin console for pricing & fulfilment",
     ],
-    stack: ["Node.js", "NestJS", "PostgreSQL", "AI Integration", "KYC APIs"],
+    stack: ["React", "Material UI", "Node.js", "NestJS", "PostgreSQL", "AI Integration", "KYC APIs"],
   },
   {
     number: "03",
@@ -196,6 +208,60 @@ const PROJECTS = [
     ],
     stack: ["React", "React Router DOM", "Tailwind CSS", "Vite", "Node.js", "MongoDB"],
   },
+  {
+    number: "05",
+    logo: learnableLogo,
+    logoAlt: "Learnable",
+    logoClass:
+      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-white object-contain p-1",
+    tags: [
+      {
+        tagClass:
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "EdTech",
+      },
+      {
+        tagClass:
+          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
+        label: "Redesign",
+      },
+    ],
+    title: "Learnable Landing Page Redesign",
+    description: (
+      <>
+        Learnable is Genesys Tech Hub's 6&ndash;9 month, project-based tech training programme
+        that turns beginners into job-ready professionals. The landing page needed a modern,
+        fully responsive refresh that clearly presents its programmes, outcomes, and intern
+        success stories.
+        <br />
+        <br />
+        I rebuilt the landing page from a Figma design in Next.js: a draggable curved portrait
+        hero, swipeable programme and project carousels, an FAQ accordion, a mobile menu, and a
+        custom 404 page &mdash; responsive from phone to desktop.
+      </>
+    ),
+    links: [
+      {
+        href: "https://learnable-landing-page.vercel.app/",
+        label: "View Site →",
+        primary: true,
+      },
+      { href: "https://github.com/Emmy-py/learnable-landing-page", label: "GitHub Repo" },
+    ],
+    outcomeLabel: "// Key Features",
+    outcomes: [
+      "Built from Figma designs for the Home and 404 pages",
+      "Fully responsive layouts with a mobile navigation menu",
+      "Draggable, curved hero portrait strip and swipeable carousels",
+      "Static, prerendered pages deployed on Vercel",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+  },
   /* Byway — temporarily removed from display, re-enable by uncommenting
   {
     number: "05",
@@ -263,8 +329,8 @@ export default function Projects() {
       </h2>
       <p className="reveal mb-15 max-w-[640px] text-[0.97rem] text-fg2 leading-[1.8]">
         Explore my portfolio of scalable applications built for startups and organizations. Each
-        project reflects my expertise in Node.js, NestJS, database management, and AI-integrated
-        backend systems.
+        project reflects my expertise across the stack: React, Next.js and React Native
+        interfaces, Node.js and NestJS APIs, database design, and AI-integrated systems.
       </p>
       {PROJECTS.map((project) => (
         <ProjectCard key={project.number} {...project} />

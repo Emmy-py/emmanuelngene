@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static, single-page portfolio site for Emmanuel Ngene (backend software developer). No build
+A static, single-page portfolio site for Emmanuel Ngene, branded as Emmy.codes🛠️ (full-stack developer). No build
 tooling, no package manager, no framework — it's plain HTML/CSS/JS served as-is.
 
 ## Commands

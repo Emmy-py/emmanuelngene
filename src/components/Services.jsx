@@ -20,35 +20,53 @@ const SERVICES = [
   {
     num: "04",
     icon: "\u{1F310}",
-    title: "Full Web Development",
-    desc: "End-to-end web applications from backend to frontend. React, Next.js, and Node.js for complete, production-ready product builds.",
+    title: "Full-Stack Web & Mobile Apps",
+    desc: "End-to-end products from database to UI. React, Next.js, React Native, and Node.js for complete, production-ready web and mobile builds.",
   },
   {
     num: "05",
+    icon: "\u{1F4F1}",
+    title: "Mobile App Development",
+    desc: "Cross-platform iOS and Android apps with React Native — smooth UX, offline support, push notifications, and APIs built to match.",
+  },
+  {
+    num: "06",
+    icon: "\u{1F5A5}",
+    title: "Website Development",
+    desc: "Fast, responsive, SEO-friendly websites and landing pages with Next.js and React — from Figma design to live deployment.",
+  },
+  {
+    num: "07",
+    icon: "\u{1F6D2}",
+    title: "E-Commerce Development",
+    desc: "Online stores with product catalogs, carts, checkout, Paystack/Stripe payments, order management, and admin dashboards.",
+  },
+  {
+    num: "08",
     icon: "\u{1F4BB}",
     title: "Custom Software Development",
     desc: "Bespoke software tailored to your workflows — admin dashboards, internal tools, SaaS platforms, and business automation systems.",
   },
   {
-    num: "06",
+    num: "09",
     icon: "\u{1F9E9}",
     title: "Third-Party Integrations",
     desc: "Stripe, Twilio, SendGrid, Paystack, AI APIs — cleanly integrated so your product works end-to-end right out of the box.",
   },
   {
-    num: "07",
+    num: "10",
     icon: "\u{1F916}",
-    title: "AI-Upskilled Backend Features",
+    title: "AI-Powered Features",
     desc: "Smart systems with AI/ML integration — intelligent verification, recommendation engines, and workflow automation.",
   },
   {
-    num: "08",
+    num: "11",
     icon: "☁",
     title: "Cloud & DevOps",
     desc: "AWS & GCP deployment, Docker containers, CI/CD pipelines, and infrastructure for production-ready systems.",
   },
   {
-    num: "09",
+    num: "12",
     icon: "\u{1F4CA}",
     title: "Code Audits & Performance Fixes",
     desc: "Slow app? I'll find the bottleneck — N+1 queries, memory leaks, unoptimized endpoints — and fix it fast.",
@@ -68,7 +86,7 @@ export default function Services() {
         Everything you need to ship.
       </h2>
       <p className="reveal mb-14 max-w-[620px] text-[0.97rem] text-fg2 leading-[1.8]">
-        From complete product backends to single API integrations &mdash; I offer end-to-end
+        From complete products to single API integrations &mdash; I offer end-to-end
         development for startups, SMEs, and organizations. Here's what I build:
       </p>
       <div className="reveal grid grid-cols-3 gap-px bg-border max-[900px]:grid-cols-1">

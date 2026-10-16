@@ -25,7 +25,7 @@ export default function Nav({ activeSection }) {
         className="font-syne text-[1.1rem] font-extrabold tracking-[-0.02em] text-fg no-underline"
         onClick={() => setOpen(false)}
       >
-        EN<span className="text-accent">.</span>dev
+        Emmy<span className="text-accent">.</span>codes 🛠️
       </a>
       <button
         className="z-[101] hidden h-9 w-9 flex-col justify-center gap-1.25 border-0 bg-transparent p-0 max-[900px]:flex"

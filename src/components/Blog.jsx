@@ -16,9 +16,9 @@ const POSTS = [
   {
     category: "Process",
     date: "Nov 2025",
-    title: "From Sketch to Production: My Backend Delivery Process",
+    title: "From Sketch to Production: My Full-Stack Delivery Process",
     excerpt:
-      "A look at the discovery-to-handover workflow I use to ship backends startups can actually build on.",
+      "A look at the discovery-to-handover workflow I use to ship products startups can actually build on.",
   },
 ];
 
@@ -32,10 +32,11 @@ export default function Blog() {
         // Blog
       </p>
       <h2 className="reveal mb-5 font-syne text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
-        Thoughts on building better backends.
+        Thoughts on building better products.
       </h2>
       <p className="reveal mb-14 max-w-[620px] text-[0.97rem] text-fg2 leading-[1.8]">
-        Notes on APIs, databases, and shipping backend systems that hold up in production.
+        Notes on frontend, APIs, databases, and shipping full-stack systems that hold up in
+        production.
       </p>
       <div className="reveal grid grid-cols-3 gap-px bg-border max-[900px]:grid-cols-1">
         {POSTS.map(({ category, date, title, excerpt }) => (

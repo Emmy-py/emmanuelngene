@@ -29,22 +29,25 @@ export default function About() {
             // About
           </p>
           <h2 className="reveal mb-5 font-syne text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
-            Your startup deserves a backend that doesn't break.
+            Your startup deserves a product that doesn't break.
           </h2>
           <div className="reveal space-y-4.5 text-base text-fg2 leading-[1.82]">
             <p>
-              I'm a backend and full-stack developer specializing in{" "}
+              I'm a full-stack developer. I started in backend engineering and now build complete
+              web, mobile and e-commerce products, specializing in{" "}
               <strong className="font-medium text-fg">
-                Node.js, NestJS, FastAPI, scalable database architecture, API design,
-                microservices, distributed systems, Docker, Kubernetes, and CI/CD pipelines
+                React, Next.js, React Native, Node.js, NestJS, Python, FastAPI, scalable database
+                architecture, API design, microservices, Docker, Kubernetes, and CI/CD pipelines
               </strong>
               . I build the systems that keep your product running — under load, at launch, and
               long after.
             </p>
             <p>
-              With proven expertise in <strong className="font-medium text-fg">backend engineering</strong>, I integrate
-              intelligent workflows, robust data pipelines, and performance optimization into
-              backend systems across diverse industries.
+              With a strong foundation in{" "}
+              <strong className="font-medium text-fg">backend engineering</strong> and modern
+              frontend and mobile skills, I build polished interfaces on top of robust APIs,
+              intelligent workflows, data pipelines, and performance-tuned systems across diverse
+              industries.
             </p>
             <p>
               Whether you're a founder with a sketch or a team needing a senior hand, I deliver

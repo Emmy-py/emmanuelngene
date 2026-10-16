@@ -14,22 +14,28 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-[linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] opacity-50 [background-size:60px_60px]"></div>
       <div className="pointer-events-none absolute top-[-10%] left-[35%] h-[700px] w-[700px] bg-[radial-gradient(circle,var(--card-hover)_0%,transparent_65%)]"></div>
-      <div className="relative z-1">
+      <div className="relative z-1 min-w-0">
         <p className="mb-6 animate-[fadeUp_0.7s_0.15s_forwards] font-mono text-[0.7rem] tracking-[0.16em] text-accent uppercase opacity-0">
-          Available for Freelance &middot; Node.js &middot; NestJS &middot; FastAPI &middot;
-          Full-Stack
+          Available for Freelance &middot; React &middot; Next.js &middot; React Native &middot;
+          Node.js &middot; NestJS &middot; Python
         </p>
-        <h1 className="mb-7 max-w-full animate-[fadeUp_0.7s_0.3s_forwards] font-syne text-[clamp(2.4rem,11vw,6.5rem)] font-extrabold tracking-[-0.04em] break-words opacity-0 leading-[0.95] max-sm:text-[clamp(2.2rem,10vw,4rem)]">
-          Emmanuel
-          <br />
-          <span className="text-transparent [-webkit-text-stroke:1.5px_var(--fg)]">Ngene</span>
-          <br />
-          <span className="text-accent">Software Engineer</span>
+        <h1 className="mb-7 max-w-full animate-[fadeUp_0.7s_0.3s_forwards] font-syne font-extrabold tracking-[-0.04em] opacity-0 leading-[0.95]">
+          <span className="block whitespace-nowrap text-[clamp(1.6rem,5.4vw,5.6rem)] max-lg:text-[clamp(1.6rem,7.4vw,5.6rem)]">
+            Emmy
+            <span className="text-transparent [-webkit-text-stroke:1.5px_var(--fg)]">.codes</span>
+            <span className="ml-[0.15em] align-middle text-[0.55em]" aria-hidden>
+              🛠️
+            </span>
+          </span>
+          <span className="mt-3 block text-[clamp(1.6rem,4.2vw,4.2rem)] tracking-[-0.03em] text-accent max-lg:text-[clamp(1.6rem,7vw,4.2rem)]">
+            Full-Stack Developer
+          </span>
         </h1>
         <p className="mb-11 max-w-[500px] animate-[fadeUp_0.7s_0.45s_forwards] text-[1.05rem] text-fg2 opacity-0 leading-[1.75]">
-          I build <strong className="font-medium text-fg">scalable, production-ready backends</strong> for startups and
-          organizations &mdash; Node.js, NestJS, FastAPI, PostgreSQL &amp; MongoDB. Clean code.
-          Full documentation. Zero missed deadlines.
+          I build <strong className="font-medium text-fg">scalable, production-ready web and mobile apps</strong> for
+          startups and organizations, end to end: React, Next.js &amp; React Native on the front,
+          Node.js, NestJS, Python &amp; FastAPI, PostgreSQL &amp; MongoDB on the back. Clean code. Full
+          documentation. Zero missed deadlines.
         </p>
         <div className="flex animate-[fadeUp_0.7s_0.6s_forwards] flex-wrap gap-3.5 opacity-0 max-sm:flex-col max-sm:items-stretch">
           <a
@@ -64,14 +70,14 @@ export default function Hero() {
         <div className="relative mx-auto w-full max-w-[360px]">
           <img
             src={heroPhoto}
-            alt="Emmanuel Ngene"
+            alt="Emmy.codes (Emmanuel Ngene)"
             className="aspect-square block w-full border border-border object-cover [object-position:center_top]"
           />
           <div className="absolute -bottom-3.5 -left-3.5 bg-accent px-4 py-2.75 font-mono text-[0.62rem] tracking-[0.1em] text-bg uppercase">
             &#x25CF;&nbsp; Open to Work
           </div>
           <div className="absolute top-4.5 -right-3.5 border border-border bg-bg3 px-3 py-1.75 font-mono text-[0.6rem] tracking-[0.08em] text-fg">
-            Node.js &middot; NestJS &middot; APIs
+            React &middot; Next.js &middot; Node.js
           </div>
         </div>
       </div>

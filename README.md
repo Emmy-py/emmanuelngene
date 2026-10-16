@@ -1,8 +1,8 @@
-# Emmanuel Ngene - Backend Software Developer Portfolio
+# Emmy.codes🛠️ - Full-Stack Developer Portfolio
 
-Hi! I'm **Emmanuel Ngene** (Emmy-py 👽), a remote **Backend Software Developer** specializing in building scalable, secure, and high-performance APIs and systems.
+Hi! I'm **Emmy.codes🛠️** (Emmanuel Ngene · Emmy-py 👽), a remote **Full-Stack Developer** building scalable, secure, high-performance web apps, mobile apps, websites and e-commerce platforms, from the UI down to the database.
 
-I craft robust server-side solutions for startups and organizations using modern JavaScript ecosystems. Currently upskilling in **AI engineering** to integrate intelligent features into applications.
+I started as a backend engineer and now ship complete products end to end with React, Next.js, React Native, Node.js and NestJS. I'm also upskilling in **AI engineering** to integrate intelligent features into applications.
 
 - 🌍 Based in Abuja, Nigeria  
 - 💼 Open to remote freelance 
@@ -12,18 +12,19 @@ I craft robust server-side solutions for startups and organizations using modern
 
 | Category              | Technologies & Tools                          |
 |-----------------------|-----------------------------------------------|
-| Backend               | Node.js, NestJS, Express                      |
+| Frontend & Mobile     | React, Next.js, React Native, TypeScript, Tailwind CSS |
+| Languages             | JavaScript, TypeScript, Python                |
+| Backend               | Node.js, NestJS, Express, Python (FastAPI)    |
 | Databases             | PostgreSQL, MongoDB (schema design, optimization, ORM/ODM) |
 | Architecture          | RESTful APIs, Scalable microservices, Authentication (JWT, OAuth), Real-time features |
 | Other                 | Git, Docker basics, CI/CD awareness, Testing (Jest) |
 | Upskilling            | AI Engineering (LLM integration, vector DBs, prompt engineering) |
-| Frontend (supporting) | HTML/CSS, basic React/Next.js for full-stack prototypes |
 
 Focused on **clean code**, **performance**, **security**, and delivering business value.
 
 ## 🚀 Featured Projects
 
-Here are some key projects showcasing my backend expertise:
+Here are some key projects showcasing my work:
 
 1. **Byway Learning Management System (Backend)**  
    Robust server for an edtech platform handling user auth, course management, progress tracking, and content delivery at scale.  
@@ -38,9 +39,10 @@ Here are some key projects showcasing my backend expertise:
    - **Contributions**: User matching, event CRUD, analytics APIs  
    - **Live**: [letdap.com](https://letdap.com)
 
-3. **GreenVerify – Digital Identity Verification Platform** (In Progress)  
-   Secure backend system for organizations to verify customer identities (KYC-style) and users to track personal data — fraud reduction & compliance focus.  
-   - **Tech**: Node.js, NestJS, PostgreSQL, exploring AI for verification accuracy  
+3. **GreenVerify – Identity & Business Compliance Platform** (In Progress)  
+   One-stop platform for identity verification and business compliance in Nigeria: NIN/BVN/phone verification, NIN slips and modifications, CAC business and company registration, post-incorporation filings, EFCC SCUML registration, trademark & IP registration, Tax ID / TaxPro Max, bills & airtime, and a developer verification API.  
+   - **Tech**: React, Material UI, Node.js, NestJS, PostgreSQL, exploring AI for verification accuracy  
+   - **Role**: Full-stack (frontend and backend)  
    - **Live (early)**: [greenverify.com.ng](https://greenverify.com.ng)
 
 More projects and experiments → [Full GitHub Profile](https://github.com/Emmy-py?tab=repositories)
@@ -60,7 +62,7 @@ Built with HTML/CSS/JS (or React if upgraded) — clean, responsive design showc
 
 ## 🤝 Let's Build Something Great
 
-Looking for a backend engineer to build/maintain scalable APIs, databases, or integrate AI features?  
+Looking for a full-stack developer to build a web app, mobile app, website or online store, or to scale your APIs and integrate AI features?  
 I'm available for remote freelance projects starting at **$1,000–$2,000** (depending on scope).
 
 Drop me a message — let's chat! 🚀
@@ -68,4 +70,4 @@ Drop me a message — let's chat! 🚀
 ---
 
 ⭐ Star this repo if you like the portfolio!  
-Made with ❤️ by Emmanuel Ngene
+Made with ❤️ by Emmy.codes🛠️
