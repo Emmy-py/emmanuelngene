@@ -50,7 +50,7 @@ More projects and experiments → [Full GitHub Profile](https://github.com/Emmy-
 ## 🌐 Live Portfolio
 
 Check out my interactive portfolio website:  
-**[emmycodes.vercel.app](https://emmycodes.vercel.app/)**  
+**[Visit Emmy.codes🛠️](https://emmycodes.vercel.app/)**  
 Built with React, Vite and Tailwind CSS: a clean, responsive design showcasing my skills, services, projects, and contact details.
 
 ## 📈 GitHub Stats
@@ -58,7 +58,6 @@ Built with React, Vite and Tailwind CSS: a clean, responsive design showcasing m
 ![Emmy-py's GitHub stats](https://github-readme-stats.vercel.app/api?username=Emmy-py&show_icons=true&theme=radical)  
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Emmy-py&layout=compact&theme=radical)
 
-<!-- Optional: add streak stats or other widgets from github-readme-stats.vercel.app -->
 
 ## 🤝 Let's Build Something Great
 

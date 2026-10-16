@@ -231,16 +231,14 @@ const PROJECTS = [
         label: "Redesign",
       },
     ],
-    title: "Learnable Landing Page Redesign",
+    title: "Learnable Website UI Redesign",
     description: (
       <>
         Learnable is Genesys Tech Hub's 6&ndash;9 month, project-based tech training programme
-        that turns beginners into job-ready professionals. The landing page needed a modern,
-        fully responsive refresh that clearly presents its programmes, outcomes, and intern
-        success stories.
+        that turns beginners into job-ready professionals.
         <br />
         <br />
-        I rebuilt the landing page from a Figma design in Next.js: a draggable curved portrait
+        A UI redesign of the Learnable website, built in Next.js: a draggable curved portrait
         hero, swipeable programme and project carousels, an FAQ accordion, a mobile menu, and a
         custom 404 page &mdash; responsive from phone to desktop.
       </>
@@ -255,12 +253,12 @@ const PROJECTS = [
     ],
     outcomeLabel: "// Key Features",
     outcomes: [
-      "Built from Figma designs for the Home and 404 pages",
+      "Fresh UI for the Home and 404 pages",
       "Fully responsive layouts with a mobile navigation menu",
       "Draggable, curved hero portrait strip and swipeable carousels",
-      "Static, prerendered pages deployed on Vercel",
+      "Static, prerendered pages for fast loading",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   /* Byway — temporarily removed from display, re-enable by uncommenting
   {
