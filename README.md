@@ -51,6 +51,25 @@ Here are some key projects showcasing my work:
    - **Role**: Design-to-code, frontend  
    - **Live**: [edge-logistics.vercel.app](https://edge-logistics.vercel.app/)
 
+5. **Learnable – Website UI Redesign**  
+   A UI redesign of the website for Learnable, Genesys Tech Hub's 6–9 month project-based tech training programme. Features a draggable curved portrait hero, swipeable programme and project carousels, an FAQ accordion, a mobile menu, a custom 404 page, and scroll animations, responsive from phone to desktop.  
+   - **Tech**: Next.js, React, TypeScript, Tailwind CSS  
+   - **Role**: UI redesign, frontend  
+   - **Live**: [learnable-landing-page.vercel.app](https://learnable-landing-page.vercel.app/)  
+   - **Repo**: [github.com/Emmy-py/learnable-landing-page](https://github.com/Emmy-py/learnable-landing-page)
+
+6. **ForeverBuy – E-Commerce Platform**  
+   Fashion and lifestyle storefront for discovering trends, best sellers and exclusive collections, built for fast browsing and a smooth checkout. Product listing and detail pages, search, cart, wishlist and auth flows, with a Node.js/Express/MongoDB backend in progress for orders and payments.  
+   - **Tech**: React, React Router DOM, Tailwind CSS, Vite, Node.js, MongoDB  
+   - **Role**: Frontend (backend in progress)  
+   - **Live**: [forever-buy-ecommerce.vercel.app](https://forever-buy-ecommerce.vercel.app/)
+
+7. **CryptoTracker – Real-Time Market Analytics Platform**  
+   Live cryptocurrency price tracking with WebSocket-powered updates, historical candlestick charts and market insights in a clean, performance-focused interface.  
+   - **Tech**: JavaScript, WebSocket, REST APIs, market data APIs, charting libraries  
+   - **Role**: Data integration and real-time update architecture  
+   - **Live**: [crypto-traccker.netlify.app](https://crypto-traccker.netlify.app/)
+
 More projects and experiments → [Full GitHub Profile](https://github.com/Emmy-py?tab=repositories)
 
 ## 🌐 Live Portfolio
