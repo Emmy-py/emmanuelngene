@@ -1,7 +1,8 @@
 import heroPhoto from "../assets/emmanuel-ngene.jpg";
+import { LIVE_PROJECT_COUNT } from "./Projects";
 
 const STATS = [
-  { num: "4+", label: "Live Products" },
+  { num: `${LIVE_PROJECT_COUNT}+`, label: "Live Products" },
   { num: "0", label: "Missed Deadlines" },
   { num: "30%+", label: "Avg. Perf. Gain" },
 ];

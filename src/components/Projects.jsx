@@ -4,11 +4,12 @@ import greenverifyLogo from "../assets/greenverify-logo.jpg";
 import cryptotrackerLogo from "../assets/cryptotracker.png";
 import foreverbuyLogo from "../assets/foreverbuy-logo.png";
 import learnableLogo from "../assets/learnable-logo.png";
+import edgeLogisticsLogo from "../assets/edge-logistics-logo.png";
 import ProjectCard from "./ProjectCard";
 
 const PROJECTS = [
 
-    {
+  {
     number: "01",
     logo: letdapLogo,
     logoAlt: "LetDap",
@@ -110,58 +111,13 @@ const PROJECTS = [
     ],
     stack: ["React", "Material UI", "Node.js", "NestJS", "PostgreSQL", "AI Integration", "KYC APIs"],
   },
+
   {
     number: "03",
-    logo: cryptotrackerLogo,
-    logoAlt: "CryptoTracker",
-    logoClass: "h-14 w-14 shrink-0 rounded-md object-contain",
-    tags: [
-      {
-        tagClass:
-          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
-        label: "\u{1F504} LIVE",
-      },
-      {
-        tagClass:
-          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "FinTech",
-      },
-      {
-        tagClass:
-          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "Crypto Analytics",
-      },
-    ],
-    title: "CryptoTracker Real-Time Market Analytics Platform",
-    description: (
-      <>
-        Traders need accurate, real-time cryptocurrency market data to make informed decisions.
-        CryptoTracker provides live price tracking, interactive chart visualization, and
-        historical market insights in a clean, performance-focused interface.
-        <br />
-        <br />
-        I built the data integration and real-time update architecture, handling live market
-        feeds, chart rendering logic, and scalable API structures designed for high-frequency
-        financial data environments.
-      </>
-    ),
-    links: [
-      { href: "https://crypto-traccker.netlify.app/", label: "View Site →", primary: true },
-    ],
-    outcomeLabel: "// KEY OUTCOMES",
-    outcomes: [
-      "Real-time cryptocurrency price tracking",
-      "WebSocket-powered live market updates",
-      "Historical candlestick chart visualization",
-      "Scalable API-ready architecture for future trading tools",
-    ],
-    stack: ["JavaScript", "WebSocket", "REST APIs", "Market Data APIs", "Charting Libraries"],
-  },
-  {
-    number: "04",
-    logo: foreverbuyLogo,
-    logoAlt: "ForeverBuy",
-    logoClass: "h-11.5 w-11.5 shrink-0 rounded-full object-contain",
+    logo: edgeLogisticsLogo,
+    logoAlt: "Edge Logistics",
+    logoClass:
+      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-white object-contain p-1",
     tags: [
       {
         tagClass:
@@ -171,45 +127,47 @@ const PROJECTS = [
       {
         tagClass:
           "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "E-Commerce",
+        label: "Logistics",
       },
       {
         tagClass:
           "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
-        label: "Frontend",
+        label: "Concept Brand",
       },
     ],
-    title: "ForeverBuy E-Commerce Platform",
+    title: "Edge Logistics Shipping & Freight Website",
     description: (
       <>
-        ForeverBuy is a fashion and lifestyle storefront for discovering the latest trends, best
-        sellers, and exclusive collections at unbeatable prices &mdash; built for fast browsing and
-        a smooth checkout experience.
+        Edge Logistics is a logistics company I imagined and own on paper: a shipping and freight
+        brand offering express delivery, freight shipping, customs clearance and warehousing.
         <br />
         <br />
-        I built the full frontend: product listing and detail pages, search, cart, wishlist, and
-        auth flows, with a Node.js/Express/MongoDB backend in progress for order management and
-        payments.
+        I built its website in Next.js from a Figma design: Home, About, Contact, Get a Quote and
+        Track Shipment pages, with validated contact, quote and newsletter forms, success
+        popups, a shipment tracking demo, and scroll-driven animations &mdash; responsive across
+        phone, iPad and desktop.
       </>
     ),
     links: [
       {
-        href: "https://forever-buy-ecommerce.vercel.app/",
+        href: "https://edge-logistics.vercel.app/",
         label: "View Site →",
         primary: true,
       },
     ],
     outcomeLabel: "// Key Features",
     outcomes: [
-      "Product listing, detail pages, and search",
-      "Shopping cart and wishlist functionality",
-      "User authentication and order management",
-      "Payment integration and admin dashboard",
+      "Five pages built pixel-close to the Figma design",
+      "Quote, contact and newsletter forms with validation and success popups",
+      "Shipment tracking flow with a map result view",
+      "Scroll reveals, count-up stats and motion that respects reduced-motion settings",
+      "Responsive layouts for phone, tablet/iPad and desktop",
     ],
-    stack: ["React", "React Router DOM", "Tailwind CSS", "Vite", "Node.js", "MongoDB"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
+
   {
-    number: "05",
+    number: "04",
     logo: learnableLogo,
     logoAlt: "Learnable",
     logoClass:
@@ -259,6 +217,106 @@ const PROJECTS = [
       "Static, prerendered pages for fast loading",
     ],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
+
+  {
+    number: "05",
+    logo: foreverbuyLogo,
+    logoAlt: "ForeverBuy",
+    logoClass: "h-11.5 w-11.5 shrink-0 rounded-full object-contain",
+    tags: [
+      {
+        tagClass:
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "E-Commerce",
+      },
+      {
+        tagClass:
+          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
+        label: "Frontend",
+      },
+    ],
+    title: "ForeverBuy E-Commerce Platform",
+    description: (
+      <>
+        ForeverBuy is a fashion and lifestyle storefront for discovering the latest trends, best
+        sellers, and exclusive collections at unbeatable prices &mdash; built for fast browsing and
+        a smooth checkout experience.
+        <br />
+        <br />
+        I built the full frontend: product listing and detail pages, search, cart, wishlist, and
+        auth flows, with a Node.js/Express/MongoDB backend in progress for order management and
+        payments.
+      </>
+    ),
+    links: [
+      {
+        href: "https://forever-buy-ecommerce.vercel.app/",
+        label: "View Site →",
+        primary: true,
+      },
+    ],
+    outcomeLabel: "// Key Features",
+    outcomes: [
+      "Product listing, detail pages, and search",
+      "Shopping cart and wishlist functionality",
+      "User authentication and order management",
+      "Payment integration and admin dashboard",
+    ],
+    stack: ["React", "React Router DOM", "Tailwind CSS", "Vite", "Node.js", "MongoDB"],
+  },
+
+  {
+    number: "06",
+    logo: cryptotrackerLogo,
+    logoAlt: "CryptoTracker",
+    logoClass: "h-14 w-14 shrink-0 rounded-md object-contain",
+    tags: [
+      {
+        tagClass:
+          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
+        label: "\u{1F504} LIVE",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "FinTech",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "Crypto Analytics",
+      },
+    ],
+    title: "CryptoTracker Real-Time Market Analytics Platform",
+    description: (
+      <>
+        Traders need accurate, real-time cryptocurrency market data to make informed decisions.
+        CryptoTracker provides live price tracking, interactive chart visualization, and
+        historical market insights in a clean, performance-focused interface.
+        <br />
+        <br />
+        I built the data integration and real-time update architecture, handling live market
+        feeds, chart rendering logic, and scalable API structures designed for high-frequency
+        financial data environments.
+      </>
+    ),
+    links: [
+      { href: "https://crypto-traccker.netlify.app/", label: "View Site →", primary: true },
+    ],
+    outcomeLabel: "// KEY OUTCOMES",
+    outcomes: [
+      "Real-time cryptocurrency price tracking",
+      "WebSocket-powered live market updates",
+      "Historical candlestick chart visualization",
+      "Scalable API-ready architecture for future trading tools",
+    ],
+    stack: ["JavaScript", "WebSocket", "REST APIs", "Market Data APIs", "Charting Libraries"],
   },
   /* Byway — temporarily removed from display, re-enable by uncommenting
   {
@@ -312,6 +370,11 @@ const PROJECTS = [
   },
   */
 ];
+
+// Projects tagged "Live" (any case); the hero stat counts these, so it updates as projects are added.
+export const LIVE_PROJECT_COUNT = PROJECTS.filter((project) =>
+  project.tags.some((tag) => /\blive\b/i.test(tag.label)),
+).length;
 
 export default function Projects() {
   return (
