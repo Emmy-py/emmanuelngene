@@ -23,6 +23,7 @@ export default function useActiveSection() {
       });
       setActive(current);
     }
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);

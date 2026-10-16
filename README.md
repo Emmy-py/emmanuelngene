@@ -58,6 +58,8 @@ Here are some key projects showcasing my work:
    - **Live**: [learnable-landing-page.vercel.app](https://learnable-landing-page.vercel.app/)  
    - **Repo**: [github.com/Emmy-py/learnable-landing-page](https://github.com/Emmy-py/learnable-landing-page)
 
+   [![Learnable website home page](screenshots/learnable.png)](https://learnable-landing-page.vercel.app/)
+
 6. **ForeverBuy – E-Commerce Platform**  
    Fashion and lifestyle storefront for discovering trends, best sellers and exclusive collections, built for fast browsing and a smooth checkout. Product listing and detail pages, search, cart, wishlist and auth flows, with a Node.js/Express/MongoDB backend in progress for orders and payments.  
    - **Tech**: React, React Router DOM, Tailwind CSS, Vite, Node.js, MongoDB  
