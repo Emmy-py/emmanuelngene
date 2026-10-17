@@ -38,7 +38,7 @@ export default function About() {
               Nigeria.
             </p>
             <p>
-              I build complete web, mobile and e-commerce products from idea to launch, specializing
+              I build complete web and mobile products from idea to launch, specializing
               in{" "}
               <strong className="font-medium text-fg">
                 React, Next.js, React Native, Node.js, NestJS, Python, FastAPI, scalable database
