@@ -1,35 +1,34 @@
+import { ArrowUpRight } from "lucide-react";
 import ProjectCard from "./ProjectCard";
+import SectionIntro from "./SectionIntro";
 import { PROJECTS } from "../data/projects";
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="border-t border-border px-[max(20px,5vw)] py-27.5 max-sm:px-[max(22px,6vw)] max-sm:py-20"
-    >
-      <p className="mb-3.5 font-mono text-[0.68rem] tracking-[0.18em] text-accent uppercase">
-        // Projects
-      </p>
-      <h2 className="reveal mb-5 font-syne text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
-        Shipped. Live. Scalable.
-      </h2>
-      <p className="reveal mb-15 max-w-[640px] text-[0.97rem] text-fg2 leading-[1.8]">
-        Explore my portfolio of scalable applications built for startups and organizations. Each
-        project reflects my expertise across the stack: React, Next.js and React Native
-        interfaces, Node.js and NestJS APIs, database design, and AI-integrated systems.
-      </p>
-      {PROJECTS.map((project) => (
-        <ProjectCard key={project.slug} {...project} />
-      ))}
-      <div className="reveal mt-8.5 text-center">
-        <a
-          href="https://github.com/Emmy-py"
-          target="_blank"
-          rel="me noopener"
-          className="inline-flex items-center gap-2 border border-border px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-fg2 uppercase no-underline transition-[color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-border-accent hover:text-accent"
-        >
-          View Full GitHub Profile →
-        </a>
+    <section id="projects" className="px-[max(20px,5vw)] py-27.5 max-sm:px-[max(22px,6vw)] max-sm:py-20">
+      <div className="mx-auto max-w-[1240px]">
+        <SectionIntro
+          center
+          badge="Featured projects"
+          title="Some of my recent work."
+          lead="Scalable applications built for startups and organizations, across React, Next.js and React Native interfaces, Node.js and NestJS APIs, and AI-integrated systems."
+        />
+        <div className="grid grid-cols-3 gap-5 max-[1000px]:grid-cols-2 max-sm:grid-cols-1">
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.slug} {...project} />
+          ))}
+        </div>
+        <div className="reveal mt-12 text-center">
+          <a
+            href="https://github.com/Emmy-py"
+            target="_blank"
+            rel="me noopener"
+            className="group inline-flex items-center gap-2 rounded-xl border border-border-accent px-6 py-3 text-[0.9rem] font-medium text-fg no-underline transition-[border-color,background] duration-200 hover:border-accent hover:bg-accent-muted"
+          >
+            More on my GitHub profile
+            <ArrowUpRight size={17} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </div>
       </div>
     </section>
   );

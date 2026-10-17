@@ -35,7 +35,7 @@ const lastmod = lastModified();
 // Inline the (small) stylesheet so it doesn't block first paint with an extra request.
 // Fonts used above the fold are preloaded so they arrive with first paint instead of
 // swapping in later and shifting the layout.
-const PRELOAD_FONTS = [/syne-latin-800-normal/, /dm-sans-latin-400-normal/, /dm-mono-latin-400-normal/];
+const PRELOAD_FONTS = [/plus-jakarta-sans-latin-800-normal/, /dm-sans-latin-400-normal/, /dm-mono-latin-400-normal/];
 const template = readFileSync(resolve(dist, "index.html"), "utf8").replace(
   /<link rel="stylesheet"[^>]*href="(\/assets\/[^"]+\.css)"[^>]*>/,
   (_, href) => {

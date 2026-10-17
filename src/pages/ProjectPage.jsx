@@ -2,7 +2,7 @@ import { PROJECTS } from "../data/projects";
 
 const SECTION_LABEL = "mb-3.5 font-mono text-[0.68rem] tracking-[0.18em] text-accent uppercase";
 const SECTION_HEADING =
-  "mb-4 font-syne text-[clamp(1.4rem,2.6vw,1.9rem)] font-extrabold tracking-[-0.03em] leading-[1.15] text-fg";
+  "mb-4 font-display text-[clamp(1.4rem,2.6vw,1.9rem)] font-extrabold tracking-[-0.03em] leading-[1.15] text-fg";
 
 export default function ProjectPage({ project }) {
   const {
@@ -12,6 +12,7 @@ export default function ProjectPage({ project }) {
     logoAlt,
     logoClass,
     logoSize = 46,
+    screenshot,
     tags,
     title,
     overview,
@@ -57,7 +58,7 @@ export default function ProjectPage({ project }) {
             ))}
           </div>
         </div>
-        <h1 className="mb-5 font-syne text-[clamp(2rem,4.6vw,3.6rem)] font-extrabold tracking-[-0.04em] leading-[1.05]">
+        <h1 className="mb-5 font-display text-[clamp(2rem,4.6vw,3.6rem)] font-extrabold tracking-[-0.04em] leading-[1.05]">
           {title}
         </h1>
         <p className="text-base text-fg2 leading-[1.8]">
@@ -71,6 +72,19 @@ export default function ProjectPage({ project }) {
           , full-stack developer.
         </p>
       </header>
+
+      {screenshot && (
+        <div className="mb-16 overflow-hidden rounded-2xl border border-border-accent shadow-[0_30px_70px_-30px_var(--glow)]">
+          <img
+            src={screenshot}
+            alt={`${name} website home page`}
+            width="800"
+            height="500"
+            fetchpriority="high"
+            className="block h-auto w-full animate-[riseIn_0.8s_cubic-bezier(0.22,1,0.36,1)_both]"
+          />
+        </div>
+      )}
 
       <div className="grid grid-cols-[1fr_340px] items-start gap-16 max-[900px]:grid-cols-1 max-[900px]:gap-12">
         <div className="max-w-[720px] space-y-12">
@@ -126,8 +140,8 @@ export default function ProjectPage({ project }) {
                 rel="noopener"
                 className={
                   primary
-                    ? "inline-flex items-center justify-center gap-1.75 border border-accent bg-accent px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-bg uppercase no-underline transition-all duration-200 hover:opacity-85"
-                    : "inline-flex items-center justify-center gap-1.75 border border-border px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-fg2 uppercase no-underline transition-all duration-200 hover:border-border-accent hover:text-accent"
+                    ? "inline-flex items-center justify-center gap-1.75 rounded-xl border border-accent-2 bg-accent-2 px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-white uppercase no-underline transition-all duration-200 hover:opacity-85"
+                    : "inline-flex items-center justify-center gap-1.75 rounded-xl border border-border px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-fg2 uppercase no-underline transition-all duration-200 hover:border-border-accent hover:text-accent"
                 }
               >
                 {label}
@@ -147,7 +161,7 @@ export default function ProjectPage({ project }) {
                 href={`/projects/${p.slug}`}
                 className="block h-full px-6 py-6 no-underline transition-colors duration-200 hover:bg-card-hover"
               >
-                <span className="mb-1.5 block font-syne text-[1.02rem] font-bold tracking-[-0.02em] text-fg">
+                <span className="mb-1.5 block font-display text-[1.02rem] font-bold tracking-[-0.02em] text-fg">
                   {p.title}
                 </span>
                 <span className="block text-[0.86rem] text-fg2 leading-[1.6]">{p.summary}</span>
@@ -157,7 +171,7 @@ export default function ProjectPage({ project }) {
         </ul>
         <a
           href="/#contact"
-          className="mt-12 inline-flex items-center gap-2 bg-accent px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-bg uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-85"
+          className="mt-12 inline-flex items-center gap-2 rounded-xl bg-accent-2 px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-white uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-85"
         >
           Hire Emmanuel for your project →
         </a>

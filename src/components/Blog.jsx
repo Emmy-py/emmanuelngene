@@ -31,7 +31,7 @@ export default function Blog() {
       <p className="mb-3.5 font-mono text-[0.68rem] tracking-[0.18em] text-accent uppercase">
         // Blog
       </p>
-      <h2 className="reveal mb-5 font-syne text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
+      <h2 className="reveal mb-5 font-display text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
         Thoughts on building better products.
       </h2>
       <p className="reveal mb-14 max-w-[620px] text-[0.97rem] text-fg2 leading-[1.8]">
@@ -52,7 +52,7 @@ export default function Blog() {
                 {date}
               </span>
             </div>
-            <h3 className="mb-2.75 font-syne text-[1.05rem] font-bold tracking-[-0.02em] leading-[1.3] text-fg">
+            <h3 className="mb-2.75 font-display text-[1.05rem] font-bold tracking-[-0.02em] leading-[1.3] text-fg">
               {title}
             </h3>
             <p className="mb-4 flex-1 text-[0.86rem] text-fg2 leading-[1.7]">{excerpt}</p>

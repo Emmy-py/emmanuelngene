@@ -38,18 +38,27 @@ There is no lint or test tooling.
 - **Projects** live in `src/data/projects.jsx` (`slug`, `summary`, `overview`, `contribution`, ...).
   Adding one there adds its homepage card, its `/projects/<slug>` page, sitemap entry, JSON-LD and
   llms.txt line. `LIVE_PROJECT_COUNT` feeds the hero stat.
-- **Pages/components**: `src/App.jsx` -> `Layout` (Cursor, ThemeSwitcher, Nav, Footer) +
+- **Pages/components**: `src/App.jsx` -> `Layout` (Cursor, Nav with `ThemeToggle`, Footer) +
   `src/pages/{Home,ProjectPage,NotFound}.jsx`. Home composes `src/components/` sections: `Hero`,
-  `About`, `Services`, `Projects`, `Testimonials`, `Process`, `Contact`. `Blog.jsx` exists but is
+  `About`, `Experience`, `Skills`, `Services`, `Projects`, `Process`, `Contact` (includes the
+  rotating testimonials). `SectionIntro` is the shared badge + heading. `Blog.jsx` exists but is
   hidden until real posts are written — don't render placeholder posts.
+- **Content facts** live in data files, never invented: `src/data/projects.jsx`, `src/data/tech.js`
+  (skills; brand icons from `simple-icons`, generic icons from `lucide-react`), `src/data/social.js`,
+  roles in `Experience.jsx`, stats in `About.jsx`.
 - **Styling**: Tailwind v4 utility classes inline on each component; `src/index.css` defines theme
-  tokens per `data-theme` (`dark` / `white` / `blue`). Fonts are self-hosted via `@fontsource`
-  (imported in `src/main.jsx`).
+  tokens per `data-theme` (`dark` / `purple`) plus the keyframes. `accent` is for text on the
+  background, `accent-2` is the fill behind white text. Fonts are self-hosted via `@fontsource`
+  (Plus Jakarta Sans = `font-display`, DM Sans, DM Mono; imported in `src/main.jsx`).
+- **Animation** is CSS keyframes + small hooks (`useReveal`, `useParallax`, `StatTile` count-up,
+  `ProjectCard` tilt); all disabled under `prefers-reduced-motion`. No animation library.
 - **Hooks** (`src/hooks/`): `useTheme` (persists to `localStorage` key `pf-theme`; starts at "dark"
-  to match prerendered HTML), `useActiveSection`, `useReveal`.
+  to match prerendered HTML), `useActiveSection`, `useReveal`, `useParallax`.
 - **`public/`** is copied to the site root: icons (`favicon.ico`, `icon.svg`, `apple-touch-icon.png`,
-  `icon-*.png`), `og-image.png`, `emmanuel-ngene.jpg` (hero + schema photo), `robots.txt`,
+  `icon-*.png`), `og-image.png`, `hero-portrait.webp` (background-removed hero photo),
+  `hero-bg.webp` (blurred desk photo), `emmanuel-ngene.jpg` (schema photo), `robots.txt`,
   `site.webmanifest`, and the IndexNow key file (`<32 hex>.txt`).
+- **`src/assets/screens/`** holds 800x500 WebP screenshots of live project sites.
 - **`screenshots/`** holds images used only by `README.md`.
 
 ## Notes

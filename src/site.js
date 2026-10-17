@@ -3,6 +3,7 @@
 export const SITE_URL = "https://emmycodes.site";
 
 export const PERSON_PHOTO = "/emmanuel-ngene.jpg";
+export const HERO_PORTRAIT = "/hero-portrait.webp";
 export const OG_IMAGE = "/og-image.png";
 
 export const SOCIAL_PROFILES = [
@@ -19,6 +20,8 @@ export const PERSON = {
   description:
     "Emmanuel Ngene (Emmy) is a full-stack software developer in Nigeria, building scalable web and mobile apps for startups and organizations.",
   email: "emmanuelngene145@gmail.com",
+  // Current employers, as stated by Emmanuel (names only).
+  worksFor: ["Dwanily", "MindTheGap"],
   knowsAbout: [
     "React",
     "Next.js",

@@ -1,26 +1,52 @@
+import { ArrowUpRight } from "lucide-react";
+
+// 3D tilt toward the pointer; mouse-like pointers only (touch scrolls straight through).
+function tilt(e) {
+  if (e.pointerType !== "mouse") return;
+  const card = e.currentTarget;
+  const rect = card.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width - 0.5;
+  const y = (e.clientY - rect.top) / rect.height - 0.5;
+  card.style.transform = `perspective(900px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg) translateY(-6px)`;
+}
+function untilt(e) {
+  e.currentTarget.style.transform = "";
+}
+
 export default function ProjectCard({
   number,
   slug,
-  name,
   logo,
   logoAlt,
-  logoClass,
   logoSize = 46,
+  screenshot,
   tags,
   title,
-  overview,
-  contribution,
-  links,
-  outcomeLabel,
-  outcomes,
+  summary,
   stack,
 }) {
+  const status = tags[0]?.label;
+
   return (
-    <div className="reveal group relative mb-0.5 overflow-hidden border border-border transition-colors duration-250 hover:border-border-accent">
-      <div className="grid min-h-[400px] grid-cols-2 max-[900px]:grid-cols-1">
-        <div className="flex flex-col justify-between border-r border-border px-10.5 py-11.5 max-[900px]:border-r-0 max-[900px]:border-b max-[900px]:border-border max-[900px]:px-7 max-[900px]:py-8.5 max-sm:px-5 max-sm:py-6.5">
-          <div>
-            <div className="mb-4.5 flex items-start gap-4">
+    <div className="reveal">
+      <article
+        onPointerMove={tilt}
+        onPointerLeave={untilt}
+        className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-[border-color,box-shadow,transform] duration-300 ease-out hover:border-border-accent hover:shadow-[0_24px_50px_-24px_var(--glow)]"
+      >
+        <div className="relative aspect-[8/5] overflow-hidden border-b border-border bg-bg3">
+          {screenshot ? (
+            <img
+              src={screenshot}
+              alt={`${logoAlt} website screenshot`}
+              width="800"
+              height="500"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,var(--glow),transparent_60%),linear-gradient(135deg,var(--bg3),var(--bg2))]">
               <img
                 src={logo}
                 alt={`${logoAlt} logo`}
@@ -28,83 +54,49 @@ export default function ProjectCard({
                 height={logoSize}
                 loading="lazy"
                 decoding="async"
-                className={logoClass}
+                className="h-20 w-20 rounded-2xl bg-white object-contain p-2.5 shadow-[0_16px_40px_-12px_var(--glow)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
               />
-              <div className="flex flex-wrap gap-1.75">
-                {tags.map(({ tagClass, label }) => (
-                  <span className={tagClass} key={label}>
-                    {label}
-                  </span>
-                ))}
-              </div>
             </div>
-            <h3 className="mb-3.25 font-syne text-[clamp(1.3rem,2vw,1.8rem)] font-extrabold tracking-[-0.04em] leading-[1.1] text-fg">
-              <a href={`/projects/${slug}`} className="text-fg no-underline hover:text-accent">
-                {title}
-              </a>
-            </h3>
-            <p className="flex-1 text-[0.88rem] text-fg2 leading-[1.75]">
-              {overview}
-              <br />
-              <br />
-              {contribution}
-            </p>
-          </div>
-          <div className="mt-6.5 flex flex-wrap gap-2.5">
-            {links.map(({ href, label, primary }) => (
-              <a
-                key={href}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                className={
-                  primary
-                    ? "inline-flex items-center gap-1.75 border border-accent bg-accent px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-bg uppercase no-underline transition-all duration-200 hover:opacity-85"
-                    : "inline-flex items-center gap-1.75 border border-border px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-fg2 uppercase no-underline transition-all duration-200 hover:border-border-accent hover:text-accent"
-                }
-              >
-                {label}
-              </a>
-            ))}
+          )}
+          <span className="absolute top-3 left-3 rounded-lg bg-bg/80 px-2.5 py-1 font-mono text-[0.7rem] text-fg backdrop-blur-sm">
+            {number}
+          </span>
+          {status && (
+            <span className="absolute top-3 right-3 rounded-lg bg-bg/80 px-2.5 py-1 font-mono text-[0.62rem] tracking-[0.08em] text-accent uppercase backdrop-blur-sm">
+              {status}
+            </span>
+          )}
+        </div>
+        <div className="flex flex-1 flex-col p-5.5">
+          <h3 className="mb-2 font-display text-[1.08rem] font-bold tracking-[-0.02em] text-fg leading-[1.3]">
             <a
               href={`/projects/${slug}`}
-              className="inline-flex items-center gap-1.75 border border-border px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-fg2 uppercase no-underline transition-all duration-200 hover:border-border-accent hover:text-accent"
+              className="text-fg no-underline after:absolute after:inset-0 after:content-['']"
             >
-              {name} case study
+              {title}
             </a>
-          </div>
-        </div>
-        <div className="flex flex-col justify-between bg-card px-10.5 py-11.5 max-[900px]:px-7 max-[900px]:py-8.5 max-sm:px-5 max-sm:py-6.5">
-          <div>
-            <p className="mb-2.75 font-mono text-[0.6rem] tracking-[0.15em] text-accent uppercase">
-              {outcomeLabel}
-            </p>
-            <ul className="mb-6 flex list-none flex-col gap-2">
-              {outcomes.map((item) => (
-                <li
-                  className="flex gap-2.5 text-[0.85rem] text-fg2 leading-[1.5] before:mt-px before:shrink-0 before:font-mono before:text-[0.76rem] before:text-accent before:content-['→']"
-                  key={item}
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="mt-auto flex flex-wrap gap-1.5 border-t border-border pt-5.5">
-            {stack.map((item) => (
-              <span
-                className="border border-border bg-card px-2 py-1 font-mono text-[0.63rem] tracking-[0.04em] text-fg2 transition-colors duration-200 group-hover:border-border-accent group-hover:text-fg"
+          </h3>
+          <p className="mb-4 flex-1 text-[0.86rem] text-fg2 leading-[1.65]">{summary}</p>
+          <ul className="mb-4 flex list-none flex-wrap gap-1.5">
+            {stack.slice(0, 4).map((item) => (
+              <li
                 key={item}
+                className="rounded-md border border-border px-2 py-0.5 font-mono text-[0.66rem] text-fg2"
               >
                 {item}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
+          <span className="inline-flex items-center gap-1 text-[0.85rem] font-medium text-accent">
+            View case study
+            <ArrowUpRight
+              size={15}
+              aria-hidden="true"
+              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </span>
         </div>
-      </div>
-      <div aria-hidden="true" className="pointer-events-none absolute bottom-4.5 right-7 font-syne text-[5.5rem] font-extrabold leading-none text-border select-none max-sm:bottom-3 max-sm:right-4.5 max-sm:text-[3.6rem]">
-        {number}
-      </div>
+      </article>
     </div>
   );
 }

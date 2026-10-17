@@ -6,7 +6,7 @@ export default function NotFound() {
       <p className="mb-3.5 font-mono text-[0.68rem] tracking-[0.18em] text-accent uppercase">
         // 404
       </p>
-      <h1 className="mb-5 font-syne text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
+      <h1 className="mb-5 font-display text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
         Page not found.
       </h1>
       <p className="mb-9 max-w-[560px] text-[0.97rem] text-fg2 leading-[1.8]">
@@ -15,7 +15,7 @@ export default function NotFound() {
       </p>
       <a
         href="/"
-        className="inline-flex items-center gap-2 bg-accent px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-bg uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-85"
+        className="inline-flex items-center gap-2 rounded-xl bg-accent-2 px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-white uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-85"
       >
         Back to the homepage →
       </a>

@@ -1,5 +1,4 @@
 import Cursor from "./Cursor";
-import ThemeSwitcher from "./ThemeSwitcher";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import useTheme from "../hooks/useTheme";
@@ -12,8 +11,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Cursor />
-      <ThemeSwitcher theme={theme} onChange={setTheme} />
-      <Nav activeSection={activeSection} />
+      <Nav activeSection={activeSection} theme={theme} onThemeChange={setTheme} />
       <main>{children}</main>
       <Footer />
     </>

@@ -9,7 +9,7 @@ export default function useReveal() {
           if (entry.isIntersecting) {
             setTimeout(() => {
               entry.target.classList.add("visible");
-            }, i * 70);
+            }, Math.min(i, 5) * 70); // capped so a big batch (fast scroll) doesn't lag
           }
         });
       },

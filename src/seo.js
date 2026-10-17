@@ -1,5 +1,5 @@
 import { PROJECTS } from "./data/projects";
-import { OG_IMAGE, PERSON, PERSON_PHOTO, SITE_URL, SOCIAL_PROFILES, absoluteUrl } from "./site";
+import { HERO_PORTRAIT, OG_IMAGE, PERSON, PERSON_PHOTO, SITE_URL, SOCIAL_PROFILES, absoluteUrl } from "./site";
 
 const PERSON_ID = `${SITE_URL}/#person`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -22,6 +22,7 @@ function personNode() {
     nationality: { "@type": "Country", name: "Nigeria" },
     address: { "@type": "PostalAddress", addressCountry: "NG" },
     knowsAbout: PERSON.knowsAbout,
+    worksFor: PERSON.worksFor.map((name) => ({ "@type": "Organization", name })),
     sameAs: SOCIAL_PROFILES,
   };
 }
@@ -66,7 +67,7 @@ export function homeMeta(lastmod) {
     description:
       "Emmanuel Ngene (Emmy) is a full-stack software developer in Nigeria building scalable web and mobile apps with React, Next.js, React Native, Node.js and Python.",
     path: "/",
-    preloadImage: PERSON_PHOTO,
+    preloadImage: HERO_PORTRAIT,
     jsonLd: graph([
       websiteNode(),
       {

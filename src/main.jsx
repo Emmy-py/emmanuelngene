@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 // Self-hosted fonts (latin subset, font-display: swap) — only the weights the site uses.
-import "@fontsource/syne/latin-600.css";
-import "@fontsource/syne/latin-700.css";
-import "@fontsource/syne/latin-800.css";
+import "@fontsource/plus-jakarta-sans/latin-600.css";
+import "@fontsource/plus-jakarta-sans/latin-700.css";
+import "@fontsource/plus-jakarta-sans/latin-800.css";
 import "@fontsource/dm-sans/latin-400.css";
 import "@fontsource/dm-sans/latin-400-italic.css";
 import "@fontsource/dm-sans/latin-500.css";

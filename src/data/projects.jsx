@@ -4,10 +4,15 @@ import cryptotrackerLogo from "../assets/cryptotracker.png";
 import foreverbuyLogo from "../assets/foreverbuy-logo.png";
 import learnableLogo from "../assets/learnable-logo.png";
 import edgeLogisticsLogo from "../assets/edge-logistics-logo.png";
+import edgeLogisticsScreen from "../assets/screens/edge-logistics.webp";
+import learnableScreen from "../assets/screens/learnable.webp";
+import foreverbuyScreen from "../assets/screens/foreverbuy.webp";
+import cryptotrackerScreen from "../assets/screens/cryptotracker.webp";
 // import bywayLogo from "../assets/byway-logo.jpg"; — re-enable along with the Byway entry below
 
 // Each project gets a card on the homepage and its own page at /projects/<slug>.
 // `summary` is plain text, used for the project page's meta description and structured data.
+// `screenshot` (800x500 WebP of the live site) is optional; cards fall back to the logo.
 export const PROJECTS = [
   {
     number: "01",
@@ -125,6 +130,7 @@ export const PROJECTS = [
   {
     number: "03",
     slug: "edge-logistics",
+    screenshot: edgeLogisticsScreen,
     name: "Edge Logistics",
     summary:
       "Edge Logistics is a shipping and freight website built by Emmanuel Ngene in Next.js from a Figma design, with quote, contact and shipment tracking flows.",
@@ -184,6 +190,7 @@ export const PROJECTS = [
   {
     number: "04",
     slug: "learnable",
+    screenshot: learnableScreen,
     name: "Learnable",
     summary:
       "A Next.js UI redesign of the website for Learnable, Genesys Tech Hub's tech training programme, by Emmanuel Ngene: carousels, FAQ and responsive layouts.",
@@ -242,6 +249,7 @@ export const PROJECTS = [
   {
     number: "05",
     slug: "foreverbuy",
+    screenshot: foreverbuyScreen,
     name: "ForeverBuy",
     summary:
       "ForeverBuy is a fashion and lifestyle e-commerce storefront. Emmanuel Ngene built the React frontend: product pages, search, cart, wishlist and auth.",
@@ -299,6 +307,7 @@ export const PROJECTS = [
   {
     number: "06",
     slug: "cryptotracker",
+    screenshot: cryptotrackerScreen,
     name: "CryptoTracker",
     summary:
       "CryptoTracker is a real-time cryptocurrency market analytics app by Emmanuel Ngene, with live price tracking, WebSocket updates and candlestick charts.",

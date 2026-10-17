@@ -1,3 +1,5 @@
+import SectionIntro from "./SectionIntro";
+
 const STEPS = [
   {
     num: "01",
@@ -23,31 +25,23 @@ const STEPS = [
 
 export default function Process() {
   return (
-    <section
-      id="process"
-      className="border-t border-border px-[max(20px,5vw)] py-27.5 max-sm:px-[max(22px,6vw)] max-sm:py-20"
-    >
-      <p className="mb-3.5 font-mono text-[0.68rem] tracking-[0.18em] text-accent uppercase">
-        // Process
-      </p>
-      <h2 className="reveal mb-5 font-syne text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
-        From idea to live product &mdash; in weeks.
-      </h2>
-      <div className="reveal mt-13 grid grid-cols-4 gap-px bg-border max-[900px]:grid-cols-1">
-        {STEPS.map(({ num, title, desc }) => (
-          <div
-            className="bg-bg px-6 py-8.5 transition-[background] duration-250 hover:bg-card-hover"
-            key={num}
-          >
-            <div className="mb-4 font-syne text-[2.8rem] font-extrabold tracking-[-0.06em] text-border-accent leading-none">
-              {num}
-            </div>
-            <h3 className="mb-2.25 font-syne text-[0.98rem] font-bold tracking-[-0.02em] text-fg">
-              {title}
-            </h3>
-            <p className="text-[0.84rem] text-fg2 leading-[1.7]">{desc}</p>
-          </div>
-        ))}
+    <section id="process" className="px-[max(20px,5vw)] py-27.5 max-sm:px-[max(22px,6vw)] max-sm:py-20">
+      <div className="mx-auto max-w-[1240px]">
+        <SectionIntro center badge="Process" title="From idea to live product, in weeks." />
+        <ol className="relative grid list-none grid-cols-4 gap-5 p-0 max-[900px]:grid-cols-2 max-sm:grid-cols-1">
+          {STEPS.map(({ num, title, desc }) => (
+            <li
+              key={num}
+              className="reveal group relative rounded-2xl border border-border bg-card p-6 transition-[transform,border-color,background] duration-300 hover:-translate-y-1.5 hover:border-border-accent hover:bg-card-hover"
+            >
+              <div className="mb-5 bg-gradient-to-br from-accent to-accent-2 bg-clip-text font-display text-[2.6rem] font-extrabold tracking-[-0.05em] text-transparent leading-none transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
+                {num}
+              </div>
+              <h3 className="mb-2 font-display text-[1rem] font-bold tracking-[-0.02em] text-fg">{title}</h3>
+              <p className="text-[0.86rem] text-fg2 leading-[1.7]">{desc}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

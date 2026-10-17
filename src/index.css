@@ -15,59 +15,48 @@
   --color-card: var(--card);
   --color-card-hover: var(--card-hover);
   --color-nav-bg: var(--nav-bg);
+  --color-glow: var(--glow);
 
-  --font-syne: "Syne", sans-serif;
+  --font-display: "Plus Jakarta Sans", "DM Sans", sans-serif;
   --font-mono: "DM Mono", monospace;
   --font-sans: "DM Sans", sans-serif;
 }
 
+/* Two themes, toggled from the nav: near-black with violet accents, and deep indigo. `accent`
+   is for text/lines on the background; `accent2` is the saturated fill behind white text. */
 [data-theme="dark"] {
-  --bg: #080808;
-  --bg2: #0f0f0f;
-  --bg3: #161616;
-  --fg: #f4f2ee;
-  --fg2: #888880;
-  --fg3: #2a2a26;
-  --accent: #00e87a;
-  --accent2: #00b85e;
-  --accent-muted: #0a2918;
-  --border: rgba(244, 242, 238, 0.08);
-  --border-accent: rgba(0, 232, 122, 0.22);
-  --card: rgba(255, 255, 255, 0.025);
-  --card-hover: rgba(0, 232, 122, 0.04);
-  --nav-bg: rgba(8, 8, 8, 0.86);
+  --bg: #050507;
+  --bg2: #0a0910;
+  --bg3: #12101a;
+  --fg: #f5f3ff;
+  --fg2: #a3a0b5;
+  --fg3: #2a2738;
+  --accent: #a78bfa;
+  --accent2: #6d4aff;
+  --accent-muted: rgba(124, 92, 255, 0.14);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(167, 139, 250, 0.35);
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(124, 92, 255, 0.08);
+  --nav-bg: rgba(5, 5, 7, 0.72);
+  --glow: rgba(124, 92, 255, 0.55);
 }
-[data-theme="white"] {
-  --bg: #ffffff;
-  --bg2: #f8f8f6;
-  --bg3: #f0eeea;
-  --fg: #0a0a0a;
-  --fg2: #555550;
-  --fg3: #e0deda;
-  --accent: #0a0a0a;
-  --accent2: #333;
-  --accent-muted: #ebebeb;
-  --border: rgba(0, 0, 0, 0.09);
-  --border-accent: rgba(0, 0, 0, 0.25);
-  --card: rgba(0, 0, 0, 0.03);
-  --card-hover: rgba(0, 0, 0, 0.05);
-  --nav-bg: rgba(255, 255, 255, 0.92);
-}
-[data-theme="blue"] {
-  --bg: #060d1f;
-  --bg2: #091227;
-  --bg3: #0d1830;
-  --fg: #e4eeff;
-  --fg2: #6a7a9e;
-  --fg3: #142050;
-  --accent: #4f9eff;
-  --accent2: #2d7fe0;
-  --accent-muted: #091530;
-  --border: rgba(79, 158, 255, 0.12);
-  --border-accent: rgba(79, 158, 255, 0.38);
-  --card: rgba(79, 158, 255, 0.04);
-  --card-hover: rgba(79, 158, 255, 0.09);
-  --nav-bg: rgba(6, 13, 31, 0.9);
+[data-theme="purple"] {
+  --bg: #0c0a1d;
+  --bg2: #110e27;
+  --bg3: #181436;
+  --fg: #f3f0ff;
+  --fg2: #aaa4cb;
+  --fg3: #251f4d;
+  --accent: #ab9dff;
+  --accent2: #6d4aff;
+  --accent-muted: rgba(124, 92, 255, 0.18);
+  --border: rgba(171, 157, 255, 0.14);
+  --border-accent: rgba(171, 157, 255, 0.42);
+  --card: rgba(124, 92, 255, 0.06);
+  --card-hover: rgba(124, 92, 255, 0.13);
+  --nav-bg: rgba(12, 10, 29, 0.74);
+  --glow: rgba(124, 92, 255, 0.7);
 }
 
 html {
@@ -85,13 +74,13 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: var(--accent2);
 }
 
 @keyframes fadeUp {
@@ -104,14 +93,81 @@ body {
     transform: translateY(0);
   }
 }
-@keyframes fadeLeft {
+@keyframes blurIn {
   from {
     opacity: 0;
-    transform: translateX(24px);
+    filter: blur(12px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.6);
+  }
+  70% {
+    transform: translateY(-3px) scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
 @keyframes pulse {
@@ -129,8 +185,21 @@ body {
 /* Driven by IntersectionObserver toggling a plain DOM class (useReveal.js) — not React
    state, so it can't be expressed as conditional Tailwind classes in JSX. */
 .reveal {
-  @apply translate-y-5.5 opacity-0 transition-[opacity,transform] duration-650 ease-in-out;
+  @apply translate-y-7 opacity-0 blur-[6px] transition-[opacity,transform,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)];
 }
 .reveal.visible {
-  @apply translate-y-0 opacity-100;
+  @apply translate-y-0 opacity-100 blur-none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    @apply translate-y-0 opacity-100 blur-none;
+  }
 }

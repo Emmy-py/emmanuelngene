@@ -1,3 +1,15 @@
+import { ArrowRight, CalendarCheck, Gauge, Landmark, Rocket } from "lucide-react";
+import SectionIntro from "./SectionIntro";
+import StatTile from "./StatTile";
+import { LIVE_PROJECT_COUNT } from "../data/projects";
+
+const STATS = [
+  { value: LIVE_PROJECT_COUNT, suffix: "+", label: "Live products shipped", Icon: Rocket },
+  { value: 0, label: "Missed deadlines", Icon: CalendarCheck },
+  { value: 30, suffix: "%+", label: "Average performance gain", Icon: Gauge },
+  { value: 300, suffix: "+", label: "Screens on an NDA government app", Icon: Landmark },
+];
+
 const PAIN_POINTS = [
   {
     title: "APIs that crash under load",
@@ -21,60 +33,62 @@ export default function About() {
   return (
     <section
       id="about"
-      className="border-t border-border px-[max(20px,5vw)] py-27.5 max-sm:px-[max(22px,6vw)] max-sm:py-20"
+      className="relative px-[max(20px,5vw)] py-27.5 max-sm:px-[max(22px,6vw)] max-sm:py-20"
     >
-      <div className="grid grid-cols-2 items-start gap-20 max-[900px]:grid-cols-1 max-sm:gap-11">
-        <div>
-          <p className="mb-3.5 font-mono text-[0.68rem] tracking-[0.18em] text-accent uppercase">
-            // About
-          </p>
-          <h2 className="reveal mb-5 font-syne text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
-            Your startup deserves a product that doesn't break.
-          </h2>
-          <div className="reveal space-y-4.5 text-base text-fg2 leading-[1.82]">
-            <p>
-              I'm <strong className="font-medium text-fg">Emmanuel Ngene</strong> (Ngene Emmanuel
-              Somto in full, though most people just call me Emmy), a full-stack developer based in
-              Nigeria.
-            </p>
-            <p>
-              I build complete web and mobile products from idea to launch, specializing
-              in{" "}
-              <strong className="font-medium text-fg">
-                React, Next.js, React Native, Node.js, NestJS, Python, FastAPI, scalable database
-                architecture, API design, microservices, Docker, Kubernetes, and CI/CD pipelines
-              </strong>
-              . I build the systems that keep your product running — under load, at launch, and
-              long after.
-            </p>
-            <p>
-              With a strong foundation in{" "}
-              <strong className="font-medium text-fg">backend engineering</strong> and modern
-              frontend and mobile skills, I build polished interfaces on top of robust APIs,
-              intelligent workflows, data pipelines, and performance-tuned systems across diverse
-              industries.
-            </p>
-            <p>
-              Whether you're a founder with a sketch or a team needing a senior hand, I deliver
-              clean, documented, handover-ready code — every time.
-            </p>
+      <div className="mx-auto max-w-[1240px]">
+        <div className="grid grid-cols-2 items-start gap-16 max-[900px]:grid-cols-1 max-sm:gap-11">
+          <div>
+            <SectionIntro badge="About me" title="I build products that don't break." />
+            <div className="reveal -mt-6 space-y-4.5 text-base text-fg2 leading-[1.82]">
+              <p>
+                I'm <strong className="font-medium text-fg">Emmanuel Ngene</strong> (Ngene Emmanuel
+                Somto in full, though most people just call me Emmy), a full-stack developer based in
+                Nigeria.
+              </p>
+              <p>
+                I build complete web and mobile products from idea to launch, specializing in{" "}
+                <strong className="font-medium text-fg">
+                  React, Next.js, React Native, Node.js, NestJS, Python, FastAPI, scalable database
+                  architecture, API design, microservices, Docker, Kubernetes, and CI/CD pipelines
+                </strong>
+                . I build the systems that keep your product running — under load, at launch, and
+                long after.
+              </p>
+              <p>
+                Some of my biggest work is under NDA, including a government app with{" "}
+                <strong className="font-medium text-fg">more than 300 screens</strong>, so it isn't
+                shown here. Whether you're a founder with a sketch or a team needing a senior hand, I
+                deliver clean, documented, handover-ready code — every time.
+              </p>
+            </div>
+            <a
+              href="#experience"
+              className="reveal group mt-8 inline-flex items-center gap-2 rounded-xl border border-border-accent px-5.5 py-3 text-[0.9rem] font-medium text-fg no-underline transition-[border-color,background] duration-200 hover:border-accent hover:bg-accent-muted"
+            >
+              See my experience
+              <ArrowRight size={17} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+          </div>
+          <div className="reveal grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+            {STATS.map((stat) => (
+              <StatTile key={stat.label} {...stat} />
+            ))}
           </div>
         </div>
-        <div className="reveal">
-          <p className="mb-3.25 font-mono text-[0.66rem] tracking-[0.15em] text-accent uppercase">
-            // Most startups struggle with
-          </p>
-          <ul className="mt-8.5 flex list-none flex-col gap-2.75">
+
+        <div className="reveal mt-20">
+          <h3 className="mb-6 font-mono text-[0.7rem] tracking-[0.15em] text-accent uppercase">
+            Most startups struggle with
+          </h3>
+          <ul className="grid list-none grid-cols-4 gap-4 max-[1000px]:grid-cols-2 max-sm:grid-cols-1">
             {PAIN_POINTS.map(({ title, text }) => (
               <li
-                className="flex items-start gap-3.5 border border-border bg-card px-4.25 py-3.75 transition-[border-color,background] duration-200 hover:border-border-accent hover:bg-card-hover"
                 key={title}
+                className="rounded-2xl border border-border bg-card p-5.5 transition-[transform,border-color,background] duration-300 hover:-translate-y-1 hover:border-border-accent hover:bg-card-hover"
               >
-                <span className="mt-1.75 h-1.75 w-1.75 rounded-[1px] bg-accent"></span>
-                <span className="text-[0.9rem] text-fg2 leading-[1.6]">
-                  <strong className="mb-0.5 block text-[0.86rem] text-fg">{title}</strong>
-                  {text}
-                </span>
+                <span className="mb-3 block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px_var(--glow)]"></span>
+                <strong className="mb-1 block text-[0.92rem] font-semibold text-fg">{title}</strong>
+                <span className="text-[0.86rem] text-fg2 leading-[1.6]">{text}</span>
               </li>
             ))}
           </ul>
