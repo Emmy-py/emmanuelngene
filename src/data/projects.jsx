@@ -407,7 +407,7 @@ export const PROJECTS = [
 
 // Projects tagged "Live" (any case); the hero stat counts these, so it updates as projects are added.
 export const LIVE_PROJECT_COUNT = PROJECTS.filter((project) =>
-  project.tags.some((tag) => /live/i.test(tag.label)),
+  project.tags.some((tag) => /\blive\b/i.test(tag.label)),
 ).length;
 
 export function findProject(slug) {
