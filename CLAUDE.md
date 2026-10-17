@@ -12,32 +12,44 @@ https://emmycodes.site and deployed on Vercel. Built with React 18 + Vite 5 + Ta
 
 ```
 npm install
-npm run dev       # local dev server
-npm run build     # production build to dist/
+npm run dev       # local dev server (client-rendered, no SEO head tags)
+npm run build     # client build + SSR build + scripts/prerender.mjs -> static pages in dist/
 npm run preview   # serve the built dist/
+npm run indexnow  # ping IndexNow with the live sitemap (also runs via GitHub Actions after prod deploys)
 ```
 
 There is no lint or test tooling.
 
 ## Architecture
 
-- **`index.html`** is the Vite entry. It holds all SEO metadata (title, description, canonical, Open
-  Graph/Twitter tags, JSON-LD Person/WebSite schema) and a `<noscript>` fallback, then mounts
-  `src/main.jsx` into `#root`.
-- **`src/App.jsx`** composes the page from `src/components/` in DOM order: `Hero`, `About`,
-  `Services`, `Projects`, `Testimonials`, `Process`, `Blog`, `Contact`, plus `Nav`, `Footer`,
-  `Cursor` (custom dot + ring cursor) and `ThemeSwitcher`.
-- **Styling**: Tailwind utility classes written inline on each component. `src/index.css` defines the
-  theme tokens (`--bg`, `--fg`, `--accent`, ...) per `data-theme` (`dark` / `white` / `blue`) on `<html>`.
-- **Hooks** (`src/hooks/`): `useTheme` (sets `data-theme`, persists to `localStorage` key `pf-theme`),
-  `useActiveSection` (nav highlighting on scroll), `useReveal` (`IntersectionObserver` reveal
-  animations on `.reveal` elements).
-- **Projects**: data lives in `src/components/Projects.jsx`; `LIVE_PROJECT_COUNT` is derived from it
-  and shown in the hero stats.
-- **`src/assets/`** holds images imported by components (hero photo, project logos/screenshots).
-- **`public/`** is copied as-is to the site root: `favicon.svg`, `og-image.png` (1200×630 social
-  preview), `robots.txt`, `sitemap.xml`, `site.webmanifest`. Update `<lastmod>` in `sitemap.xml` when
-  content changes meaningfully.
+- **Prerendered SPA.** `npm run build` builds the client, then an SSR bundle of
+  `src/entry-server.jsx`, then `scripts/prerender.mjs` renders every route to static HTML
+  (`dist/index.html`, `dist/projects/<slug>.html`, `dist/404.html`), injects per-page head tags,
+  inlines the CSS, preloads above-the-fold fonts, validates JSON-LD, and writes `sitemap.xml` and
+  `llms.txt`. `src/main.jsx` hydrates the prerendered markup. `vercel.json` sets `cleanUrls`.
+- **Routing** is `src/routes.js` (`/`, `/projects/<slug>`, everything else = 404), shared by client
+  and prerenderer. Navigation between pages is plain `<a>` links (full page loads); nav links are
+  `/#section` so they work from any page.
+- **`index.html`** is the template: `<!--head-->` and `<!--app-->` placeholders, static icon/manifest
+  tags, and an inline script applying the saved theme before paint.
+- **SEO**: `src/site.js` holds the canonical domain (`https://emmycodes.site`, never www/vercel.app)
+  and personal facts; `src/seo.js` builds titles, descriptions, OG/Twitter tags and JSON-LD
+  (WebSite, ProfilePage, Person, Organization, CreativeWork per project, BreadcrumbList).
+- **Projects** live in `src/data/projects.jsx` (`slug`, `summary`, `overview`, `contribution`, ...).
+  Adding one there adds its homepage card, its `/projects/<slug>` page, sitemap entry, JSON-LD and
+  llms.txt line. `LIVE_PROJECT_COUNT` feeds the hero stat.
+- **Pages/components**: `src/App.jsx` -> `Layout` (Cursor, ThemeSwitcher, Nav, Footer) +
+  `src/pages/{Home,ProjectPage,NotFound}.jsx`. Home composes `src/components/` sections: `Hero`,
+  `About`, `Services`, `Projects`, `Testimonials`, `Process`, `Contact`. `Blog.jsx` exists but is
+  hidden until real posts are written — don't render placeholder posts.
+- **Styling**: Tailwind v4 utility classes inline on each component; `src/index.css` defines theme
+  tokens per `data-theme` (`dark` / `white` / `blue`). Fonts are self-hosted via `@fontsource`
+  (imported in `src/main.jsx`).
+- **Hooks** (`src/hooks/`): `useTheme` (persists to `localStorage` key `pf-theme`; starts at "dark"
+  to match prerendered HTML), `useActiveSection`, `useReveal`.
+- **`public/`** is copied to the site root: icons (`favicon.ico`, `icon.svg`, `apple-touch-icon.png`,
+  `icon-*.png`), `og-image.png`, `emmanuel-ngene.jpg` (hero + schema photo), `robots.txt`,
+  `site.webmanifest`, and the IndexNow key file (`<32 hex>.txt`).
 - **`screenshots/`** holds images used only by `README.md`.
 
 ## Notes

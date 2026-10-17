@@ -56,7 +56,7 @@ export default function Blog() {
               {title}
             </h3>
             <p className="mb-4 flex-1 text-[0.86rem] text-fg2 leading-[1.7]">{excerpt}</p>
-            <span className="font-mono text-[0.65rem] tracking-[0.08em] text-fg2/60 uppercase">
+            <span className="font-mono text-[0.65rem] tracking-[0.08em] text-fg2 uppercase">
               Full post coming soon
             </span>
           </div>

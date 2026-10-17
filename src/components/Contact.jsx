@@ -74,7 +74,7 @@ export default function Contact() {
               key={platform}
               href={href}
               target={external ? "_blank" : undefined}
-              rel={external ? "noreferrer" : undefined}
+              rel={external ? "me noopener" : undefined}
               className="group flex items-center gap-4.5 border-b border-border py-5 text-fg no-underline transition-[padding-left] duration-200 first:border-t hover:pl-2.5"
             >
               <span
@@ -109,7 +109,7 @@ export default function Contact() {
           </p>
           <div className="mb-6.5 flex items-center gap-2.25 font-mono text-[0.66rem] tracking-[0.08em] text-fg2">
             <span className="h-1.75 w-1.75 shrink-0 animate-[pulse_2s_infinite] rounded-full bg-accent"></span>
-            Available for new projects &mdash; Feb 2026
+            Available for new projects
           </div>
           <a
             href="mailto:emmanuelngene145@gmail.com"

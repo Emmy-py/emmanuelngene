@@ -1,40 +1,17 @@
-import Cursor from "./components/Cursor";
-import ThemeSwitcher from "./components/ThemeSwitcher";
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Services from "./components/Services";
-import Projects from "./components/Projects";
-import Testimonials from "./components/Testimonials";
-import Process from "./components/Process";
-import Blog from "./components/Blog";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import useTheme from "./hooks/useTheme";
-import useActiveSection from "./hooks/useActiveSection";
-import useReveal from "./hooks/useReveal";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import ProjectPage from "./pages/ProjectPage";
+import NotFound from "./pages/NotFound";
+import { resolveRoute } from "./routes";
 
-export default function App() {
-  const [theme, setTheme] = useTheme();
-  const activeSection = useActiveSection();
-  useReveal();
+export default function App({ path }) {
+  const route = resolveRoute(path);
 
   return (
-    <>
-      <Cursor />
-      <ThemeSwitcher theme={theme} onChange={setTheme} />
-      <Nav activeSection={activeSection} />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <Testimonials />
-        <Process />
-        <Blog />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      {route.page === "home" && <Home />}
+      {route.page === "project" && <ProjectPage project={route.project} />}
+      {route.page === "notFound" && <NotFound />}
+    </Layout>
   );
 }

@@ -1,5 +1,5 @@
-import heroPhoto from "../assets/emmanuel-ngene.jpg";
-import { LIVE_PROJECT_COUNT } from "./Projects";
+import { LIVE_PROJECT_COUNT } from "../data/projects";
+import { PERSON_PHOTO } from "../site";
 
 const STATS = [
   { num: `${LIVE_PROJECT_COUNT}+`, label: "Live Products" },
@@ -21,19 +21,17 @@ export default function Hero() {
           Node.js &middot; NestJS &middot; Python
         </p>
         <h1 className="mb-7 max-w-full animate-[fadeUp_0.7s_0.3s_forwards] font-syne font-extrabold tracking-[-0.04em] opacity-0 leading-[0.95]">
-          <span className="block whitespace-nowrap text-[clamp(1.6rem,5.4vw,5.6rem)] max-lg:text-[clamp(1.6rem,7.4vw,5.6rem)]">
-            Emmy
-            <span className="text-transparent [-webkit-text-stroke:1.5px_var(--fg)]">.codes</span>
-            <span className="ml-[0.15em] align-middle text-[0.55em]" aria-hidden>
-              🛠️
-            </span>
+          <span className="block text-[clamp(1.75rem,5.4vw,5.6rem)] max-lg:text-[clamp(1.75rem,9.4vw,5.6rem)]">
+            Emmanuel{" "}
+            <span className="text-transparent [-webkit-text-stroke:1.5px_var(--fg)]">Ngene</span>
           </span>
           <span className="mt-3 block text-[clamp(1.6rem,4.2vw,4.2rem)] tracking-[-0.03em] text-accent max-lg:text-[clamp(1.6rem,7vw,4.2rem)]">
             Full-Stack Developer
           </span>
         </h1>
         <p className="mb-11 max-w-[500px] animate-[fadeUp_0.7s_0.45s_forwards] text-[1.05rem] text-fg2 opacity-0 leading-[1.75]">
-          I build <strong className="font-medium text-fg">scalable, production-ready web and mobile apps</strong> for
+          I'm Emmy, the developer behind Emmy.codes 🛠️. I build{" "}
+          <strong className="font-medium text-fg">scalable, production-ready web and mobile apps</strong> for
           startups and organizations, end to end: React, Next.js &amp; React Native on the front,
           Node.js, NestJS, Python &amp; FastAPI, PostgreSQL &amp; MongoDB on the back. Clean code. Full
           documentation. Zero missed deadlines.
@@ -48,10 +46,10 @@ export default function Hero() {
           <a
             href="https://github.com/Emmy-py"
             target="_blank"
-            rel="noreferrer"
+            rel="me noopener"
             className="inline-flex items-center gap-2 border border-border px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-fg2 uppercase no-underline transition-[color,border-color,transform] duration-200 hover:-translate-y-0.5 hover:border-border-accent hover:text-accent max-sm:justify-center"
           >
-            GitHub &#x2192;
+            My GitHub &#x2192;
           </a>
         </div>
         <div className="mt-12.5 flex animate-[fadeUp_0.7s_0.75s_forwards] gap-10 border-t border-border pt-9 opacity-0 max-sm:mt-9.5 max-sm:flex-wrap max-sm:gap-7 max-sm:pt-7">
@@ -70,8 +68,12 @@ export default function Hero() {
       <div className="relative z-1 animate-[fadeLeft_0.8s_0.5s_forwards] opacity-0 max-lg:max-w-[260px]">
         <div className="relative mx-auto w-full max-w-[360px]">
           <img
-            src={heroPhoto}
-            alt="Emmy.codes (Emmanuel Ngene)"
+            src={PERSON_PHOTO}
+            alt="Emmanuel Ngene, software developer"
+            width={720}
+            height={720}
+            fetchpriority="high"
+            decoding="async"
             className="aspect-square block w-full border border-border object-cover [object-position:center_top]"
           />
           <div className="absolute -bottom-3.5 -left-3.5 bg-accent px-4 py-2.75 font-mono text-[0.62rem] tracking-[0.1em] text-bg uppercase">

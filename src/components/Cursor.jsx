@@ -5,17 +5,20 @@ export default function Cursor() {
   const ringRef = useRef(null);
 
   useEffect(() => {
+    // Touch devices have no cursor to follow.
+    if (!window.matchMedia("(pointer: fine)").matches) return;
     const cur = cursorRef.current;
     const ring = ringRef.current;
     let mx = 0,
       my = 0,
       rx = 0,
       ry = 0;
-    let frame;
+    let frame = 0;
 
     function onMouseMove(e) {
       mx = e.clientX;
       my = e.clientY;
+      if (!frame) frame = requestAnimationFrame(tick);
     }
 
     function tick() {
@@ -25,11 +28,11 @@ export default function Cursor() {
       ry += (my - ry) * 0.12;
       ring.style.left = rx + "px";
       ring.style.top = ry + "px";
-      frame = requestAnimationFrame(tick);
+      // Keep animating only while the ring is still catching up with the pointer.
+      frame = Math.abs(mx - rx) + Math.abs(my - ry) > 0.5 ? requestAnimationFrame(tick) : 0;
     }
 
     document.addEventListener("mousemove", onMouseMove);
-    tick();
 
     function grow() {
       cur.style.width = "16px";

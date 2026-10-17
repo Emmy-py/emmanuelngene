@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 
 const LINKS = [
-  { href: "#hero", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#blog", label: "Blog" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#hero", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#services", label: "Services" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Nav({ activeSection }) {
@@ -22,7 +21,8 @@ export default function Nav({ activeSection }) {
   return (
     <nav className="fixed inset-x-0 top-0 z-[100] flex items-center justify-between border-b border-border bg-nav-bg px-[max(20px,5vw)] py-4.5 backdrop-blur-[16px] transition-[background,border-color] duration-[400ms]">
       <a
-        href="#hero"
+        href="/"
+        aria-label="Emmanuel Ngene, Emmy.codes home"
         className="font-syne text-[1.1rem] font-extrabold tracking-[-0.02em] text-fg no-underline"
         onClick={() => setOpen(false)}
       >
@@ -71,7 +71,7 @@ export default function Nav({ activeSection }) {
               href={href}
               onClick={() => setOpen(false)}
               className={`font-mono text-[0.7rem] tracking-[0.08em] uppercase no-underline transition-colors duration-200 hover:text-accent max-[900px]:text-[0.82rem] ${
-                href === `#${activeSection}` ? "text-accent" : "text-fg2"
+                href === `/#${activeSection}` ? "text-accent" : "text-fg2"
               }`}
             >
               {label}
@@ -80,7 +80,7 @@ export default function Nav({ activeSection }) {
         ))}
         <li className="hidden max-[900px]:mt-2 max-[900px]:block">
           <a
-            href="#contact"
+            href="/#contact"
             className="inline-block bg-accent px-5.5 py-2.5 font-mono text-[0.72rem] tracking-[0.08em] text-bg uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-px hover:opacity-85"
             onClick={() => setOpen(false)}
           >
@@ -89,7 +89,7 @@ export default function Nav({ activeSection }) {
         </li>
       </ul>
       <a
-        href="#contact"
+        href="/#contact"
         className="inline-block bg-accent px-5.5 py-2.5 font-mono text-[0.72rem] tracking-[0.08em] text-bg uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-px hover:opacity-85 max-[900px]:hidden"
       >
         Hire Me

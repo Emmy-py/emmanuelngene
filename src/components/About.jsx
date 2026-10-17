@@ -33,7 +33,16 @@ export default function About() {
           </h2>
           <div className="reveal space-y-4.5 text-base text-fg2 leading-[1.82]">
             <p>
-              I'm a full-stack developer. I started in backend engineering and now build complete
+              I'm <strong className="font-medium text-fg">Emmanuel Ngene</strong> (Ngene Emmanuel
+              Somto in full, though most people just call me Emmy), a full-stack developer based in
+              Nigeria and the founder of{" "}
+              <a href="/projects/greenverify" className="text-fg underline decoration-accent underline-offset-3 hover:text-accent">
+                Greenverify Ltd
+              </a>
+              .
+            </p>
+            <p>
+              I started in backend engineering and now build complete
               web, mobile and e-commerce products, specializing in{" "}
               <strong className="font-medium text-fg">
                 React, Next.js, React Native, Node.js, NestJS, Python, FastAPI, scalable database

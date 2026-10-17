@@ -1,10 +1,5 @@
 const TESTIMONIALS = [
   {
-    text: "Delivered on time and exceeded expectations. The API was clean, well-documented, and ready to deploy on day one. Exactly what we needed.",
-    author: "Client — EdTech Startup",
-    role: "Byway LMS",
-  },
-  {
     text: "Emmanuel was a reliable collaborator who grasped our goals quickly and contributed meaningfully to every sprint. Professional throughout.",
     author: "Client — Event Tech Platform",
     role: "LetDap",
@@ -28,7 +23,7 @@ export default function Testimonials() {
       <h2 className="reveal mb-5 font-syne text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.035em] leading-[1.05]">
         Results clients trust.
       </h2>
-      <div className="reveal mt-13 grid grid-cols-3 gap-px bg-border max-[900px]:grid-cols-1">
+      <div className="reveal mt-13 grid grid-cols-2 gap-px bg-border max-[900px]:grid-cols-1">
         {TESTIMONIALS.map(({ text, author, role }) => (
           <div
             className="bg-bg px-7.5 py-8.5 transition-colors duration-200 hover:bg-card-hover"
