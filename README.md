@@ -89,7 +89,7 @@ Built with React, Vite and Tailwind CSS: a clean, responsive design showcasing m
 ## 🤝 Let's Build Something Great
 
 Looking for a full-stack developer to build a web app, mobile app, website or online store, or to scale your APIs and integrate AI features?  
-I'm available for remote freelance projects starting at **$1,000–$2,000** (depending on scope).
+I'm available for remote freelance projects.
 
 Drop me a message — let's chat! 🚀
 

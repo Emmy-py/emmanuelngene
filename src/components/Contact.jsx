@@ -104,7 +104,7 @@ export default function Contact() {
             next <span className="text-accent">scalable app?</span>
           </h3>
           <p className="mb-7.5 text-[0.9rem] text-fg2 leading-[1.7]">
-            Custom development starting at $1K&ndash;$2K. Drop me an email or connect on LinkedIn
+            Custom development available. Drop me an email or connect on LinkedIn
             &mdash; I reply within 4 hours on business days.
           </p>
           <div className="mb-6.5 flex items-center gap-2.25 font-mono text-[0.66rem] tracking-[0.08em] text-fg2">
