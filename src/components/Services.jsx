@@ -59,7 +59,7 @@ export default function Services() {
               key={num}
               className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-[transform,border-color,background,box-shadow] duration-300 before:absolute before:-top-16 before:-right-16 before:h-32 before:w-32 before:rounded-full before:bg-glow before:opacity-0 before:blur-2xl before:transition-opacity before:duration-500 hover:-translate-y-1.5 hover:border-border-accent hover:bg-card-hover hover:shadow-[0_18px_40px_-20px_var(--glow)] hover:before:opacity-60"
             >
-              <span className="relative mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-border-accent bg-accent-muted text-accent transition-[transform,background,color] duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-accent-2 group-hover:text-white">
+              <span className="relative mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-border-accent bg-accent-muted text-accent transition-[transform,background,color] duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:bg-accent-2 group-hover:text-on-accent">
                 <Icon size={20} aria-hidden="true" />
               </span>
               <h3 className="relative mb-2 font-display text-[1rem] font-bold tracking-[-0.02em] text-fg">

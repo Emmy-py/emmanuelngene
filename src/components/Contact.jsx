@@ -44,7 +44,7 @@ export default function Contact() {
           </p>
           <a
             href={`mailto:${EMAIL}`}
-            className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent-2 to-[#8b5cf6] px-6.5 py-3.25 font-medium text-white no-underline shadow-[0_12px_32px_-10px_var(--glow)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_var(--glow)]"
+            className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent-2 to-[var(--grad-a)] px-6.5 py-3.25 font-medium text-on-accent no-underline shadow-[0_12px_32px_-10px_var(--glow)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_var(--glow)]"
           >
             Get in touch
             <ArrowUpRight size={18} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

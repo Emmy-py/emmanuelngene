@@ -140,7 +140,7 @@ export default function ProjectPage({ project }) {
                 rel="noopener"
                 className={
                   primary
-                    ? "inline-flex items-center justify-center gap-1.75 rounded-xl border border-accent-2 bg-accent-2 px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-white uppercase no-underline transition-all duration-200 hover:opacity-85"
+                    ? "inline-flex items-center justify-center gap-1.75 rounded-xl border border-accent-2 bg-accent-2 px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-on-accent uppercase no-underline transition-all duration-200 hover:opacity-85"
                     : "inline-flex items-center justify-center gap-1.75 rounded-xl border border-border px-4.5 py-2.5 font-mono text-[0.68rem] tracking-[0.07em] text-fg2 uppercase no-underline transition-all duration-200 hover:border-border-accent hover:text-accent"
                 }
               >
@@ -171,7 +171,7 @@ export default function ProjectPage({ project }) {
         </ul>
         <a
           href="/#contact"
-          className="mt-12 inline-flex items-center gap-2 rounded-xl bg-accent-2 px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-white uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-85"
+          className="mt-12 inline-flex items-center gap-2 rounded-xl bg-accent-2 px-8.5 py-3.75 font-mono text-[0.75rem] tracking-[0.1em] text-on-accent uppercase no-underline transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-85"
         >
           Hire Emmanuel for your project →
         </a>

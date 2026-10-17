@@ -35,7 +35,7 @@ export default function StatTile({ value, suffix = "", label, Icon }) {
 
   return (
     <div className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-5.5 backdrop-blur-sm transition-[transform,border-color,background] duration-300 hover:-translate-y-1 hover:border-border-accent hover:bg-card-hover">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent-2 to-accent text-white shadow-[0_8px_20px_-8px_var(--glow)] transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-accent-2 to-accent text-on-accent shadow-[0_8px_20px_-8px_var(--glow)] transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
         <Icon size={20} aria-hidden="true" />
       </span>
       <div>

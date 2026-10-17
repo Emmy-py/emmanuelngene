@@ -44,7 +44,7 @@ export default function Nav({ activeSection, theme, onThemeChange }) {
         className="group flex items-center gap-2 font-display text-[1.15rem] font-extrabold tracking-[-0.02em] text-fg no-underline"
         onClick={() => setOpen(false)}
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-2 to-accent text-white transition-transform duration-500 group-hover:rotate-[360deg]">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-2 to-accent text-on-accent transition-transform duration-500 group-hover:rotate-[360deg]">
           <CodeXml size={17} aria-hidden="true" />
         </span>
         <span>
@@ -86,7 +86,7 @@ export default function Nav({ activeSection, theme, onThemeChange }) {
         <ThemeToggle theme={theme} onChange={onThemeChange} />
         <a
           href="/#contact"
-          className="group inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-accent-2 to-[#8b5cf6] px-4.5 py-2.5 text-[0.85rem] font-medium text-white no-underline shadow-[0_8px_24px_-8px_var(--glow)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-6px_var(--glow)] max-sm:hidden"
+          className="group inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-accent-2 to-[var(--grad-a)] px-4.5 py-2.5 text-[0.85rem] font-medium text-on-accent no-underline shadow-[0_8px_24px_-8px_var(--glow)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-6px_var(--glow)] max-sm:hidden"
         >
           Hire Me
           <ArrowUpRight size={16} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

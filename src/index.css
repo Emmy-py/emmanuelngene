@@ -9,6 +9,7 @@
   --color-fg3: var(--fg3);
   --color-accent: var(--accent);
   --color-accent-2: var(--accent2);
+  --color-on-accent: var(--on-accent);
   --color-accent-muted: var(--accent-muted);
   --color-border: var(--border);
   --color-border-accent: var(--border-accent);
@@ -22,9 +23,9 @@
   --font-sans: "DM Sans", sans-serif;
 }
 
-/* Two themes, toggled from the nav: "dark" is pure black with violet accents, "purple" is deep
-   indigo. `accent` is for text/lines on the background; `accent2` is the saturated fill behind
-   white text. */
+/* Two themes, toggled from the nav: "dark" is pure black with violet accents, "black" is all
+   black and grey with no colour. `accent` is for text/lines on the background; `accent2` is the
+   fill behind `on-accent` text; `grad-*` colour the hero name, buttons and portrait circle. */
 [data-theme="dark"] {
   --bg: #000000;
   --bg2: #08080a;
@@ -34,6 +35,7 @@
   --fg3: #2a2738;
   --accent: #a78bfa;
   --accent2: #6d4aff;
+  --on-accent: #ffffff;
   --accent-muted: rgba(124, 92, 255, 0.14);
   --border: rgba(255, 255, 255, 0.08);
   --border-accent: rgba(167, 139, 250, 0.35);
@@ -41,23 +43,34 @@
   --card-hover: rgba(124, 92, 255, 0.08);
   --nav-bg: rgba(0, 0, 0, 0.72);
   --glow: rgba(124, 92, 255, 0.55);
+  --grad-a: #8b5cf6;
+  --grad-b: #c4b5fd;
+  --circle-a: #a78bfa;
+  --circle-b: #6d4aff;
+  --circle-c: #2e1a7a;
 }
-[data-theme="purple"] {
-  --bg: #0c0a1d;
-  --bg2: #110e27;
-  --bg3: #181436;
-  --fg: #f3f0ff;
-  --fg2: #aaa4cb;
-  --fg3: #251f4d;
-  --accent: #ab9dff;
-  --accent2: #6d4aff;
-  --accent-muted: rgba(124, 92, 255, 0.18);
-  --border: rgba(171, 157, 255, 0.14);
-  --border-accent: rgba(171, 157, 255, 0.42);
-  --card: rgba(124, 92, 255, 0.06);
-  --card-hover: rgba(124, 92, 255, 0.13);
-  --nav-bg: rgba(12, 10, 29, 0.74);
-  --glow: rgba(124, 92, 255, 0.7);
+[data-theme="black"] {
+  --bg: #000000;
+  --bg2: #070707;
+  --bg3: #101010;
+  --fg: #fafafa;
+  --fg2: #a3a3a3;
+  --fg3: #262626;
+  --accent: #e5e5e5;
+  --accent2: #f5f5f5;
+  --on-accent: #000000;
+  --accent-muted: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(255, 255, 255, 0.24);
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.06);
+  --nav-bg: rgba(0, 0, 0, 0.75);
+  --glow: rgba(255, 255, 255, 0.16);
+  --grad-a: #a3a3a3;
+  --grad-b: #ffffff;
+  --circle-a: #525252;
+  --circle-b: #262626;
+  --circle-c: #0a0a0a;
 }
 
 html {

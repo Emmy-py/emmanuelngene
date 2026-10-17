@@ -47,7 +47,7 @@ There is no lint or test tooling.
   (skills; brand icons from `simple-icons`, generic icons from `lucide-react`), `src/data/social.js`,
   roles in `Experience.jsx`, stats in `About.jsx`.
 - **Styling**: Tailwind v4 utility classes inline on each component; `src/index.css` defines theme
-  tokens per `data-theme` (`dark` / `purple`) plus the keyframes. `accent` is for text on the
+  tokens per `data-theme` (`dark` = black + violet, `black` = all black/grey) plus the keyframes. `accent` is for text on the
   background, `accent-2` is the fill behind white text. Fonts are self-hosted via `@fontsource`
   (Plus Jakarta Sans = `font-display`, DM Sans, DM Mono; imported in `src/main.jsx`).
 - **Animation** is CSS keyframes + small hooks (`useReveal`, `useParallax`, `StatTile` count-up,
@@ -56,8 +56,8 @@ There is no lint or test tooling.
   to match prerendered HTML), `useActiveSection`, `useReveal`, `useParallax`.
 - **`public/`** is copied to the site root: icons (`favicon.ico`, `icon.svg`, `apple-touch-icon.png`,
   `icon-*.png`), `og-image.png`, `hero-portrait.webp` (background-removed hero photo),
-  `hero-bg*.webp` (desk photo per theme: wide crop with left half pre-blurred for desktop,
-  full portrait crop `-mobile` for phones),
+  `hero-bg.webp` / `hero-bg-mobile.webp` (grayscale desk photo, wide crop for desktop,
+  full portrait crop for phones; shown only behind the hero text),
   `emmanuel-ngene.jpg` (schema photo), `robots.txt`,
   `site.webmanifest`, and the IndexNow key file (`<32 hex>.txt`).
 - **`src/assets/screens/`** holds 800x500 WebP screenshots of live project sites.

@@ -9,7 +9,7 @@ export default function useTheme() {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    setTheme(document.documentElement.getAttribute("data-theme") === "purple" ? "purple" : "dark");
+    setTheme(document.documentElement.getAttribute("data-theme") === "black" ? "black" : "dark");
   }, []);
 
   const changeTheme = useCallback((t) => {

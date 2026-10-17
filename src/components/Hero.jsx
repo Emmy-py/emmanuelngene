@@ -31,23 +31,17 @@ export default function Hero() {
       ref={ref}
       className="relative isolate flex min-h-[min(100svh,980px)] items-center overflow-hidden px-[max(20px,5vw)] pt-32 pb-20 max-lg:pt-28 max-sm:px-[max(22px,6vw)] max-sm:pt-26 max-sm:pb-14"
     >
-      {/* Background: Emmanuel's own desk setup in black and grey (the purple theme tints it). It sits
+      {/* Background: Emmanuel's own desk setup in black and grey . It sits
           behind the text only and fades to the page colour before it reaches the portrait. */}
       <div
         className="absolute -inset-8 -z-20 transition-transform duration-300 ease-out [mask-image:radial-gradient(ellipse_75%_85%_at_22%_25%,#000_40%,transparent_78%)] max-lg:[mask-image:linear-gradient(180deg,#000_38%,transparent_58%)]"
         style={parallax(-14)}
       >
-        {/* Two pre-graded versions instead of a CSS blend (which repaints every frame); the purple
-            one is lazy, so it only downloads when the purple theme shows it. Phones get the full,
-            sharp portrait-orientation photo, since a wide crop squeezed onto a tall screen showed
-            only dark wall. */}
+        {/* Phones get the full, sharp portrait-orientation photo, since a wide crop squeezed onto
+            a tall screen showed only dark wall. */}
         <picture>
           <source media="(max-width: 1023px)" srcSet="/hero-bg-mobile.webp" />
-          <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%] [[data-theme=purple]_&]:hidden" />
-        </picture>
-        <picture>
-          <source media="(max-width: 1023px)" srcSet="/hero-bg-mobile-purple.webp" />
-          <img src="/hero-bg-purple.webp" alt="" aria-hidden="true" width="1600" height="1200" loading="lazy" decoding="async" className="hidden h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%] [[data-theme=purple]_&]:block" />
+          <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%]" />
         </picture>
       </div>
       {/* Darkens the photo behind the text so it stays readable. */}
@@ -65,7 +59,7 @@ export default function Hero() {
           <h1 className="mb-6 font-display font-extrabold tracking-[-0.035em] text-fg leading-[1.05]">
             <span className="block animate-[blurIn_0.6s_0.08s_ease-out_both] text-[clamp(2rem,5.6vw,4.4rem)]">
               Hi, I&rsquo;m{" "}
-              <span className="animate-[shimmer_2.4s_0.7s_ease-in-out_1_both] bg-[linear-gradient(90deg,#8b5cf6,#c4b5fd,#6d4aff,#8b5cf6)] bg-[length:200%_auto] bg-clip-text whitespace-nowrap text-transparent">
+              <span className="animate-[shimmer_2.4s_0.7s_ease-in-out_1_both] bg-[linear-gradient(90deg,var(--grad-a),var(--grad-b),var(--accent2),var(--grad-a))] bg-[length:200%_auto] bg-clip-text whitespace-nowrap text-transparent">
                 Emmanuel Ngene
               </span>
             </span>
@@ -82,7 +76,7 @@ export default function Hero() {
           <div className="mb-11 flex animate-[blurIn_0.6s_0.32s_ease-out_both] flex-wrap gap-3.5 max-sm:flex-col">
             <a
               href="#projects"
-              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-accent-2 to-[#8b5cf6] px-7 py-3.5 font-medium text-white no-underline shadow-[0_12px_32px_-10px_var(--glow)] transition-[transform,box-shadow] duration-200 before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(110deg,transparent_30%,rgba(255,255,255,0.35)_50%,transparent_70%)] before:transition-transform before:duration-700 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_var(--glow)] hover:before:translate-x-full"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-accent-2 to-[var(--grad-a)] px-7 py-3.5 font-medium text-on-accent no-underline shadow-[0_12px_32px_-10px_var(--glow)] transition-[transform,box-shadow] duration-200 before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(110deg,transparent_30%,rgba(255,255,255,0.35)_50%,transparent_70%)] before:transition-transform before:duration-700 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_var(--glow)] hover:before:translate-x-full"
             >
               View My Work
               <ArrowUpRight size={18} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -117,8 +111,8 @@ export default function Hero() {
         <div className="relative mx-auto aspect-[5/6] w-full max-w-[500px] max-lg:max-w-[400px] max-sm:max-w-[330px]">
           {/* Glow circle with a slowly spinning conic ring. */}
           <div className="absolute inset-x-[6%] top-[10%] aspect-square transition-transform duration-300 ease-out" style={parallax(10)}>
-            <div className="absolute inset-0 animate-[scaleIn_0.8s_0.1s_cubic-bezier(0.22,1,0.36,1)_both] rounded-full bg-[radial-gradient(circle_at_35%_30%,#a78bfa,#6d4aff_45%,#2e1a7a_80%)] shadow-[0_0_120px_-10px_var(--glow)]"></div>
-            <div className="absolute -inset-3 animate-[spin_14s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,#a78bfa_70deg,transparent_140deg,transparent_220deg,#6d4aff_290deg,transparent_360deg)] opacity-70 [mask:radial-gradient(farthest-side,transparent_calc(100%-2px),#000_calc(100%-1px))]"></div>
+            <div className="absolute inset-0 animate-[scaleIn_0.8s_0.1s_cubic-bezier(0.22,1,0.36,1)_both] rounded-full bg-[radial-gradient(circle_at_35%_30%,var(--circle-a),var(--circle-b)_45%,var(--circle-c)_80%)] shadow-[0_0_120px_-10px_var(--glow)]"></div>
+            <div className="absolute -inset-3 animate-[spin_14s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,var(--circle-a)_70deg,transparent_140deg,transparent_220deg,var(--grad-b)_290deg,transparent_360deg)] opacity-70 [mask:radial-gradient(farthest-side,transparent_calc(100%-2px),#000_calc(100%-1px))]"></div>
           </div>
           <div
             className="absolute top-[4%] right-0 h-24 w-24 bg-[radial-gradient(var(--accent)_1.2px,transparent_1.2px)] [background-size:12px_12px] opacity-40"
