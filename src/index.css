@@ -24,7 +24,7 @@
 
 /* Two themes, toggled from the nav: "dark" is pure black with violet accents, "purple" is deep
    indigo. `accent` is for text/lines on the background; `accent2` is the saturated fill behind
-   white text. `--hero-tint` is how strongly the (greyscale) hero photo is tinted purple. */
+   white text. */
 [data-theme="dark"] {
   --bg: #000000;
   --bg2: #08080a;
@@ -41,7 +41,6 @@
   --card-hover: rgba(124, 92, 255, 0.08);
   --nav-bg: rgba(0, 0, 0, 0.72);
   --glow: rgba(124, 92, 255, 0.55);
-  --hero-tint: 0;
 }
 [data-theme="purple"] {
   --bg: #0c0a1d;
@@ -59,7 +58,6 @@
   --card-hover: rgba(124, 92, 255, 0.13);
   --nav-bg: rgba(12, 10, 29, 0.74);
   --glow: rgba(124, 92, 255, 0.7);
-  --hero-tint: 0.9;
 }
 
 html {
@@ -96,16 +94,15 @@ body {
     transform: translateY(0);
   }
 }
+/* Opacity + transform only, so entrances stay on the compositor (filter: blur repaints). */
 @keyframes blurIn {
   from {
     opacity: 0;
-    filter: blur(12px);
-    transform: translateY(18px);
+    transform: translateY(18px) scale(0.98);
   }
   to {
     opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 @keyframes riseIn {
@@ -188,10 +185,10 @@ body {
 /* Driven by IntersectionObserver toggling a plain DOM class (useReveal.js) — not React
    state, so it can't be expressed as conditional Tailwind classes in JSX. */
 .reveal {
-  @apply translate-y-7 opacity-0 blur-[6px] transition-[opacity,transform,filter] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)];
+  @apply translate-y-7 opacity-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)];
 }
 .reveal.visible {
-  @apply translate-y-0 opacity-100 blur-none;
+  @apply translate-y-0 opacity-100;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -203,6 +200,6 @@ body {
     transition-duration: 0.01ms !important;
   }
   .reveal {
-    @apply translate-y-0 opacity-100 blur-none;
+    @apply translate-y-0 opacity-100;
   }
 }

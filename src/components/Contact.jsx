@@ -62,8 +62,8 @@ export default function Contact() {
               <div
                 key={role}
                 aria-hidden={i !== active}
-                className={`[grid-area:1/1] transition-[opacity,transform,filter] duration-700 ${
-                  i === active ? "translate-y-0 opacity-100 blur-0" : "pointer-events-none translate-y-3 opacity-0 blur-[4px]"
+                className={`[grid-area:1/1] transition-[opacity,transform] duration-700 ${
+                  i === active ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
                 }`}
               >
                 <blockquote className="m-0 mb-5 text-[0.98rem] text-fg italic leading-[1.75]">&ldquo;{text}&rdquo;</blockquote>

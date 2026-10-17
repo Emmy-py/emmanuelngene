@@ -24,7 +24,7 @@ export default function Experience() {
         <SectionIntro
           badge="Experience"
           title="Where I've been building."
-          lead="Alongside freelance work for startups and organizations, these are the teams I build with."
+          lead="Alongside my freelance work."
         />
         <ol className="reveal relative ml-5 list-none border-0 p-0">
           <span

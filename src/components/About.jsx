@@ -41,24 +41,14 @@ export default function About() {
             <SectionIntro badge="About me" title="I build products that don't break." />
             <div className="reveal -mt-6 space-y-4.5 text-base text-fg2 leading-[1.82]">
               <p>
-                I'm <strong className="font-medium text-fg">Emmanuel Ngene</strong> (Ngene Emmanuel
-                Somto in full, though most people just call me Emmy), a full-stack developer based in
-                Nigeria.
-              </p>
-              <p>
-                I build complete web and mobile products from idea to launch, specializing in{" "}
-                <strong className="font-medium text-fg">
-                  React, Next.js, React Native, Node.js, NestJS, Python, FastAPI, scalable database
-                  architecture, API design, microservices, Docker, Kubernetes, and CI/CD pipelines
-                </strong>
-                . I build the systems that keep your product running — under load, at launch, and
-                long after.
+                I'm <strong className="font-medium text-fg">Emmanuel Ngene (Emmy)</strong>, a full-stack
+                developer in Nigeria. I take products from idea to launch and build them to hold up
+                under load, with clean, documented, handover-ready code.
               </p>
               <p>
                 Some of my biggest work is under NDA, including a government app with{" "}
                 <strong className="font-medium text-fg">more than 300 screens</strong>, so it isn't
-                shown here. Whether you're a founder with a sketch or a team needing a senior hand, I
-                deliver clean, documented, handover-ready code — every time.
+                shown here.
               </p>
             </div>
             <a

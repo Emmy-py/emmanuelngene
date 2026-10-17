@@ -1,91 +1,42 @@
-import {
-  Bot,
-  Cloud,
-  Cpu,
-  Database,
-  Gauge,
-  Layers,
-  Monitor,
-  Network,
-  Plug,
-  ShieldCheck,
-  ShoppingCart,
-  Smartphone,
-} from "lucide-react";
+import { Bot, Cloud, Layers, Network, ShieldCheck, ShoppingCart } from "lucide-react";
 import SectionIntro from "./SectionIntro";
 
 const SERVICES = [
   {
     num: "01",
-    Icon: Network,
-    title: "API Architecture & Development",
-    desc: "REST & GraphQL APIs with Node.js and NestJS. Modular, tested, documented, and built to scale under real traffic.",
+    Icon: Layers,
+    title: "Web & Mobile Apps",
+    desc: "Complete products from database to UI: Next.js and React web apps, and React Native apps for iOS and Android.",
   },
   {
     num: "02",
-    Icon: Database,
-    title: "Database Design & Optimization",
-    desc: "PostgreSQL and MongoDB schemas optimized from day one — smart indexing, query tuning, migrations, and data modeling.",
+    Icon: Network,
+    title: "APIs & Databases",
+    desc: "REST and GraphQL APIs with Node.js, NestJS and Python, on PostgreSQL and MongoDB schemas built to grow.",
   },
   {
     num: "03",
     Icon: ShieldCheck,
     title: "Authentication & Security",
-    desc: "JWT, OAuth2, role-based access, session management, and encrypted storage. Your users' data stays protected.",
+    desc: "JWT, OAuth2, role-based access and encrypted storage, so your users' data stays protected.",
   },
   {
     num: "04",
-    Icon: Layers,
-    title: "Full-Stack Web & Mobile Apps",
-    desc: "End-to-end products from database to UI. React, Next.js, React Native, and Node.js for complete, production-ready web and mobile builds.",
+    Icon: ShoppingCart,
+    title: "E-Commerce & Custom Software",
+    desc: "Online stores with Paystack/Stripe checkout, plus admin dashboards, internal tools and SaaS platforms.",
   },
   {
     num: "05",
-    Icon: Smartphone,
-    title: "Mobile App Development",
-    desc: "Cross-platform iOS and Android apps with React Native — smooth UX, offline support, push notifications, and APIs built to match.",
+    Icon: Bot,
+    title: "Integrations & AI",
+    desc: "Payments, messaging and AI APIs wired in cleanly, plus AI-powered verification and workflow automation.",
   },
   {
     num: "06",
-    Icon: Monitor,
-    title: "Website Development",
-    desc: "Fast, responsive, SEO-friendly websites and landing pages with Next.js and React — from Figma design to live deployment.",
-  },
-  {
-    num: "07",
-    Icon: ShoppingCart,
-    title: "E-Commerce Development",
-    desc: "Online stores with product catalogs, carts, checkout, Paystack/Stripe payments, order management, and admin dashboards.",
-  },
-  {
-    num: "08",
-    Icon: Cpu,
-    title: "Custom Software Development",
-    desc: "Bespoke software tailored to your workflows — admin dashboards, internal tools, SaaS platforms, and business automation systems.",
-  },
-  {
-    num: "09",
-    Icon: Plug,
-    title: "Third-Party Integrations",
-    desc: "Stripe, Twilio, SendGrid, Paystack, AI APIs — cleanly integrated so your product works end-to-end right out of the box.",
-  },
-  {
-    num: "10",
-    Icon: Bot,
-    title: "AI-Powered Features",
-    desc: "Smart systems with AI/ML integration — intelligent verification, recommendation engines, and workflow automation.",
-  },
-  {
-    num: "11",
     Icon: Cloud,
-    title: "Cloud & DevOps",
-    desc: "AWS & GCP deployment, Docker containers, CI/CD pipelines, and infrastructure for production-ready systems.",
-  },
-  {
-    num: "12",
-    Icon: Gauge,
-    title: "Code Audits & Performance Fixes",
-    desc: "Slow app? I'll find the bottleneck — N+1 queries, memory leaks, unoptimized endpoints — and fix it fast.",
+    title: "Cloud, DevOps & Performance",
+    desc: "AWS and GCP deployment, Docker and CI/CD, and audits that find and fix slow queries and endpoints.",
   },
 ];
 
@@ -100,9 +51,9 @@ export default function Services() {
           center
           badge="My services"
           title="What I can do for you."
-          lead="From complete products to single API integrations, I offer end-to-end development for startups, SMEs, and organizations."
+          lead="End-to-end development for startups, SMEs and organizations."
         />
-        <div className="grid grid-cols-4 gap-4 max-[1100px]:grid-cols-3 max-[900px]:grid-cols-2 max-sm:grid-cols-1">
+        <div className="grid grid-cols-3 gap-4 max-[900px]:grid-cols-2 max-sm:grid-cols-1">
           {SERVICES.map(({ num, Icon, title, desc }) => (
             <div
               key={num}

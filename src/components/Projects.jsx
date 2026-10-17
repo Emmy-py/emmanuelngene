@@ -11,7 +11,7 @@ export default function Projects() {
           center
           badge="Featured projects"
           title="Some of my recent work."
-          lead="Scalable applications built for startups and organizations, across React, Next.js and React Native interfaces, Node.js and NestJS APIs, and AI-integrated systems."
+          lead="Open any project for the full case study."
         />
         <div className="grid grid-cols-3 gap-5 max-[1000px]:grid-cols-2 max-sm:grid-cols-1">
           {PROJECTS.map((project) => (

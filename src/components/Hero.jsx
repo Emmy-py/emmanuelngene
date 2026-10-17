@@ -33,10 +33,14 @@ export default function Hero() {
     >
       {/* Background: Emmanuel's own desk setup in black and grey; the purple theme tints it. */}
       <div className="absolute -inset-8 -z-20 transition-transform duration-300 ease-out" style={parallax(-14)}>
-        <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%]" />
-        <div className="absolute inset-0 bg-[#6d4aff] opacity-[var(--hero-tint)] mix-blend-color transition-opacity duration-500"></div>
+        {/* Two pre-graded versions instead of a CSS blend (which repaints every frame). The purple one
+            is lazy, so it only downloads when the purple theme shows it. */}
+        <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%] [[data-theme=purple]_&]:hidden" />
+        <img src="/hero-bg-purple.webp" alt="" aria-hidden="true" width="1600" height="1200" loading="lazy" decoding="async" className="hidden h-full w-full object-cover object-[30%_40%] [[data-theme=purple]_&]:block" />
       </div>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_92%,transparent)_0%,color-mix(in_srgb,var(--bg)_62%,transparent)_45%,color-mix(in_srgb,var(--bg)_15%,transparent)_100%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_70%,transparent)_0%,var(--bg)_100%)]"></div>
+      {/* The photo's left half is pre-blurred in the image file (cheaper than backdrop-filter);
+          this gradient darkens it behind the text while the right half stays sharp. */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_80%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_48%,transparent_75%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_65%,transparent)_0%,var(--bg)_100%)]"></div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-bg to-transparent"></div>
       <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-glow opacity-25 blur-[120px]"></div>
 
@@ -44,13 +48,13 @@ export default function Hero() {
         <div className="min-w-0">
           <p className="mb-6 inline-flex animate-[blurIn_0.6s_ease-out_both] items-center gap-2 rounded-full border border-border-accent bg-accent-muted px-3.5 py-1.5 font-mono text-[0.68rem] tracking-[0.14em] text-accent uppercase backdrop-blur-sm">
             <span className="h-1.5 w-1.5 animate-[pulse_2s_infinite] rounded-full bg-accent"></span>
-            Full-stack developer &middot; Available for freelance
+            Available for freelance
           </p>
 
           <h1 className="mb-6 font-display font-extrabold tracking-[-0.035em] text-fg leading-[1.05]">
             <span className="block animate-[blurIn_0.6s_0.08s_ease-out_both] text-[clamp(2rem,5.6vw,4.4rem)]">
               Hi, I&rsquo;m{" "}
-              <span className="animate-[shimmer_6s_linear_infinite] bg-[linear-gradient(90deg,#8b5cf6,#c4b5fd,#6d4aff,#8b5cf6)] bg-[length:200%_auto] bg-clip-text whitespace-nowrap text-transparent">
+              <span className="animate-[shimmer_2.4s_0.7s_ease-in-out_1_both] bg-[linear-gradient(90deg,#8b5cf6,#c4b5fd,#6d4aff,#8b5cf6)] bg-[length:200%_auto] bg-clip-text whitespace-nowrap text-transparent">
                 Emmanuel Ngene
               </span>
             </span>
@@ -60,10 +64,8 @@ export default function Hero() {
           </h1>
 
           <p className="mb-9 max-w-[540px] animate-[blurIn_0.6s_0.24s_ease-out_both] text-[1.05rem] text-fg2 leading-[1.75]">
-            I&rsquo;m Emmy, the developer behind Emmy.codes. I build{" "}
-            <strong className="font-medium text-fg">scalable, production-ready web and mobile apps</strong> for
-            startups and organizations, end to end: React, Next.js &amp; React Native on the front,
-            Node.js, NestJS, Python &amp; FastAPI on the back.
+            I build <strong className="font-medium text-fg">fast, scalable web and mobile apps</strong> for
+            startups and organizations, from the first screen to the database.
           </p>
 
           <div className="mb-11 flex animate-[blurIn_0.6s_0.32s_ease-out_both] flex-wrap gap-3.5 max-sm:flex-col">
@@ -157,16 +159,6 @@ export default function Hero() {
                   })}
                 </pre>
               </div>
-            </div>
-          </div>
-
-          <div
-            className="absolute bottom-[8%] -left-[4%] animate-[blurIn_0.6s_0.9s_ease-out_both] rounded-xl border border-border-accent bg-bg2/80 px-4 py-2.5 shadow-[0_16px_40px_-18px_var(--glow)] backdrop-blur-md"
-            style={parallax(14)}
-          >
-            <div className="flex items-center gap-2 text-[0.8rem] font-medium text-fg">
-              <span className="h-2 w-2 animate-[pulse_2s_infinite] rounded-full bg-[#4ade80]"></span>
-              Open to work
             </div>
           </div>
         </div>
