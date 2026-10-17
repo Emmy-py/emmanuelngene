@@ -5,6 +5,7 @@ import Skills from "../components/Skills";
 import Services from "../components/Services";
 import Projects from "../components/Projects";
 import Process from "../components/Process";
+import Blog from "../components/Blog";
 import Contact from "../components/Contact";
 import useReveal from "../hooks/useReveal";
 
@@ -20,7 +21,7 @@ export default function Home() {
       <Services />
       <Projects />
       <Process />
-      {/* <Blog /> is hidden until the posts are written (component kept in src/components/Blog.jsx). */}
+      <Blog />
       <Contact />
     </>
   );

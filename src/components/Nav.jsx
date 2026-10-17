@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/#skills", label: "Skills" },
   { href: "/#services", label: "Services" },
   { href: "/#projects", label: "Projects" },
+  { href: "/blog", label: "Blog" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -65,7 +66,7 @@ export default function Nav({ activeSection, theme, onThemeChange }) {
         }`}
       >
         {LINKS.map(({ href, label }) => {
-          const active = href === `/#${activeSection}`;
+          const active = href === `/#${activeSection}` || (href === "/blog" && activeSection === "blog");
           return (
             <li key={href}>
               <a

@@ -1,6 +1,6 @@
 // Runs after `vite build` and the SSR build (see package.json). Renders every route to static
 // HTML in dist/, then writes the build-time files that depend on the route list: sitemap.xml
-// and llms.txt. Fails the build if any JSON-LD block is not valid JSON.
+// llms.txt and rss.xml. Fails the build if any JSON-LD block is not valid JSON.
 import { execSync } from "node:child_process";
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -10,7 +10,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = resolve(root, "dist");
 const ssrDir = resolve(root, "dist-ssr");
 
-const { SITE_URL, getPages, render, renderHead, llmsTxt } = await import(
+const { SITE_URL, getPages, preparePosts, render, renderHead, llmsTxt, rssXml } = await import(
   pathToFileURL(resolve(ssrDir, "entry-server.js")).href
 );
 
@@ -49,6 +49,7 @@ const template = readFileSync(resolve(dist, "index.html"), "utf8").replace(
     return [...preloads, `<style>${css}</style>`].join("\n    ");
   },
 );
+await preparePosts();
 const pages = getPages(lastmod);
 
 for (const page of pages) {
@@ -78,7 +79,7 @@ ${pages
   .map(
     (page) => `  <url>
     <loc>${SITE_URL}${page.path}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${page.lastmod ?? lastmod}</lastmod>
   </url>`,
   )
   .join("\n")}
@@ -86,6 +87,7 @@ ${pages
 `;
 writeFileSync(resolve(dist, "sitemap.xml"), sitemap);
 writeFileSync(resolve(dist, "llms.txt"), llmsTxt());
-console.log(`wrote sitemap.xml (lastmod ${lastmod}) and llms.txt`);
+writeFileSync(resolve(dist, "rss.xml"), rssXml());
+console.log(`wrote sitemap.xml (lastmod ${lastmod}), llms.txt and rss.xml`);
 
 rmSync(ssrDir, { recursive: true, force: true });

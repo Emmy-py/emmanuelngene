@@ -8,6 +8,7 @@ const SECTION_IDS = [
   "services",
   "projects",
   "process",
+  "blog",
   "contact",
 ];
 

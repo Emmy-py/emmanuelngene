@@ -4,14 +4,14 @@ import Footer from "./Footer";
 import useTheme from "../hooks/useTheme";
 import useActiveSection from "../hooks/useActiveSection";
 
-export default function Layout({ children }) {
+export default function Layout({ page, children }) {
   const [theme, setTheme] = useTheme();
   const activeSection = useActiveSection();
 
   return (
     <>
       <Cursor />
-      <Nav activeSection={activeSection} theme={theme} onThemeChange={setTheme} />
+      <Nav activeSection={page === "blog" || page === "post" ? "blog" : activeSection} theme={theme} onThemeChange={setTheme} />
       <main>{children}</main>
       <Footer />
     </>

@@ -1,8 +1,10 @@
+import { POSTS, postPath } from "./data/posts";
 import { PROJECTS } from "./data/projects";
 import { HERO_PORTRAIT, OG_IMAGE, PERSON, PERSON_PHOTO, SITE_URL, SOCIAL_PROFILES, absoluteUrl } from "./site";
 
 const PERSON_ID = `${SITE_URL}/#person`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
+const BLOG_ID = `${SITE_URL}/blog#blog`;
 
 export const projectPath = (project) => `/projects/${project.slug}`;
 
@@ -120,6 +122,109 @@ export function projectMeta(project) {
   };
 }
 
+const postRef = (post) => ({ "@id": `${absoluteUrl(postPath(post))}#article` });
+
+export function blogMeta() {
+  const url = absoluteUrl("/blog");
+  return {
+    title: "Blog: Guides on APIs, Databases & Performance | Emmanuel Ngene",
+    description:
+      "Practical guides by Emmanuel Ngene (Emmy) on building web and mobile apps that hold up in production: API design, databases, authentication, performance and handovers.",
+    path: "/blog",
+    jsonLd: graph([
+      websiteNode(),
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: "Blog by Emmanuel Ngene",
+        isPartOf: { "@id": WEBSITE_ID },
+        mainEntity: { "@id": BLOG_ID },
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Emmanuel Ngene", item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Blog", item: url },
+          ],
+        },
+      },
+      {
+        "@type": "Blog",
+        "@id": BLOG_ID,
+        url,
+        name: "Emmy.codes Blog",
+        description: "Guides on building web and mobile apps that hold up in production.",
+        inLanguage: "en",
+        author: { "@id": PERSON_ID },
+        publisher: { "@id": PERSON_ID },
+        blogPost: POSTS.map((post) => ({
+          "@type": "BlogPosting",
+          ...postRef(post),
+          headline: post.title,
+          url: absoluteUrl(postPath(post)),
+          datePublished: post.datePublished,
+        })),
+      },
+      personNode(),
+    ]),
+  };
+}
+
+export function postMeta(post, wordCount) {
+  const url = absoluteUrl(postPath(post));
+  return {
+    title: `${post.title} | Emmanuel Ngene`,
+    description: post.description,
+    path: postPath(post),
+    ogType: "article",
+    article: {
+      publishedTime: post.datePublished,
+      modifiedTime: post.dateModified,
+      section: post.category,
+      tags: post.keywords,
+    },
+    jsonLd: graph([
+      websiteNode(),
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: post.title,
+        description: post.description,
+        isPartOf: { "@id": WEBSITE_ID },
+        mainEntity: postRef(post),
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Emmanuel Ngene", item: `${SITE_URL}/` },
+            { "@type": "ListItem", position: 2, name: "Blog", item: absoluteUrl("/blog") },
+            { "@type": "ListItem", position: 3, name: post.title, item: url },
+          ],
+        },
+      },
+      {
+        "@type": "BlogPosting",
+        ...postRef(post),
+        headline: post.title,
+        description: post.description,
+        url,
+        mainEntityOfPage: { "@id": `${url}#webpage` },
+        isPartOf: { "@id": BLOG_ID },
+        image: absoluteUrl(OG_IMAGE),
+        datePublished: post.datePublished,
+        dateModified: post.dateModified,
+        author: { "@id": PERSON_ID, "@type": "Person", name: PERSON.name, url: `${SITE_URL}/` },
+        publisher: { "@id": PERSON_ID },
+        articleSection: post.category,
+        keywords: post.keywords.join(", "),
+        wordCount,
+        inLanguage: "en",
+      },
+      personNode(),
+    ]),
+  };
+}
+
 export function notFoundMeta() {
   return {
     title: "Page Not Found | Emmanuel Ngene",
@@ -133,7 +238,7 @@ export function notFoundMeta() {
 const escapeAttr = (value) =>
   String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
-export function renderHead({ title, description, path, ogType = "website", preloadImage, jsonLd }) {
+export function renderHead({ title, description, path, ogType = "website", article, preloadImage, jsonLd }) {
   const url = path ? absoluteUrl(path) : null;
   const image = absoluteUrl(OG_IMAGE);
   const tags = [
@@ -152,6 +257,17 @@ export function renderHead({ title, description, path, ogType = "website", prelo
     `<meta property="og:image:height" content="630" />`,
     `<meta property="og:image:alt" content="Emmanuel Ngene — Software Developer · emmycodes.site" />`,
     `<meta property="og:locale" content="en_US" />`,
+    ...(article
+      ? [
+          `<meta name="author" content="${PERSON.name}" />`,
+          `<meta property="article:published_time" content="${article.publishedTime}" />`,
+          `<meta property="article:modified_time" content="${article.modifiedTime}" />`,
+          `<meta property="article:author" content="${SITE_URL}/" />`,
+          `<meta property="article:section" content="${escapeAttr(article.section)}" />`,
+          ...article.tags.map((tag) => `<meta property="article:tag" content="${escapeAttr(tag)}" />`),
+        ]
+      : []),
+    `<link rel="alternate" type="application/rss+xml" title="Emmy.codes Blog" href="${SITE_URL}/rss.xml" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:site" content="@_devemmy" />`,
     `<meta name="twitter:creator" content="@_devemmy" />`,

@@ -24,10 +24,10 @@ There is no lint or test tooling.
 
 - **Prerendered SPA.** `npm run build` builds the client, then an SSR bundle of
   `src/entry-server.jsx`, then `scripts/prerender.mjs` renders every route to static HTML
-  (`dist/index.html`, `dist/projects/<slug>.html`, `dist/404.html`), injects per-page head tags,
-  inlines the CSS, preloads above-the-fold fonts, validates JSON-LD, and writes `sitemap.xml` and
-  `llms.txt`. `src/main.jsx` hydrates the prerendered markup. `vercel.json` sets `cleanUrls`.
-- **Routing** is `src/routes.js` (`/`, `/projects/<slug>`, everything else = 404), shared by client
+  (`dist/index.html`, `dist/projects/<slug>.html`, `dist/blog.html`, `dist/blog/<slug>.html`,
+  `dist/404.html`), injects per-page head tags, inlines the CSS, preloads above-the-fold fonts,
+  validates JSON-LD, and writes `sitemap.xml`, `llms.txt` and `rss.xml`. `src/main.jsx` hydrates the prerendered markup. `vercel.json` sets `cleanUrls`.
+- **Routing** is `src/routes.js` (`/`, `/projects/<slug>`, `/blog`, `/blog/<slug>`, everything else = 404), shared by client
   and prerenderer. Navigation between pages is plain `<a>` links (full page loads); nav links are
   `/#section` so they work from any page.
 - **`index.html`** is the template: `<!--head-->` and `<!--app-->` placeholders, static icon/manifest
@@ -40,9 +40,14 @@ There is no lint or test tooling.
   llms.txt line. `LIVE_PROJECT_COUNT` feeds the hero stat.
 - **Pages/components**: `src/App.jsx` -> `Layout` (Cursor, Nav with `ThemeToggle`, Footer) +
   `src/pages/{Home,ProjectPage,NotFound}.jsx`. Home composes `src/components/` sections: `Hero`,
-  `About`, `Experience`, `Skills`, `Services`, `Projects`, `Process`, `Contact` (includes the
-  rotating testimonials). `SectionIntro` is the shared badge + heading. `Blog.jsx` exists but is
-  hidden until real posts are written — don't render placeholder posts.
+  `About`, `Experience`, `Skills`, `Services`, `Projects`, `Process`, `Blog` (latest 3 posts), `Contact`
+  (includes the rotating testimonials). `SectionIntro` is the shared badge + heading.
+- **Blog**: post metadata in `src/data/posts.js`, bodies in `src/content/blog/<slug>.md` (a small
+  Markdown subset parsed by `src/lib/markdown.js`, rendered by `components/Markdown.jsx`). Each
+  body is its own lazy chunk: `main.jsx` loads it before hydrating a post page, and
+  `entry-server.jsx` `preparePosts()` loads all of them before prerendering. The build fails if a
+  post's `readMinutes` doesn't match its text. Pages: `pages/BlogIndex.jsx`, `pages/BlogPost.jsx`
+  (BlogPosting JSON-LD, article meta tags, per-post sitemap `lastmod` from `dateModified`).
 - **Content facts** live in data files, never invented: `src/data/projects.jsx`, `src/data/tech.js`
   (skills; brand icons from `simple-icons`, generic icons from `lucide-react`), `src/data/social.js`,
   roles in `Experience.jsx`, stats in `About.jsx`.
