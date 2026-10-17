@@ -31,8 +31,12 @@ export default function Hero() {
       ref={ref}
       className="relative isolate flex min-h-[min(100svh,980px)] items-center overflow-hidden px-[max(20px,5vw)] pt-32 pb-20 max-lg:pt-28 max-sm:px-[max(22px,6vw)] max-sm:pt-26 max-sm:pb-14"
     >
-      {/* Background: Emmanuel's own desk setup in black and grey; the purple theme tints it. */}
-      <div className="absolute -inset-8 -z-20 transition-transform duration-300 ease-out" style={parallax(-14)}>
+      {/* Background: Emmanuel's own desk setup in black and grey (the purple theme tints it). It sits
+          behind the text only and fades to the page colour before it reaches the portrait. */}
+      <div
+        className="absolute -inset-8 -z-20 transition-transform duration-300 ease-out [mask-image:radial-gradient(ellipse_75%_85%_at_22%_25%,#000_40%,transparent_78%)] max-lg:[mask-image:linear-gradient(180deg,#000_38%,transparent_58%)]"
+        style={parallax(-14)}
+      >
         {/* Two pre-graded versions instead of a CSS blend (which repaints every frame); the purple
             one is lazy, so it only downloads when the purple theme shows it. Phones get the full,
             sharp portrait-orientation photo, since a wide crop squeezed onto a tall screen showed
@@ -46,9 +50,8 @@ export default function Hero() {
           <img src="/hero-bg-purple.webp" alt="" aria-hidden="true" width="1600" height="1200" loading="lazy" decoding="async" className="hidden h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%] [[data-theme=purple]_&]:block" />
         </picture>
       </div>
-      {/* The photo's left half is pre-blurred in the image file (cheaper than backdrop-filter);
-          this gradient darkens it behind the text while the right half stays sharp. */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_80%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_48%,transparent_75%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_72%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_45%,color-mix(in_srgb,var(--bg)_20%,transparent)_75%,var(--bg)_100%)]"></div>
+      {/* Darkens the photo behind the text so it stays readable. */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_72%,transparent)_0%,color-mix(in_srgb,var(--bg)_45%,transparent)_55%,transparent_80%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_72%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_45%,color-mix(in_srgb,var(--bg)_20%,transparent)_75%,var(--bg)_100%)]"></div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-bg to-transparent"></div>
       <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-glow opacity-25 blur-[120px]"></div>
 
