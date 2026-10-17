@@ -31,11 +31,12 @@ export default function Hero() {
       ref={ref}
       className="relative isolate flex min-h-[min(100svh,980px)] items-center overflow-hidden px-[max(20px,5vw)] pt-32 pb-20 max-lg:pt-28 max-sm:px-[max(22px,6vw)] max-sm:pt-26 max-sm:pb-14"
     >
-      {/* Background: Emmanuel's own desk setup, blurred and graded purple. */}
+      {/* Background: Emmanuel's own desk setup in black and grey; the purple theme tints it. */}
       <div className="absolute -inset-8 -z-20 transition-transform duration-300 ease-out" style={parallax(-14)}>
-        <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1367" decoding="async" className="h-full w-full object-cover" />
+        <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%]" />
+        <div className="absolute inset-0 bg-[#6d4aff] opacity-[var(--hero-tint)] mix-blend-color transition-opacity duration-500"></div>
       </div>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,var(--bg)_0%,color-mix(in_srgb,var(--bg)_70%,transparent)_42%,color-mix(in_srgb,var(--bg)_10%,transparent)_100%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_70%,transparent)_0%,var(--bg)_100%)]"></div>
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_92%,transparent)_0%,color-mix(in_srgb,var(--bg)_62%,transparent)_45%,color-mix(in_srgb,var(--bg)_15%,transparent)_100%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_70%,transparent)_0%,var(--bg)_100%)]"></div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-bg to-transparent"></div>
       <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-glow opacity-25 blur-[120px]"></div>
 

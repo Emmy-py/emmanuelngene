@@ -22,7 +22,7 @@ function personNode() {
     nationality: { "@type": "Country", name: "Nigeria" },
     address: { "@type": "PostalAddress", addressCountry: "NG" },
     knowsAbout: PERSON.knowsAbout,
-    worksFor: PERSON.worksFor.map((name) => ({ "@type": "Organization", name })),
+    worksFor: PERSON.worksFor.map(({ name, url }) => ({ "@type": "Organization", name, url })),
     sameAs: SOCIAL_PROFILES,
   };
 }

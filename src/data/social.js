@@ -1,4 +1,4 @@
-import { siGithub, siTiktok, siX } from "simple-icons";
+import { siGithub, siInstagram, siTiktok, siX } from "simple-icons";
 
 // LinkedIn isn't in simple-icons (trademark request), so its mark is inlined here.
 const LINKEDIN_PATH =
@@ -14,6 +14,12 @@ export const SOCIALS = [
     path: LINKEDIN_PATH,
   },
   { label: "X (Twitter)", handle: "@_devemmy", href: "https://x.com/_devemmy", path: siX.path },
+  {
+    label: "Instagram (portfolio)",
+    handle: "@_devemmy",
+    href: "https://www.instagram.com/_devemmy",
+    path: siInstagram.path,
+  },
   {
     label: "TikTok",
     handle: "@_devemmy",

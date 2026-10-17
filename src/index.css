@@ -22,12 +22,13 @@
   --font-sans: "DM Sans", sans-serif;
 }
 
-/* Two themes, toggled from the nav: near-black with violet accents, and deep indigo. `accent`
-   is for text/lines on the background; `accent2` is the saturated fill behind white text. */
+/* Two themes, toggled from the nav: "dark" is pure black with violet accents, "purple" is deep
+   indigo. `accent` is for text/lines on the background; `accent2` is the saturated fill behind
+   white text. `--hero-tint` is how strongly the (greyscale) hero photo is tinted purple. */
 [data-theme="dark"] {
-  --bg: #050507;
-  --bg2: #0a0910;
-  --bg3: #12101a;
+  --bg: #000000;
+  --bg2: #08080a;
+  --bg3: #111114;
   --fg: #f5f3ff;
   --fg2: #a3a0b5;
   --fg3: #2a2738;
@@ -38,8 +39,9 @@
   --border-accent: rgba(167, 139, 250, 0.35);
   --card: rgba(255, 255, 255, 0.03);
   --card-hover: rgba(124, 92, 255, 0.08);
-  --nav-bg: rgba(5, 5, 7, 0.72);
+  --nav-bg: rgba(0, 0, 0, 0.72);
   --glow: rgba(124, 92, 255, 0.55);
+  --hero-tint: 0;
 }
 [data-theme="purple"] {
   --bg: #0c0a1d;
@@ -57,6 +59,7 @@
   --card-hover: rgba(124, 92, 255, 0.13);
   --nav-bg: rgba(12, 10, 29, 0.74);
   --glow: rgba(124, 92, 255, 0.7);
+  --hero-tint: 0.9;
 }
 
 html {

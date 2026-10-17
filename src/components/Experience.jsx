@@ -1,11 +1,17 @@
-import { Briefcase, GraduationCap } from "lucide-react";
+import { ArrowUpRight, Briefcase, GraduationCap } from "lucide-react";
 import SectionIntro from "./SectionIntro";
 
 // Roles as stated by Emmanuel; no dates or details beyond that.
 const ROLES = [
-  { role: "Software Engineer", org: "Dwanily", period: "Present", Icon: Briefcase },
-  { role: "Software Engineer", org: "MindTheGap", period: "Present", Icon: Briefcase },
-  { role: "Software Engineering Intern", org: "Genesys Tech Hub", period: "Internship", Icon: GraduationCap },
+  { role: "Software Engineer", org: "Dawnily", href: "https://www.dawnily.com/", period: "Present", Icon: Briefcase },
+  { role: "Software Engineer", org: "MindTheGap", href: "https://mindthegap.ng/", period: "Present", Icon: Briefcase },
+  {
+    role: "Software Engineering Intern",
+    org: "Genesys Tech Hub",
+    href: "https://genesystechhub.com/",
+    period: "Internship",
+    Icon: GraduationCap,
+  },
 ];
 
 export default function Experience() {
@@ -25,7 +31,7 @@ export default function Experience() {
             className="absolute top-2 bottom-2 left-0 w-0.5 origin-top scale-y-0 bg-gradient-to-b from-accent-2 via-accent to-transparent transition-transform delay-200 duration-[1400ms] ease-out [.visible_&]:scale-y-100"
             aria-hidden="true"
           ></span>
-          {ROLES.map(({ role, org, period, Icon }, i) => (
+          {ROLES.map(({ role, org, href, period, Icon }, i) => (
             <li
               key={org}
               className="relative pb-10 pl-12 opacity-0 transition-[opacity,transform] duration-700 last:pb-0 [.visible_&]:translate-x-0 [.visible_&]:opacity-100 -translate-x-4"
@@ -37,7 +43,20 @@ export default function Experience() {
               <div className="group rounded-2xl border border-border bg-card px-6 py-5 transition-[border-color,background,transform] duration-300 hover:translate-x-1 hover:border-border-accent hover:bg-card-hover">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="font-display text-[1.15rem] font-bold tracking-[-0.02em] text-fg">
-                    {role} <span className="text-accent">@ {org}</span>
+                    {role}{" "}
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener"
+                      className="group/link inline-flex items-center gap-0.5 text-accent no-underline hover:underline hover:underline-offset-4"
+                    >
+                      @ {org}
+                      <ArrowUpRight
+                        size={16}
+                        aria-hidden="true"
+                        className="transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                      />
+                    </a>
                   </h3>
                   <span className="rounded-full border border-border-accent bg-accent-muted px-3 py-1 font-mono text-[0.66rem] tracking-[0.1em] text-accent uppercase">
                     {period}

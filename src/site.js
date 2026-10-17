@@ -11,6 +11,7 @@ export const SOCIAL_PROFILES = [
   "https://www.linkedin.com/in/emmanuel-ngene-708337263",
   "https://x.com/_devemmy",
   "https://www.tiktok.com/@_devemmy",
+  "https://www.instagram.com/_devemmy",
 ];
 
 export const PERSON = {
@@ -21,7 +22,10 @@ export const PERSON = {
     "Emmanuel Ngene (Emmy) is a full-stack software developer in Nigeria, building scalable web and mobile apps for startups and organizations.",
   email: "emmanuelngene145@gmail.com",
   // Current employers, as stated by Emmanuel (names only).
-  worksFor: ["Dwanily", "MindTheGap"],
+  worksFor: [
+    { name: "Dawnily Technology", url: "https://www.dawnily.com/" },
+    { name: "MindTheGap", url: "https://mindthegap.ng/" },
+  ],
   knowsAbout: [
     "React",
     "Next.js",

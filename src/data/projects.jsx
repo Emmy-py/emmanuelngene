@@ -4,6 +4,8 @@ import cryptotrackerLogo from "../assets/cryptotracker.png";
 import foreverbuyLogo from "../assets/foreverbuy-logo.png";
 import learnableLogo from "../assets/learnable-logo.png";
 import edgeLogisticsLogo from "../assets/edge-logistics-logo.png";
+import letdapScreen from "../assets/screens/letdap.webp";
+import greenverifyScreen from "../assets/screens/greenverify.webp";
 import edgeLogisticsScreen from "../assets/screens/edge-logistics.webp";
 import learnableScreen from "../assets/screens/learnable.webp";
 import foreverbuyScreen from "../assets/screens/foreverbuy.webp";
@@ -12,11 +14,13 @@ import cryptotrackerScreen from "../assets/screens/cryptotracker.webp";
 
 // Each project gets a card on the homepage and its own page at /projects/<slug>.
 // `summary` is plain text, used for the project page's meta description and structured data.
-// `screenshot` (800x500 WebP of the live site) is optional; cards fall back to the logo.
+// `screenshot` (800x500 WebP of the live site; mobile-only captures are framed in a phone) is
+// optional; cards fall back to the logo.
 export const PROJECTS = [
   {
     number: "01",
     slug: "letdap",
+    screenshot: letdapScreen,
     name: "LetDap",
     summary:
       "LetDap is a social event management platform. Emmanuel Ngene contributed as a backend engineer: NestJS APIs, event scheduling and MongoDB optimization.",
@@ -68,6 +72,7 @@ export const PROJECTS = [
   {
     number: "02",
     slug: "greenverify",
+    screenshot: greenverifyScreen,
     name: "GreenVerify",
     summary:
       "GreenVerify is an identity verification and business compliance platform in Nigeria (NIN, BVN, CAC, SCUML, Tax ID), built full-stack by Emmanuel Ngene.",

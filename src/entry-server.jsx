@@ -34,7 +34,7 @@ export function llmsTxt() {
 
 > ${PERSON.description}
 
-Emmanuel Ngene, also known as Ngene Emmanuel Somto or "Emmy" (brand: emmycodes / Emmy.codes), is a full-stack developer based in Nigeria, currently a software engineer at Dwanily and MindTheGap, and a former intern at Genesys Tech Hub. Some of his work is under NDA, including a government app with more than 300 screens. He builds production-ready web and mobile products end to end: React, Next.js and React Native on the frontend; Node.js, NestJS, Python and FastAPI on the backend; PostgreSQL and MongoDB for data. He is available for freelance work.
+Emmanuel Ngene, also known as Ngene Emmanuel Somto or "Emmy" (brand: emmycodes / Emmy.codes), is a full-stack developer based in Nigeria, currently a software engineer at Dawnily Technology and MindTheGap, and a former intern at Genesys Tech Hub. Some of his work is under NDA, including a government app with more than 300 screens. He builds production-ready web and mobile products end to end: React, Next.js and React Native on the frontend; Node.js, NestJS, Python and FastAPI on the backend; PostgreSQL and MongoDB for data. He is available for freelance work.
 
 ## Key pages
 
@@ -53,6 +53,7 @@ ${projects}
 - LinkedIn: https://www.linkedin.com/in/emmanuel-ngene-708337263
 - X (Twitter): https://x.com/_devemmy
 - TikTok: https://www.tiktok.com/@_devemmy
+- Instagram (portfolio): https://www.instagram.com/_devemmy
 - Email: ${PERSON.email}
 `;
 }

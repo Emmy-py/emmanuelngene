@@ -1,16 +1,17 @@
 import { Moon, Sparkles } from "lucide-react";
 
-// Nav toggle between the two themes: "dark" (near-black) and "purple" (deep indigo).
+// Nav toggle between the two themes: "dark" (pure black) and "purple" (deep indigo).
 export default function ThemeToggle({ theme, onChange }) {
   const isPurple = theme === "purple";
   const next = isPurple ? "dark" : "purple";
+  const nextLabel = isPurple ? "black" : "purple";
 
   return (
     <button
       type="button"
       onClick={() => onChange(next)}
-      aria-label={`Switch to ${next} theme`}
-      title={`Switch to ${next} theme`}
+      aria-label={`Switch to ${nextLabel} theme`}
+      title={`Switch to ${nextLabel} theme`}
       className="relative flex h-9 w-16 shrink-0 cursor-none items-center rounded-full border border-border-accent bg-accent-muted p-1 transition-colors duration-300"
     >
       <span
