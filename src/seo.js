@@ -3,7 +3,6 @@ import { OG_IMAGE, PERSON, PERSON_PHOTO, SITE_URL, SOCIAL_PROFILES, absoluteUrl 
 
 const PERSON_ID = `${SITE_URL}/#person`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
-const ORG_ID = `${SITE_URL}/#greenverify`;
 
 export const projectPath = (project) => `/projects/${project.slug}`;
 
@@ -23,18 +22,7 @@ function personNode() {
     nationality: { "@type": "Country", name: "Nigeria" },
     address: { "@type": "PostalAddress", addressCountry: "NG" },
     knowsAbout: PERSON.knowsAbout,
-    worksFor: { "@id": ORG_ID },
     sameAs: SOCIAL_PROFILES,
-  };
-}
-
-function organizationNode() {
-  return {
-    "@type": "Organization",
-    "@id": ORG_ID,
-    name: PERSON.company.name,
-    url: PERSON.company.url,
-    founder: { "@id": PERSON_ID },
   };
 }
 
@@ -93,7 +81,6 @@ export function homeMeta(lastmod) {
         hasPart: PROJECTS.map((project) => ({ "@id": `${absoluteUrl(projectPath(project))}#project` })),
       },
       personNode(),
-      organizationNode(),
       ...PROJECTS.map(projectNode),
     ]),
   };
@@ -128,7 +115,6 @@ export function projectMeta(project) {
       },
       projectNode(project),
       personNode(),
-      organizationNode(),
     ]),
   };
 }

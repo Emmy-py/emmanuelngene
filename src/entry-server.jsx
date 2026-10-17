@@ -34,7 +34,7 @@ export function llmsTxt() {
 
 > ${PERSON.description}
 
-Emmanuel Ngene, also known as Ngene Emmanuel Somto or "Emmy" (brand: emmycodes / Emmy.codes), is a full-stack developer based in Nigeria and the founder of Greenverify Ltd. He builds production-ready web and mobile products end to end: React, Next.js and React Native on the frontend; Node.js, NestJS, Python and FastAPI on the backend; PostgreSQL and MongoDB for data. He is available for freelance work.
+Emmanuel Ngene, also known as Ngene Emmanuel Somto or "Emmy" (brand: emmycodes / Emmy.codes), is a full-stack developer based in Nigeria. He builds production-ready web and mobile products end to end: React, Next.js and React Native on the frontend; Node.js, NestJS, Python and FastAPI on the backend; PostgreSQL and MongoDB for data. He is available for freelance work.
 
 ## Key pages
 

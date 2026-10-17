@@ -34,7 +34,7 @@ There is no lint or test tooling.
   tags, and an inline script applying the saved theme before paint.
 - **SEO**: `src/site.js` holds the canonical domain (`https://emmycodes.site`, never www/vercel.app)
   and personal facts; `src/seo.js` builds titles, descriptions, OG/Twitter tags and JSON-LD
-  (WebSite, ProfilePage, Person, Organization, CreativeWork per project, BreadcrumbList).
+  (WebSite, ProfilePage, Person, CreativeWork per project, BreadcrumbList).
 - **Projects** live in `src/data/projects.jsx` (`slug`, `summary`, `overview`, `contribution`, ...).
   Adding one there adds its homepage card, its `/projects/<slug>` page, sitemap entry, JSON-LD and
   llms.txt line. `LIVE_PROJECT_COUNT` feeds the hero stat.

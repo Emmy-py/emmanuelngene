@@ -17,7 +17,7 @@ export const PERSON = {
   alternateNames: ["Ngene Emmanuel Somto", "Ngene Emmanuel", "Emmy", "emmycodes"],
   jobTitle: "Full-Stack Software Developer",
   description:
-    "Emmanuel Ngene (Emmy) is a full-stack software developer in Nigeria and the founder of Greenverify Ltd, building scalable web and mobile apps for startups and organizations.",
+    "Emmanuel Ngene (Emmy) is a full-stack software developer in Nigeria, building scalable web and mobile apps for startups and organizations.",
   email: "emmanuelngene145@gmail.com",
   knowsAbout: [
     "React",
@@ -41,7 +41,6 @@ export const PERSON = {
     "CI/CD",
     "Full-stack web development",
   ],
-  company: { name: "Greenverify Ltd", url: "https://greenverify.com.ng" },
 };
 
 export const absoluteUrl = (path) => SITE_URL + path;
