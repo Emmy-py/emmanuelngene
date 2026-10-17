@@ -77,7 +77,7 @@ More projects and experiments → [Full GitHub Profile](https://github.com/Emmy-
 ## 🌐 Live Portfolio
 
 Check out my interactive portfolio website:  
-**[Visit Emmy.codes🛠️](https://emmycodes.vercel.app/)**  
+**[Visit Emmy.codes🛠️](https://emmycodes.site/)**  
 Built with React, Vite and Tailwind CSS: a clean, responsive design showcasing my skills, services, projects, and contact details.
 
 ## 📈 GitHub Stats

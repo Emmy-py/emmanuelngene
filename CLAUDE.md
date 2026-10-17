@@ -4,40 +4,42 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static, single-page portfolio site for Emmanuel Ngene, branded as Emmy.codes🛠️ (full-stack developer). No build
-tooling, no package manager, no framework — it's plain HTML/CSS/JS served as-is.
+A single-page portfolio site for Emmanuel Ngene, branded as Emmy.codes🛠️ (full-stack developer), live at
+https://emmycodes.site and deployed on Vercel. Built with React 18 + Vite 5 + Tailwind CSS v4 (via
+`@tailwindcss/vite`).
 
 ## Commands
 
-There is no build, lint, or test tooling in this repo (no `package.json`). To preview changes,
-just open `index.html` directly in a browser, or serve the directory statically, e.g.:
+```
+npm install
+npm run dev       # local dev server
+npm run build     # production build to dist/
+npm run preview   # serve the built dist/
+```
 
-```
-npx serve .
-```
+There is no lint or test tooling.
 
 ## Architecture
 
-- **`index.html`** is the entire site. All CSS lives in the `<style>` block in `<head>` (~lines
-  14-1135) and all JS lives in a single inline `<script>` at the end of `<body>` (~line 1891
-  onward). There is no build step that assembles this — edits are made directly in this file.
-- **`style.css`** and **`script.js`** at the repo root are *not* referenced by `index.html` and are
-  effectively dead/leftover files — the real styles and script are inline as described above.
-- **Theming**: implemented via a `data-theme` attribute on `<html>` (`dark` / `white` / `blue`),
-  each defining a block of CSS custom properties (`--bg`, `--fg`, `--accent`, etc.) at the top of
-  the `<style>` block. The theme switcher buttons (`.theme-btn`, `data-t` attribute) toggle this
-  attribute and persist the choice to `localStorage` under the `pf-theme` key.
-- **Page sections** (in DOM order, all inside `<body>`): `#hero`, `#about`, `#services`,
-  `#projects`, `#testimonials`, `#process`, `#contact`. Nav links highlight the active section on
-  scroll by comparing `window.scrollY` against each section's `offsetTop`.
-- **Inline script behaviors**: custom cursor (dot + trailing ring following the mouse), theme
-  switching/persistence, scroll-triggered reveal animations via `IntersectionObserver` on
-  `.reveal` elements, and active-nav-link highlighting on scroll. All wrapped in a single IIFE.
-- **`assets/`** holds project screenshot(s) referenced from the `#projects` section (e.g.
-  `cryptotracker.png`).
-- **`favicon.svg`** is the site favicon, referenced directly from `<head>`.
+- **`index.html`** is the Vite entry. It holds all SEO metadata (title, description, canonical, Open
+  Graph/Twitter tags, JSON-LD Person/WebSite schema) and a `<noscript>` fallback, then mounts
+  `src/main.jsx` into `#root`.
+- **`src/App.jsx`** composes the page from `src/components/` in DOM order: `Hero`, `About`,
+  `Services`, `Projects`, `Testimonials`, `Process`, `Blog`, `Contact`, plus `Nav`, `Footer`,
+  `Cursor` (custom dot + ring cursor) and `ThemeSwitcher`.
+- **Styling**: Tailwind utility classes written inline on each component. `src/index.css` defines the
+  theme tokens (`--bg`, `--fg`, `--accent`, ...) per `data-theme` (`dark` / `white` / `blue`) on `<html>`.
+- **Hooks** (`src/hooks/`): `useTheme` (sets `data-theme`, persists to `localStorage` key `pf-theme`),
+  `useActiveSection` (nav highlighting on scroll), `useReveal` (`IntersectionObserver` reveal
+  animations on `.reveal` elements).
+- **Projects**: data lives in `src/components/Projects.jsx`; `LIVE_PROJECT_COUNT` is derived from it
+  and shown in the hero stats.
+- **`src/assets/`** holds images imported by components (hero photo, project logos/screenshots).
+- **`public/`** is copied as-is to the site root: `favicon.svg`, `og-image.png` (1200×630 social
+  preview), `robots.txt`, `sitemap.xml`, `site.webmanifest`. Update `<lastmod>` in `sitemap.xml` when
+  content changes meaningfully.
+- **`screenshots/`** holds images used only by `README.md`.
 
 ## Notes
 
-- `git`, `main`, and `updating-cv` at the repo root are empty, untracked-looking files (likely
-  accidental artifacts) — not part of the site.
+- `git`, `main`, and `updating-cv` at the repo root are empty, accidental files — not part of the site.
