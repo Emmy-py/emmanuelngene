@@ -33,14 +33,22 @@ export default function Hero() {
     >
       {/* Background: Emmanuel's own desk setup in black and grey; the purple theme tints it. */}
       <div className="absolute -inset-8 -z-20 transition-transform duration-300 ease-out" style={parallax(-14)}>
-        {/* Two pre-graded versions instead of a CSS blend (which repaints every frame). The purple one
-            is lazy, so it only downloads when the purple theme shows it. */}
-        <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%] [[data-theme=purple]_&]:hidden" />
-        <img src="/hero-bg-purple.webp" alt="" aria-hidden="true" width="1600" height="1200" loading="lazy" decoding="async" className="hidden h-full w-full object-cover object-[30%_40%] [[data-theme=purple]_&]:block" />
+        {/* Two pre-graded versions instead of a CSS blend (which repaints every frame); the purple
+            one is lazy, so it only downloads when the purple theme shows it. Phones get the full,
+            sharp portrait-orientation photo, since a wide crop squeezed onto a tall screen showed
+            only dark wall. */}
+        <picture>
+          <source media="(max-width: 1023px)" srcSet="/hero-bg-mobile.webp" />
+          <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%] [[data-theme=purple]_&]:hidden" />
+        </picture>
+        <picture>
+          <source media="(max-width: 1023px)" srcSet="/hero-bg-mobile-purple.webp" />
+          <img src="/hero-bg-purple.webp" alt="" aria-hidden="true" width="1600" height="1200" loading="lazy" decoding="async" className="hidden h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%] [[data-theme=purple]_&]:block" />
+        </picture>
       </div>
       {/* The photo's left half is pre-blurred in the image file (cheaper than backdrop-filter);
           this gradient darkens it behind the text while the right half stays sharp. */}
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_80%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_48%,transparent_75%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_65%,transparent)_0%,var(--bg)_100%)]"></div>
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_80%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_48%,transparent_75%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_72%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_45%,color-mix(in_srgb,var(--bg)_20%,transparent)_75%,var(--bg)_100%)]"></div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-bg to-transparent"></div>
       <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-glow opacity-25 blur-[120px]"></div>
 
@@ -119,16 +127,16 @@ export default function Hero() {
             <img
               src="/hero-portrait.webp"
               alt="Emmanuel Ngene, software developer"
-              width="548"
-              height="900"
+              width="578"
+              height="800"
               fetchpriority="high"
               decoding="async"
-              className="relative h-auto w-[78%] animate-[riseIn_0.9s_0.15s_cubic-bezier(0.22,1,0.36,1)_both] [mask-image:linear-gradient(to_bottom,#000_82%,transparent)]"
+              className="relative h-auto w-[86%] animate-[riseIn_0.9s_0.15s_cubic-bezier(0.22,1,0.36,1)_both] [mask-image:linear-gradient(to_bottom,#000_82%,transparent)]"
             />
           </div>
 
           <div
-            className="absolute top-[30%] -right-[6%] w-[62%] min-w-[230px] transition-transform duration-300 ease-out max-sm:-right-[2%] max-sm:top-[50%] max-sm:w-[72%] max-sm:min-w-0"
+            className="absolute top-[55%] -right-[6%] w-[62%] min-w-[230px] transition-transform duration-300 ease-out max-sm:-right-[2%] max-sm:top-[58%] max-sm:w-[72%] max-sm:min-w-0"
             style={parallax(22)}
           >
             <div className="animate-[float_6s_ease-in-out_1.2s_infinite]">
