@@ -59,8 +59,8 @@ There is no lint or test tooling.
   `ProjectCard` tilt); all disabled under `prefers-reduced-motion`. No animation library.
 - **Hooks** (`src/hooks/`): `useTheme` (persists to `localStorage` key `pf-theme`; starts at "dark"
   to match prerendered HTML), `useActiveSection`, `useReveal`, `useParallax`.
-- **`public/`** is copied to the site root: icons (`favicon.ico`, `icon.svg`, `apple-touch-icon.png`,
-  `icon-*.png`), `og-image.png`, `hero-portrait.webp` (background-removed hero photo),
+- **`public/`** is copied to the site root: icons (`favicon.ico`, `apple-touch-icon.png`,
+  `icon-*.png`, all cut from the neon ">|" glass-icon render), `og-image.png`, `hero-portrait.webp` (background-removed hero photo),
   `hero-bg.webp` / `hero-bg-mobile.webp` (grayscale desk photo, wide crop for desktop,
   full portrait crop for phones; shown only behind the hero text),
   `emmanuel-ngene.jpg` (schema photo), `robots.txt`,
