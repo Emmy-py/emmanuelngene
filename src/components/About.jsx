@@ -7,7 +7,7 @@ const STATS = [
   { value: LIVE_PROJECT_COUNT, suffix: "+", label: "Live products shipped", Icon: Rocket },
   { value: 0, label: "Missed deadlines", Icon: CalendarCheck },
   { value: 30, suffix: "%+", label: "Average performance gain", Icon: Gauge },
-  { value: 300, suffix: "+", label: "Screens on an NDA government app", Icon: Landmark },
+  { value: 300, suffix: "+", label: "Screens on a confidential government app", Icon: Landmark },
 ];
 
 const PAIN_POINTS = [
@@ -46,9 +46,9 @@ export default function About() {
                 under load, with clean, documented, handover-ready code.
               </p>
               <p>
-                Some of my biggest work is under NDA, including a government app with{" "}
-                <strong className="font-medium text-fg">more than 300 screens</strong>, so it isn't
-                shown here.
+                Some of my biggest work is covered by a non-disclosure agreement, including a
+                government app with <strong className="font-medium text-fg">more than 300 screens</strong>{" "}
+                that I built with my team, so it isn't shown here.
               </p>
             </div>
             <a
