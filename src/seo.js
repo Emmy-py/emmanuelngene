@@ -67,7 +67,7 @@ export function homeMeta(lastmod) {
   return {
     title: "Emmanuel Ngene (Emmy) — Software Developer | emmycodes",
     description:
-      "Emmanuel Ngene (Emmy) is a full-stack software developer in Nigeria building scalable web and mobile apps with React, Next.js, React Native, Node.js and Python.",
+      "Full-stack developer (React, Next.js, React Native, Node.js, Python) in Nigeria. Emmanuel Ngene (Emmy) builds scalable web and mobile apps for startups and businesses.",
     path: "/",
     preloadImage: HERO_PORTRAIT,
     jsonLd: graph([

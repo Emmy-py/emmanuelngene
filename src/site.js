@@ -4,7 +4,7 @@ export const SITE_URL = "https://emmycodes.site";
 
 export const PERSON_PHOTO = "/emmanuel-ngene.jpg";
 export const HERO_PORTRAIT = "/hero-portrait.webp";
-export const OG_IMAGE = "/og-image.png";
+export const OG_IMAGE = "/og-image-v2.png";
 
 export const SOCIAL_PROFILES = [
   "https://github.com/Emmy-py",
