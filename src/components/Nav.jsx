@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, CodeXml } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const LINKS = [
@@ -45,9 +45,14 @@ export default function Nav({ activeSection, theme, onThemeChange }) {
         className="group flex items-center gap-2 font-display text-[1.15rem] font-extrabold tracking-[-0.02em] text-fg no-underline"
         onClick={() => setOpen(false)}
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-2 to-accent text-on-accent transition-transform duration-500 group-hover:rotate-[360deg]">
-          <CodeXml size={17} aria-hidden="true" />
-        </span>
+        <img
+          src="/logo-mark.png"
+          alt=""
+          width="36"
+          height="36"
+          decoding="async"
+          className="h-9 w-9 transition-transform duration-500 group-hover:rotate-[360deg] [[data-theme=black]_&]:grayscale"
+        />
         <span>
           Emmy<span className="text-accent">.codes</span>
         </span>
