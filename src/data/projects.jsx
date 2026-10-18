@@ -10,6 +10,8 @@ import edgeLogisticsScreen from "../assets/screens/edge-logistics.webp";
 import learnableScreen from "../assets/screens/learnable.webp";
 import foreverbuyScreen from "../assets/screens/foreverbuy.webp";
 import cryptotrackerScreen from "../assets/screens/cryptotracker.webp";
+import exclusiveLogo from "../assets/exclusive-logo.png";
+import exclusiveScreen from "../assets/screens/exclusive.webp";
 // import bywayLogo from "../assets/byway-logo.jpg"; — re-enable along with the Byway entry below
 
 // Each project gets a card on the homepage and its own page at /projects/<slug>.
@@ -194,6 +196,66 @@ export const PROJECTS = [
   },
   {
     number: "04",
+    slug: "exclusive",
+    screenshot: exclusiveScreen,
+    name: "Exclusive",
+    summary:
+      "Exclusive is a Next.js e-commerce storefront built by Emmanuel Ngene from a 13-screen Figma design: category filters, search, cart, wishlist and smooth animations.",
+    logo: exclusiveLogo,
+    logoAlt: "Exclusive",
+    logoClass:
+      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-white object-contain p-1",
+    tags: [
+      {
+        tagClass:
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "E-Commerce",
+      },
+      {
+        tagClass:
+          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
+        label: "Figma to Code",
+      },
+    ],
+    title: "Exclusive E-Commerce Storefront",
+    overview: (
+      <>
+        Exclusive is a multi-category online store for electronics, fashion, home, beauty and
+        more &mdash; a demo storefront built for prospective clients to explore, with a sliding
+        hero, flash sales countdown, product pages and a full shopping flow.
+      </>
+    ),
+    contribution: (
+      <>
+        I turned the full 13-screen Figma design into a responsive Next.js and Tailwind CSS app:
+        a filterable shop with search and sorting, product galleries, a persistent cart and
+        wishlist with coupons, and polished Motion animations &mdash; pixel-matched on desktop and
+        redesigned for tablet and phone.
+      </>
+    ),
+    links: [
+      {
+        href: "https://exclusivebuy.vercel.app/",
+        label: "Visit the Exclusive site →",
+        primary: true,
+      },
+    ],
+    outcomeLabel: "// Key Features",
+    outcomes: [
+      "All 13 Figma screens built and fully responsive",
+      "Shop page with category filters, live search and sorting",
+      "Cart and wishlist that persist across visits, with coupon codes",
+      "Sliding hero, scroll reveals and countdown timers with Motion",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
+  },
+  {
+    number: "05",
     slug: "learnable",
     screenshot: learnableScreen,
     name: "Learnable",
@@ -252,7 +314,7 @@ export const PROJECTS = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
-    number: "05",
+    number: "06",
     slug: "foreverbuy",
     screenshot: foreverbuyScreen,
     name: "ForeverBuy",
@@ -310,7 +372,7 @@ export const PROJECTS = [
     stack: ["React", "React Router DOM", "Tailwind CSS", "Vite", "Node.js", "MongoDB"],
   },
   {
-    number: "06",
+    number: "07",
     slug: "cryptotracker",
     screenshot: cryptotrackerScreen,
     name: "CryptoTracker",
@@ -366,7 +428,7 @@ export const PROJECTS = [
   },
   /* Byway — temporarily removed from display, re-enable by uncommenting
   {
-    number: "05",
+    number: "08",
     logo: bywayLogo,
     logoAlt: "Byway",
     logoClass:
