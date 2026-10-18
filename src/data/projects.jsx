@@ -140,7 +140,7 @@ export const PROJECTS = [
     screenshot: edgeLogisticsScreen,
     name: "Edge Logistics",
     summary:
-      "Edge Logistics is a shipping and freight website built by Emmanuel Ngene in Next.js from a Figma design, with quote, contact and shipment tracking flows.",
+      "Edge Logistics is a shipping and freight website built by Emmanuel Ngene in Next.js, with quote, contact and shipment tracking flows.",
     logo: edgeLogisticsLogo,
     logoAlt: "Edge Logistics",
     logoClass:
@@ -171,7 +171,7 @@ export const PROJECTS = [
     ),
     contribution: (
       <>
-        I built its website in Next.js from a Figma design: Home, About, Contact, Get a Quote and
+        I built its website in Next.js: Home, About, Contact, Get a Quote and
         Track Shipment pages, with validated contact, quote and newsletter forms, success
         popups, a shipment tracking demo, and scroll-driven animations &mdash; responsive across
         phone, iPad and desktop.
@@ -186,7 +186,7 @@ export const PROJECTS = [
     ],
     outcomeLabel: "// Key Features",
     outcomes: [
-      "Five pages built pixel-close to the Figma design",
+      "Five polished, pixel-perfect pages",
       "Quote, contact and newsletter forms with validation and success popups",
       "Shipment tracking flow with a map result view",
       "Scroll reveals, count-up stats and motion that respects reduced-motion settings",
@@ -200,7 +200,7 @@ export const PROJECTS = [
     screenshot: exclusiveScreen,
     name: "Exclusive",
     summary:
-      "Exclusive is a Next.js e-commerce storefront built by Emmanuel Ngene from a 13-screen Figma design: category filters, search, cart, wishlist and smooth animations.",
+      "Exclusive is a Next.js e-commerce storefront built by Emmanuel Ngene, with category filters, search, cart, wishlist and smooth animations.",
     logo: exclusiveLogo,
     logoAlt: "Exclusive",
     logoClass:
@@ -219,7 +219,7 @@ export const PROJECTS = [
       {
         tagClass:
           "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
-        label: "Figma to Code",
+        label: "Frontend",
       },
     ],
     title: "Exclusive E-Commerce Storefront",
@@ -232,10 +232,10 @@ export const PROJECTS = [
     ),
     contribution: (
       <>
-        I turned the full 13-screen Figma design into a responsive Next.js and Tailwind CSS app:
+        I built the full 13-screen storefront as a responsive Next.js and Tailwind CSS app:
         a filterable shop with search and sorting, product galleries, a persistent cart and
-        wishlist with coupons, and polished Motion animations &mdash; pixel-matched on desktop and
-        redesigned for tablet and phone.
+        wishlist with coupons, and polished Motion animations &mdash; responsive across phone,
+        tablet and desktop.
       </>
     ),
     links: [
@@ -247,7 +247,7 @@ export const PROJECTS = [
     ],
     outcomeLabel: "// Key Features",
     outcomes: [
-      "All 13 Figma screens built and fully responsive",
+      "13 screens, fully responsive from phone to desktop",
       "Shop page with category filters, live search and sorting",
       "Cart and wishlist that persist across visits, with coupon codes",
       "Sliding hero, scroll reveals and countdown timers with Motion",
