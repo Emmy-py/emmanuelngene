@@ -37,7 +37,12 @@ There is no lint or test tooling.
   (WebSite, ProfilePage, Person, CreativeWork per project, BreadcrumbList).
 - **Projects** live in `src/data/projects.jsx` (`slug`, `summary`, `overview`, `contribution`, ...).
   Adding one there adds its homepage card, its `/projects/<slug>` page, sitemap entry, JSON-LD and
-  llms.txt line. `LIVE_PROJECT_COUNT` feeds the hero stat.
+  llms.txt line. `LIVE_PROJECT_COUNT` feeds the "Live products shipped" stat in `About.jsx`.
+- **Live project count must always be correct.** It counts every project in `PROJECTS` with a
+  primary link (a live site), including ones tagged "In Development" (e.g. GreenVerify). Whenever a
+  project is added, removed, hidden or gets/loses its live link, keep it that way: give live projects
+  a `primary: true` link, then build and confirm the stat in `dist/index.html` equals the number of
+  live projects (7 as of 2026-10-18). Never hardcode the number.
 - **Pages/components**: `src/App.jsx` -> `Layout` (Cursor, Nav with `ThemeToggle`, Footer) +
   `src/pages/{Home,ProjectPage,NotFound}.jsx`. Home composes `src/components/` sections: `Hero`,
   `About`, `Experience`, `Skills`, `Services`, `Projects`, `Process`, `Blog` (latest 3 posts), `Contact`
