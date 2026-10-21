@@ -66,8 +66,9 @@ There is no lint or test tooling.
   to match prerendered HTML), `useActiveSection`, `useReveal`, `useParallax`.
 - **`public/`** is copied to the site root: icons (`favicon.ico`, `apple-touch-icon.png`,
   `icon-*.png`, all cut from the neon ">|" glass-icon render), `og-image.png`, `hero-portrait.webp` (background-removed hero photo),
-  `hero-bg.webp` / `hero-bg-mobile.webp` (grayscale desk photo, wide crop for desktop,
-  full portrait crop for phones; shown only behind the hero text),
+  `hero-bg.webp` / `hero-bg-mobile.webp` (grayscale desk photo, wide crop for desktop, full
+  portrait crop for phones; not shown at the moment: removed from the hero to test load speed,
+  restore by reverting the commit "Remove the hero background photo"),
   `emmanuel-ngene.jpg` (schema photo), `robots.txt`,
   `site.webmanifest`, and the IndexNow key file (`<32 hex>.txt`).
 - **`src/assets/screens/`** holds 800x500 WebP screenshots of live project sites.
