@@ -41,7 +41,7 @@ export default function Hero() {
             a tall screen showed only dark wall. */}
         <picture>
           <source media="(max-width: 1023px)" srcSet="/hero-bg-mobile.webp" />
-          <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1600" height="1200" decoding="async" className="h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%]" />
+          <img src="/hero-bg.webp" alt="" aria-hidden="true" width="1280" height="960" fetchpriority="low" decoding="async" className="h-full w-full object-cover object-[30%_40%] max-lg:object-[center_35%]" />
         </picture>
       </div>
       {/* Darkens the photo behind the text so it stays readable. */}
