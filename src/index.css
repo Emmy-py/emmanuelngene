@@ -195,13 +195,14 @@ body {
   }
 }
 
-/* Driven by IntersectionObserver toggling a plain DOM class (useReveal.js) — not React
-   state, so it can't be expressed as conditional Tailwind classes in JSX. */
+/* Driven by IntersectionObserver toggling plain DOM classes (useReveal.js) — not React
+   state, so it can't be expressed as conditional Tailwind classes in JSX. Visible by default:
+   only elements the script marks .reveal-pending (below the fold once JS runs) start hidden. */
 .reveal {
-  @apply translate-y-7 opacity-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)];
+  @apply transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)];
 }
-.reveal.visible {
-  @apply translate-y-0 opacity-100;
+.reveal.reveal-pending:not(.visible) {
+  @apply translate-y-7 opacity-0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -212,7 +213,7 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .reveal {
+  .reveal.reveal-pending:not(.visible) {
     @apply translate-y-0 opacity-100;
   }
 }
