@@ -34,7 +34,7 @@ export default function Hero() {
       {/* Darkens the photo behind the text so it stays readable. */}
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--bg)_72%,transparent)_0%,color-mix(in_srgb,var(--bg)_45%,transparent)_55%,transparent_80%)] max-lg:bg-[linear-gradient(180deg,color-mix(in_srgb,var(--bg)_72%,transparent)_0%,color-mix(in_srgb,var(--bg)_55%,transparent)_45%,color-mix(in_srgb,var(--bg)_20%,transparent)_75%,var(--bg)_100%)]"></div>
       <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-bg to-transparent"></div>
-      <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] rounded-full bg-glow opacity-25 blur-[120px]"></div>
+      <div className="pointer-events-none absolute -top-40 -left-40 -z-10 h-[520px] w-[520px] bg-[radial-gradient(closest-side,var(--glow),transparent)] opacity-40"></div>
 
       <div className="mx-auto grid w-full max-w-[1240px] grid-cols-[1.1fr_1fr] items-center gap-12 max-lg:grid-cols-1 max-lg:gap-14">
         <div className="min-w-0">
@@ -124,7 +124,7 @@ export default function Hero() {
             style={parallax(22)}
           >
             <div className="animate-[float_6s_ease-in-out_1.2s_infinite]">
-              <div className="animate-[blurIn_0.6s_0.6s_ease-out_both] rounded-xl border border-border-accent bg-bg2/80 p-4 font-mono text-[0.72rem] leading-[1.7] shadow-[0_20px_50px_-20px_var(--glow)] backdrop-blur-md max-sm:p-3 max-sm:text-[0.6rem]">
+              <div className="animate-[blurIn_0.6s_0.6s_ease-out_both] rounded-xl border border-border-accent bg-bg2/95 p-4 font-mono text-[0.72rem] leading-[1.7] shadow-[0_20px_50px_-20px_var(--glow)] max-sm:p-3 max-sm:text-[0.6rem]">
                 <div className="mb-2.5 flex items-center justify-between border-b border-border pb-2 text-fg2">
                   <span>&lt;/&gt; developer.ts</span>
                   <span className="h-2 w-2 animate-[pulse_2s_infinite] rounded-full bg-[#4ade80]"></span>

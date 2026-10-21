@@ -99,32 +99,27 @@ body {
 
 @keyframes fadeUp {
   from {
-    opacity: 0;
     transform: translateY(26px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
-/* Opacity + transform only, so entrances stay on the compositor (filter: blur repaints). */
+/* Entrances are transform only: content is never hidden waiting for an animation to run, and
+   they stay on the compositor (filter: blur repaints). */
 @keyframes blurIn {
   from {
-    opacity: 0;
     transform: translateY(18px) scale(0.98);
   }
   to {
-    opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
 @keyframes riseIn {
   from {
-    opacity: 0;
     transform: translateY(60px) scale(0.96);
   }
   to {
-    opacity: 1;
     transform: translateY(0) scale(1);
   }
 }

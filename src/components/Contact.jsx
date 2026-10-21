@@ -31,7 +31,7 @@ export default function Contact() {
       id="contact"
       className="relative overflow-hidden bg-bg2 px-[max(20px,5vw)] py-27.5 max-sm:px-[max(22px,6vw)] max-sm:py-20"
     >
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-glow opacity-25 blur-[120px]"></div>
+      <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[420px] w-[720px] -translate-x-1/2 bg-[radial-gradient(closest-side,var(--glow),transparent)] opacity-40"></div>
       <div className="relative mx-auto grid max-w-[1240px] grid-cols-[1.1fr_1.2fr_0.9fr] items-start gap-10 max-[1000px]:grid-cols-2 max-sm:grid-cols-1">
         <div className="reveal">
           <p className="mb-3 font-mono text-[0.68rem] tracking-[0.14em] text-accent uppercase">Let's work together</p>
