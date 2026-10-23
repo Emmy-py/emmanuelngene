@@ -1,15 +1,15 @@
 import { ArrowUpRight, Briefcase, GraduationCap } from "lucide-react";
 import SectionIntro from "./SectionIntro";
 
-// Roles as stated by Emmanuel; no dates or details beyond that.
-const ROLES = [
-  { role: "Software Engineer", org: "Dawnily", href: "https://www.dawnily.com/", period: "Present", Icon: Briefcase },
-  { role: "Software Engineer", org: "MindTheGap", href: "https://mindthegap.ng/", period: "Present", Icon: Briefcase },
+// Roles and dates as stated by Emmanuel; no details beyond that.
+export const ROLES = [
+  { role: "Software Engineer", org: "Dawnily", href: "https://www.dawnily.com/", period: "May 2026 – Present", Icon: Briefcase },
+  { role: "Software Engineer", org: "MindTheGap", href: "https://mindthegap.ng/", period: "May 2026 – Present", Icon: Briefcase },
   {
     role: "Software Engineering Intern",
     org: "Genesys Tech Hub",
     href: "https://genesystechhub.com/",
-    period: "Internship",
+    period: "Internship · 2025",
     Icon: GraduationCap,
   },
 ];

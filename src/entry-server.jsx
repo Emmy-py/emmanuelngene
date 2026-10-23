@@ -1,5 +1,6 @@
-import { renderToString } from "react-dom/server";
+import { renderToStaticMarkup, renderToString } from "react-dom/server";
 import App from "./App.jsx";
+import Resume from "./pages/Resume.jsx";
 import { POSTS, formatDate, loadPost, postBody, postPath } from "./data/posts";
 import { PROJECTS } from "./data/projects";
 import { countWords, readingMinutes } from "./lib/markdown";
@@ -44,6 +45,11 @@ export function getPages(lastmod) {
 
 export function render(path) {
   return renderToString(<App path={path} />);
+}
+
+// Static markup for dist/resume.html (no hydration), printed to a PDF by scripts/resume-pdf.mjs.
+export function renderResume() {
+  return renderToStaticMarkup(<Resume />);
 }
 
 function loadedBody(post) {

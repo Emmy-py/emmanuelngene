@@ -3,7 +3,7 @@ import SectionIntro from "./SectionIntro";
 import StatTile from "./StatTile";
 import { LIVE_PROJECT_COUNT } from "../data/projects";
 
-const STATS = [
+export const STATS = [
   { value: LIVE_PROJECT_COUNT, suffix: "+", label: "Live products shipped", Icon: Rocket },
   { value: 0, label: "Missed deadlines", Icon: CalendarCheck },
   { value: 30, suffix: "%+", label: "Average performance gain", Icon: Gauge },

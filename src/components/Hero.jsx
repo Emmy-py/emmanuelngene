@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, Download, Mail } from "lucide-react";
 import TechIcon from "./TechIcon";
 import { HERO_TECH, TECH } from "../data/tech";
 import useParallax from "../hooks/useParallax";
@@ -87,6 +87,14 @@ export default function Hero() {
             >
               <Mail size={17} aria-hidden="true" />
               Contact Me
+            </a>
+            <a
+              href="/emmanuel-ngene-resume.pdf"
+              download="Emmanuel-Ngene-Resume.pdf"
+              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-border-accent bg-bg/40 px-7 py-3.5 font-medium text-fg no-underline backdrop-blur-sm transition-[transform,border-color,background] duration-200 hover:-translate-y-0.5 hover:border-accent hover:bg-accent-muted"
+            >
+              <Download size={17} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-y-0.5" />
+              Download Resume
             </a>
           </div>
 

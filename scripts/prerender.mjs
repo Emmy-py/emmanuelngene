@@ -10,7 +10,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = resolve(root, "dist");
 const ssrDir = resolve(root, "dist-ssr");
 
-const { SITE_URL, getPages, preparePosts, render, renderHead, llmsTxt, rssXml } = await import(
+const { SITE_URL, getPages, preparePosts, render, renderHead, renderResume, llmsTxt, rssXml } = await import(
   pathToFileURL(resolve(ssrDir, "entry-server.js")).href
 );
 
@@ -71,6 +71,21 @@ for (const page of pages) {
   writeFileSync(out, html);
   console.log(`prerendered ${page.path} -> dist/${page.file}`);
 }
+
+// Print-only resume page (not in the sitemap): no theme or app scripts, A4 page box, and asset
+// URLs made relative so the fonts also load when Chrome prints it from file:// (npm run resume).
+const resume = template
+  .replace("<!--head-->", "<title>Emmanuel Ngene — Resume</title>\n    <style>@page { size: A4; margin: 12mm 0 }</style>")
+  .replace(/<meta name="robots"[^>]*>/, '<meta name="robots" content="noindex" />')
+  .replace(/ data-theme="dark"/, "")
+  .replace(/<script>[\s\S]*?<\/script>/, "")
+  .replace(/<script type="module"[\s\S]*?<\/script>/, "")
+  .replace(/<link rel="preload"[^>]*>\s*/g, "")
+  .replace(/<body class="[^"]*">/, '<body class="bg-white">')
+  .replace("<!--app-->", renderResume())
+  .replaceAll("url(/assets/", "url(assets/");
+writeFileSync(resolve(dist, "resume.html"), resume);
+console.log("prerendered resume -> dist/resume.html");
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

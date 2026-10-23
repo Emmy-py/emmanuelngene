@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "indexnow": "node scripts/indexnow.mjs",
+    "resume": "npm run build && node scripts/resume-pdf.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

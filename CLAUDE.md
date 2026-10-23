@@ -15,6 +15,7 @@ npm install
 npm run dev       # local dev server (client-rendered, no SEO head tags)
 npm run build     # client build + SSR build + scripts/prerender.mjs -> static pages in dist/
 npm run preview   # serve the built dist/
+npm run resume    # build, then print dist/resume.html to public/emmanuel-ngene-resume.pdf with local Chrome/Edge
 npm run indexnow  # ping IndexNow with the live sitemap (also runs via GitHub Actions after prod deploys)
 ```
 
@@ -53,6 +54,12 @@ There is no lint or test tooling.
   `entry-server.jsx` `preparePosts()` loads all of them before prerendering. The build fails if a
   post's `readMinutes` doesn't match its text. Pages: `pages/BlogIndex.jsx`, `pages/BlogPost.jsx`
   (BlogPosting JSON-LD, article meta tags, per-post sitemap `lastmod` from `dateModified`).
+- **Resume**: `src/pages/Resume.jsx` renders a light, A4 resume from the same data (`PROJECTS`,
+  `SKILL_GROUPS`, `About.jsx` `STATS`, `Experience.jsx` `ROLES`; phone, education and role dates
+  were supplied by Emmanuel). `prerender.mjs` writes it to `dist/resume.html` (not in the sitemap) and
+  `scripts/resume-pdf.mjs` prints it to `public/emmanuel-ngene-resume.pdf`, which is committed and
+  linked from the Hero's "Download Resume" button. Vercel can't print it, so re-run `npm run resume`
+  and commit the PDF whenever projects, roles or skills change.
 - **Content facts** live in data files, never invented: `src/data/projects.jsx`, `src/data/tech.js`
   (skills; brand icons from `simple-icons`, generic icons from `lucide-react`), `src/data/social.js`,
   roles in `Experience.jsx`, stats in `About.jsx`.
@@ -68,7 +75,7 @@ There is no lint or test tooling.
   `icon-*.png`, all cut from the neon ">|" glass-icon render), `og-image.png`, `hero-portrait.webp` (background-removed hero photo),
   `hero-bg.webp` / `hero-bg-mobile.webp` (grayscale desk photo, wide crop for desktop,
   full portrait crop for phones; shown only behind the hero text),
-  `emmanuel-ngene.jpg` (schema photo), `robots.txt`,
+  `emmanuel-ngene.jpg` (schema photo), `emmanuel-ngene-resume.pdf` (generated, see Resume), `robots.txt`,
   `site.webmanifest`, and the IndexNow key file (`<32 hex>.txt`).
 - **`src/assets/screens/`** holds 800x500 WebP screenshots of live project sites.
 - **`screenshots/`** holds images used only by `README.md`.
