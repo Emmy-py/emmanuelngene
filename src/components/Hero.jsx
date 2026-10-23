@@ -73,7 +73,7 @@ export default function Hero() {
             startups and organizations, from the first screen to the database.
           </p>
 
-          <div className="mb-11 flex animate-[blurIn_0.6s_0.32s_ease-out_both] flex-wrap gap-3.5 max-sm:flex-col">
+          <div className="mb-5 flex animate-[blurIn_0.6s_0.32s_ease-out_both] flex-wrap gap-3.5 max-sm:flex-col">
             <a
               href="#projects"
               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-accent-2 to-[var(--grad-a)] px-7 py-3.5 font-medium text-on-accent no-underline shadow-[0_12px_32px_-10px_var(--glow)] transition-[transform,box-shadow] duration-200 before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(110deg,transparent_30%,rgba(255,255,255,0.35)_50%,transparent_70%)] before:transition-transform before:duration-700 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_var(--glow)] hover:before:translate-x-full"
@@ -88,15 +88,16 @@ export default function Hero() {
               <Mail size={17} aria-hidden="true" />
               Contact Me
             </a>
-            <a
-              href="/emmanuel-ngene-resume.pdf"
-              download="Emmanuel-Ngene-Resume.pdf"
-              className="group inline-flex items-center justify-center gap-2 rounded-xl border border-border-accent bg-bg/40 px-7 py-3.5 font-medium text-fg no-underline backdrop-blur-sm transition-[transform,border-color,background] duration-200 hover:-translate-y-0.5 hover:border-accent hover:bg-accent-muted"
-            >
-              <Download size={17} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-y-0.5" />
-              Download Resume
-            </a>
           </div>
+          {/* A secondary link rather than a third button, so the two main actions stay on one row. */}
+          <a
+            href="/emmanuel-ngene-resume.pdf"
+            download="Emmanuel-Ngene-Resume.pdf"
+            className="group mb-11 inline-flex animate-[blurIn_0.6s_0.36s_ease-out_both] items-center gap-2 py-1 text-[0.92rem] font-medium text-accent no-underline underline-offset-4 hover:underline max-sm:flex max-sm:justify-center"
+          >
+            <Download size={16} aria-hidden="true" className="transition-transform duration-200 group-hover:translate-y-0.5" />
+            Download Resume (PDF)
+          </a>
 
           <p className="mb-4 animate-[blurIn_0.6s_0.4s_ease-out_both] font-mono text-[0.68rem] tracking-[0.14em] text-fg2 uppercase">
             Technologies I work with
