@@ -12,67 +12,19 @@ import foreverbuyScreen from "../assets/screens/foreverbuy.webp";
 import cryptotrackerScreen from "../assets/screens/cryptotracker.webp";
 import exclusiveLogo from "../assets/exclusive-logo.png";
 import exclusiveScreen from "../assets/screens/exclusive.webp";
+import weddingInviteLogo from "../assets/wedding-invitation-logo.png";
+import weddingInviteScreen from "../assets/screens/wedding-invitation.webp";
 // import bywayLogo from "../assets/byway-logo.jpg"; — re-enable along with the Byway entry below
 
 // Each project gets a card on the homepage and its own page at /projects/<slug>.
 // `summary` is plain text, used for the project page's meta description and structured data.
 // `screenshot` (800x500 WebP of the live site; mobile-only captures are framed in a phone) is
 // optional; cards fall back to the logo.
+// `contributionOnly: true` marks someone else's product Emmanuel only contributed to: the project
+// page byline and JSON-LD then credit him as a contributor, not the author/creator.
 export const PROJECTS = [
   {
     number: "01",
-    slug: "letdap",
-    screenshot: letdapScreen,
-    name: "LetDap",
-    summary:
-      "LetDap is a social event management platform. Emmanuel Ngene contributed as a backend engineer: NestJS APIs, event scheduling and MongoDB optimization.",
-    logo: letdapLogo,
-    logoAlt: "LetDap",
-    logoClass:
-      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-[#1a8cff] object-contain p-1",
-    tags: [
-      {
-        tagClass:
-          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "● Live",
-      },
-      {
-        tagClass:
-          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "Event Tech",
-      },
-      {
-        tagClass:
-          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
-        label: "Collaborator",
-      },
-    ],
-    title: "LetDap Event Management Platform",
-    overview: (
-      <>
-        LetDap is a social event management platform empowering organizers to plan, promote, and
-        manage events while enabling users to connect through shared experiences.
-      </>
-    ),
-    contribution: (
-      <>
-        I collaborated as a backend engineer on the platform's core infrastructure &mdash;
-        contributing to server-side feature development, API design, and MongoDB optimization
-        within the engineering team.
-      </>
-    ),
-    links: [{ href: "https://letsdap.com", label: "Visit the LetDap site →", primary: true }],
-    outcomeLabel: "// Contributions",
-    outcomes: [
-      "Core backend modules for event scheduling & user management",
-      "API optimization improving overall platform responsiveness",
-      "Scalable MongoDB models for real-time user interactions",
-      "Delivered sprint features consistently and on schedule",
-    ],
-    stack: ["Node.js", "NestJS", "MongoDB", "REST API", "Real-Time"],
-  },
-  {
-    number: "02",
     slug: "greenverify",
     screenshot: greenverifyScreen,
     name: "GreenVerify",
@@ -135,7 +87,123 @@ export const PROJECTS = [
     stack: ["React", "Material UI", "Node.js", "NestJS", "PostgreSQL", "AI Integration", "KYC APIs"],
   },
   {
+    number: "02",
+    slug: "wedding-invitation",
+    screenshot: weddingInviteScreen,
+    name: "AdeEmeka Wedding Invitation",
+    summary:
+      "An animated digital wedding invitation built by Emmanuel Ngene for Amar Surprises & Event Decoration, an Enugu event planner, for her client's wedding: an envelope that opens, music, countdown and RSVP.",
+    logo: weddingInviteLogo,
+    logoAlt: "AdeEmeka Wedding Invitation",
+    logoClass: "h-11.5 w-11.5 shrink-0 rounded-full object-contain",
+    tags: [
+      {
+        tagClass:
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "Event Tech",
+      },
+      {
+        tagClass:
+          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
+        label: "Client Project",
+      },
+    ],
+    title: "Animated Digital Wedding Invitation",
+    overview: (
+      <>
+        Amar Surprises &amp; Event Decoration, a surprise and event planner in Enugu, reached out
+        to me to design a website for her client's wedding: a digital invitation guests open on their phones that
+        feels as special as a paper card in the post.
+      </>
+    ),
+    contribution: (
+      <>
+        I designed and built it in Next.js with GSAP animations. Guests land on a sealed envelope
+        with a wax-seal monogram and their own name on it; one tap pops the seal, swings the flap
+        open in 3D, slides the card out in a burst of petals and starts the music. Inside are the
+        couple's photos, a live countdown, both events with directions, add-to-calendar and an
+        RSVP form &mdash; mobile-first, keyboard accessible and gentle on reduced-motion settings.
+      </>
+    ),
+    links: [
+      {
+        href: "https://adeemeka-wedding-invitation.vercel.app/",
+        label: "Open the invitation →",
+        primary: true,
+      },
+      { href: "https://www.tiktok.com/@amar_surprises.events", label: "Amar Surprises & Event Decoration on TikTok" },
+    ],
+    outcomeLabel: "// Key Features",
+    outcomes: [
+      "Animated envelope opening: wax seal, 3D flap, sliding card and canvas petal burst",
+      "Personalised links that print each guest's name on the envelope",
+      "Photo gallery with lightbox, live countdown and background music",
+      "Google Maps directions, .ics and Google Calendar export, and an RSVP flow",
+      "Custom WhatsApp link preview, fast first load on mobile data",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Canvas"],
+  },
+  {
     number: "03",
+    slug: "letdap",
+    contributionOnly: true,
+    screenshot: letdapScreen,
+    name: "LetDap",
+    summary:
+      "LetDap is a social event management platform built and led by its founder, who is also a developer. Emmanuel Ngene contributed as a collaborating backend engineer: NestJS APIs, event scheduling and MongoDB optimization.",
+    logo: letdapLogo,
+    logoAlt: "LetDap",
+    logoClass:
+      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-[#1a8cff] object-contain p-1",
+    tags: [
+      {
+        tagClass:
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "Event Tech",
+      },
+      {
+        tagClass:
+          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
+        label: "Contributor",
+      },
+    ],
+    title: "LetDap Event Management Platform (Contribution)",
+    overview: (
+      <>
+        LetDap is a social event management platform empowering organizers to plan, promote, and
+        manage events while enabling users to connect through shared experiences. It is built and
+        led by its founder, who is also a developer.
+      </>
+    ),
+    contribution: (
+      <>
+        My role was contribution only: I joined as a collaborating backend engineer, helping with
+        server-side features, API work and MongoDB optimization inside the founder's existing
+        codebase and roadmap.
+      </>
+    ),
+    links: [{ href: "https://letsdap.com", label: "Visit the LetDap site →", primary: true }],
+    outcomeLabel: "// My Contributions",
+    outcomes: [
+      "Contributed to backend modules for event scheduling & user management",
+      "Helped optimise APIs for overall platform responsiveness",
+      "Worked on MongoDB models for real-time user interactions",
+      "Delivered my assigned sprint features on schedule",
+    ],
+    stack: ["Node.js", "NestJS", "MongoDB", "REST API", "Real-Time"],
+  },
+  {
+    number: "04",
     slug: "edge-logistics",
     screenshot: edgeLogisticsScreen,
     name: "Edge Logistics",
@@ -195,7 +263,7 @@ export const PROJECTS = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
-    number: "04",
+    number: "05",
     slug: "exclusive",
     screenshot: exclusiveScreen,
     name: "Exclusive",
@@ -255,7 +323,7 @@ export const PROJECTS = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
   },
   {
-    number: "05",
+    number: "06",
     slug: "learnable",
     screenshot: learnableScreen,
     name: "Learnable",
@@ -314,7 +382,7 @@ export const PROJECTS = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
-    number: "06",
+    number: "07",
     slug: "foreverbuy",
     screenshot: foreverbuyScreen,
     name: "ForeverBuy",
@@ -372,7 +440,7 @@ export const PROJECTS = [
     stack: ["React", "React Router DOM", "Tailwind CSS", "Vite", "Node.js", "MongoDB"],
   },
   {
-    number: "07",
+    number: "08",
     slug: "cryptotracker",
     screenshot: cryptotrackerScreen,
     name: "CryptoTracker",
@@ -428,7 +496,7 @@ export const PROJECTS = [
   },
   /* Byway — temporarily removed from display, re-enable by uncommenting
   {
-    number: "08",
+    number: "09",
     logo: bywayLogo,
     logoAlt: "Byway",
     logoClass:

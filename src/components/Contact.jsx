@@ -5,11 +5,6 @@ import { EMAIL, SOCIALS } from "../data/social";
 
 const TESTIMONIALS = [
   {
-    text: "Emmanuel was a reliable collaborator who grasped our goals quickly and contributed meaningfully to every sprint. Professional throughout.",
-    author: "Client — Event Tech Platform",
-    role: "LetDap",
-  },
-  {
     text: "Solid architecture from day one. Secure, scalable, and the team can build on it with full confidence. Would hire again without hesitation.",
     author: "Client — FinTech Organization",
     role: "GreenVerify",

@@ -21,6 +21,7 @@ export default function ProjectPage({ project }) {
     outcomeLabel,
     outcomes,
     stack,
+    contributionOnly,
   } = project;
   const others = PROJECTS.filter((p) => p.slug !== slug);
 
@@ -62,14 +63,14 @@ export default function ProjectPage({ project }) {
           {title}
         </h1>
         <p className="text-base text-fg2 leading-[1.8]">
-          A project by{" "}
+          {contributionOnly ? "A project " : "A project by "}
           <a
             href="/"
             className="text-fg underline decoration-accent underline-offset-3 hover:text-accent"
           >
             Emmanuel Ngene
           </a>
-          , full-stack developer.
+          {contributionOnly ? " contributed to as a collaborating developer." : ", full-stack developer."}
         </p>
       </header>
 

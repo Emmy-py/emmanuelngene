@@ -54,8 +54,9 @@ function projectNode(project) {
     // Small logos are inlined by Vite as data: URIs, which aren't valid schema image URLs.
     ...(!project.logo.startsWith("data:") && { image: absoluteUrl(project.logo) }),
     keywords: project.stack.join(", "),
-    author: { "@id": PERSON_ID },
-    creator: { "@id": PERSON_ID },
+    ...(project.contributionOnly
+      ? { contributor: { "@id": PERSON_ID } }
+      : { author: { "@id": PERSON_ID }, creator: { "@id": PERSON_ID } }),
   };
 }
 
