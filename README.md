@@ -49,28 +49,34 @@ Here are some key projects showcasing my work:
    Website for a logistics company I imagined and own on paper, offering express delivery, freight shipping, customs clearance and warehousing. Built from a Figma design with Home, About, Contact, Get a Quote and Track Shipment pages, validated forms with success popups, a shipment tracking demo, and scroll-driven animations, responsive across phone, iPad and desktop.  
    - **Tech**: Next.js, React, TypeScript, Tailwind CSS  
    - **Role**: Design-to-code, frontend  
-   - **Live**: [edge-logistics.vercel.app](https://edge-logistics.vercel.app/)
+   - **Live**: [logistics.emmycodes.site](https://logistics.emmycodes.site/)
 
 5. **Learnable – Website UI Redesign**  
    A UI redesign of the website for Learnable, Genesys Tech Hub's 6–9 month project-based tech training programme. Features a draggable curved portrait hero, swipeable programme and project carousels, an FAQ accordion, a mobile menu, a custom 404 page, and scroll animations, responsive from phone to desktop.  
    - **Tech**: Next.js, React, TypeScript, Tailwind CSS  
    - **Role**: UI redesign, frontend  
-   - **Live**: [learnable-landing-page.vercel.app](https://learnable-landing-page.vercel.app/)  
+   - **Live**: [learnable.emmycodes.site](https://learnable.emmycodes.site/)  
    - **Repo**: [github.com/Emmy-py/learnable-landing-page](https://github.com/Emmy-py/learnable-landing-page)
 
-   [![Learnable website home page](screenshots/learnable.png)](https://learnable-landing-page.vercel.app/)
+   [![Learnable website home page](screenshots/learnable.png)](https://learnable.emmycodes.site/)
 
 6. **ForeverBuy – E-Commerce Platform**  
    Fashion and lifestyle storefront for discovering trends, best sellers and exclusive collections, built for fast browsing and a smooth checkout. Product listing and detail pages, search, cart, wishlist and auth flows, with a Node.js/Express/MongoDB backend in progress for orders and payments.  
    - **Tech**: React, React Router DOM, Tailwind CSS, Vite, Node.js, MongoDB  
    - **Role**: Frontend (backend in progress)  
-   - **Live**: [forever-buy-ecommerce.vercel.app](https://forever-buy-ecommerce.vercel.app/)
+   - **Live**: [foreverbuy.emmycodes.site](https://foreverbuy.emmycodes.site/)
 
 7. **CryptoTracker – Real-Time Market Analytics Platform**  
    Live cryptocurrency price tracking with WebSocket-powered updates, historical candlestick charts and market insights in a clean, performance-focused interface.  
    - **Tech**: JavaScript, WebSocket, REST APIs, market data APIs, charting libraries  
    - **Role**: Data integration and real-time update architecture  
    - **Live**: [crypto-traccker.netlify.app](https://crypto-traccker.netlify.app/)
+
+8. **Hennessy Concept – Scroll-Driven Luxury Brand Site**  
+   An unofficial concept site for Hennessy cognac (not affiliated with Hennessy or Moët Hennessy): a scroll-driven WebGL pour with custom liquid, ice and condensation shaders, an automatic fallback to pre-rendered frames on slower devices, shared-element bottle transitions, flavour wheels and a fact-checked brand history. ~2 s LCP on throttled mobile, zero layout shift, zero axe violations.  
+   - **Tech**: Next.js, React, TypeScript, Three.js, React Three Fiber, GSAP, Tailwind CSS  
+   - **Role**: Design and development, end to end  
+   - **Live**: [hennessy.emmycodes.site](https://hennessy.emmycodes.site/)
 
 More projects and experiments → [Full GitHub Profile](https://github.com/Emmy-py?tab=repositories)
 

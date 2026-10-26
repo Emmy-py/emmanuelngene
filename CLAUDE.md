@@ -43,7 +43,7 @@ There is no lint or test tooling.
   primary link (a live site), including ones tagged "In Development" (e.g. GreenVerify). Whenever a
   project is added, removed, hidden or gets/loses its live link, keep it that way: give live projects
   a `primary: true` link, then build and confirm the stat in `dist/index.html` equals the number of
-  live projects (8 as of 2026-10-25). Never hardcode the number.
+  live projects (9 as of 2026-10-26). Never hardcode the number.
 - **Pages/components**: `src/App.jsx` -> `Layout` (Cursor, Nav with `ThemeToggle`, Footer) +
   `src/pages/{Home,ProjectPage,NotFound}.jsx`. Home composes `src/components/` sections: `Hero`,
   `About`, `Experience`, `Skills`, `Services`, `Projects`, `Process`, `Blog` (latest 3 posts), `Contact`

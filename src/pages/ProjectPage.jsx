@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { PROJECTS } from "../data/projects";
 
 const SECTION_LABEL = "mb-3.5 font-mono text-[0.68rem] tracking-[0.18em] text-accent uppercase";
@@ -24,6 +25,8 @@ export default function ProjectPage({ project }) {
     contributionOnly,
   } = project;
   const others = PROJECTS.filter((p) => p.slug !== slug);
+  const live = links.find((link) => link.primary);
+  const secondary = links.filter((link) => !link.primary);
 
   return (
     <article className="px-[max(20px,5vw)] pt-36 pb-27.5 max-sm:px-[max(22px,6vw)] max-sm:pt-28 max-sm:pb-20">
@@ -72,18 +75,61 @@ export default function ProjectPage({ project }) {
           </a>
           {contributionOnly ? " contributed to as a collaborating developer." : ", full-stack developer."}
         </p>
+
+        {/* The live site is the point of the page: offer it before any reading, not only in the sidebar. */}
+        {live && (
+          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <a
+              href={live.href}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-2 rounded-xl bg-accent-2 px-6 py-3.5 font-display text-[0.95rem] font-bold text-on-accent no-underline shadow-[0_16px_40px_-16px_var(--glow)] transition-[opacity,transform] duration-200 hover:-translate-y-0.5 hover:opacity-90"
+            >
+              {live.label}
+              <ArrowUpRight size={18} aria-hidden="true" />
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
+            <span className="font-mono text-[0.72rem] tracking-[0.04em] text-fg2">{new URL(live.href).host}</span>
+            {secondary.map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-1 text-[0.88rem] text-fg2 underline decoration-border-accent underline-offset-4 hover:text-accent"
+              >
+                {label}
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        )}
       </header>
 
       {screenshot && (
         <div className="mb-16 overflow-hidden rounded-2xl border border-border-accent shadow-[0_30px_70px_-30px_var(--glow)]">
-          <img
-            src={screenshot}
-            alt={`${name} website home page`}
-            width="800"
-            height="500"
-            fetchpriority="high"
-            className="block h-auto w-full animate-[riseIn_0.8s_cubic-bezier(0.22,1,0.36,1)_both]"
-          />
+          {live ? (
+            // The screenshot opens the live site too: it's what people instinctively click.
+            <a href={live.href} target="_blank" rel="noopener" className="block">
+              <img
+                src={screenshot}
+                alt={`${name} website home page (opens the live site)`}
+                width="800"
+                height="500"
+                fetchpriority="high"
+                className="block h-auto w-full animate-[riseIn_0.8s_cubic-bezier(0.22,1,0.36,1)_both]"
+              />
+            </a>
+          ) : (
+            <img
+              src={screenshot}
+              alt={`${name} website home page`}
+              width="800"
+              height="500"
+              fetchpriority="high"
+              className="block h-auto w-full animate-[riseIn_0.8s_cubic-bezier(0.22,1,0.36,1)_both]"
+            />
+          )}
         </div>
       )}
 

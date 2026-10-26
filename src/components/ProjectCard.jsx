@@ -24,8 +24,10 @@ export default function ProjectCard({
   title,
   summary,
   stack,
+  links,
 }) {
   const status = tags[0]?.label;
+  const live = links?.find((link) => link.primary);
 
   return (
     <div className="reveal">
@@ -87,14 +89,30 @@ export default function ProjectCard({
               </li>
             ))}
           </ul>
-          <span className="inline-flex items-center gap-1 text-[0.85rem] font-medium text-accent">
-            View case study
-            <ArrowUpRight
-              size={15}
-              aria-hidden="true"
-              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            />
-          </span>
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2.5">
+            <span className="inline-flex items-center gap-1 text-[0.85rem] font-medium text-accent">
+              View case study
+              <ArrowUpRight
+                size={15}
+                aria-hidden="true"
+                className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </span>
+            {/* Straight to the live site without reading the case study first. Sits above
+                the card's stretched case-study link (z-10). */}
+            {live && (
+              <a
+                href={live.href}
+                target="_blank"
+                rel="noopener"
+                className="relative z-10 inline-flex items-center gap-1 rounded-lg border border-border-accent px-3 py-1.5 text-[0.8rem] font-medium text-fg no-underline transition-colors duration-200 hover:bg-accent-2 hover:text-on-accent"
+              >
+                Visit live site
+                <ArrowUpRight size={14} aria-hidden="true" />
+                <span className="sr-only">: {title} (opens in a new tab)</span>
+              </a>
+            )}
+          </div>
         </div>
       </article>
     </div>

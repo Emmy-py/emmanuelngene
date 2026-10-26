@@ -14,6 +14,8 @@ import exclusiveLogo from "../assets/exclusive-logo.png";
 import exclusiveScreen from "../assets/screens/exclusive.webp";
 import weddingInviteLogo from "../assets/wedding-invitation-logo.png";
 import weddingInviteScreen from "../assets/screens/wedding-invitation.webp";
+import hennessyLogo from "../assets/hennessy-logo.png";
+import hennessyScreen from "../assets/screens/hennessy.webp";
 // import bywayLogo from "../assets/byway-logo.jpg"; — re-enable along with the Byway entry below
 
 // Each project gets a card on the homepage and its own page at /projects/<slug>.
@@ -75,7 +77,7 @@ export const PROJECTS = [
         privacy as non-negotiables.
       </>
     ),
-    links: [{ href: "https://greenverify.com.ng", label: "Visit the GreenVerify site →", primary: true }],
+    links: [{ href: "https://greenverify.com.ng", label: "Explore the live GreenVerify platform", primary: true }],
     outcomeLabel: "// Services Delivered",
     outcomes: [
       "NIN, BVN, phone & demographics verification, NIN slips and modifications",
@@ -132,11 +134,11 @@ export const PROJECTS = [
     ),
     links: [
       {
-        href: "https://adeemeka-wedding-invitation.vercel.app/",
-        label: "Open the invitation →",
+        href: "https://wedding.emmycodes.site/",
+        label: "Open the animated invitation",
         primary: true,
       },
-      { href: "https://www.tiktok.com/@amar_surprises.events", label: "Amar Surprises & Event Decoration on TikTok" },
+      { href: "https://www.tiktok.com/@amar_surprises.events", label: "See Amar Surprises & Event Decoration on TikTok" },
     ],
     outcomeLabel: "// Key Features",
     outcomes: [
@@ -150,6 +152,65 @@ export const PROJECTS = [
   },
   {
     number: "03",
+    slug: "hennessy-concept",
+    screenshot: hennessyScreen,
+    name: "Hennessy Concept",
+    summary:
+      "An unofficial, award-style concept website for Hennessy cognac by Emmanuel Ngene: a scroll-driven WebGL pour, a shared-element bottle collection, flavour wheels and a fact-checked brand history.",
+    logo: hennessyLogo,
+    logoAlt: "Hennessy Concept",
+    logoClass: "h-11.5 w-11.5 shrink-0 rounded-lg object-contain",
+    tags: [
+      {
+        tagClass:
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "WebGL & Motion",
+      },
+      {
+        tagClass:
+          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
+        label: "Concept",
+      },
+    ],
+    title: "Hennessy Concept: A Scroll-Driven Luxury Brand Site",
+    overview: (
+      <>
+        A design study of what a luxury drinks brand could feel like online, built as an unofficial
+        concept for Hennessy cognac (not affiliated with Hennessy or Mo&euml;t Hennessy). Its
+        signature moment is a pour you control by scrolling: a bottle tips in and fills a crystal
+        glass over ice, rendered live in 3D.
+      </>
+    ),
+    contribution: (
+      <>
+        I designed and built it end to end in Next.js with React Three Fiber, GSAP and Lenis. The
+        liquid, stream, ice and condensation are custom shaders; slower devices are detected while
+        the scene runs and switched to pre-rendered frames of the same scene. Around it: an 11-bottle
+        collection whose bottles fly into their own pages, SVG flavour wheels, an amber page wipe,
+        a preloader and age gate, a custom cursor and optional synthesised sound. I cut the bottle
+        photos out with an AI pipeline, kept LCP around 2 seconds on throttled mobile with zero
+        layout shift and zero axe accessibility violations, and fact-checked every date and
+        tasting note against Hennessy's own material.
+      </>
+    ),
+    links: [{ href: "https://hennessy.emmycodes.site/", label: "Scroll the live 3D cognac pour", primary: true }],
+    outcomeLabel: "// Highlights",
+    outcomes: [
+      "Scroll-driven WebGL pour with custom liquid, ice and condensation shaders",
+      "Automatic fallback to pre-rendered frames on slower devices",
+      "Shared-element bottle transitions, flavour wheels and an amber page wipe",
+      "~2 s LCP on throttled mobile, zero layout shift, zero axe violations",
+      "Every date and tasting note fact-checked against Hennessy's own sources",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Three.js", "React Three Fiber", "GSAP", "Tailwind CSS"],
+  },
+  {
+    number: "04",
     slug: "letdap",
     contributionOnly: true,
     screenshot: letdapScreen,
@@ -192,7 +253,7 @@ export const PROJECTS = [
         codebase and roadmap.
       </>
     ),
-    links: [{ href: "https://letsdap.com", label: "Visit the LetDap site →", primary: true }],
+    links: [{ href: "https://letsdap.com", label: "See the live LetDap site", primary: true }],
     outcomeLabel: "// My Contributions",
     outcomes: [
       "Contributed to backend modules for event scheduling & user management",
@@ -203,7 +264,7 @@ export const PROJECTS = [
     stack: ["Node.js", "NestJS", "MongoDB", "REST API", "Real-Time"],
   },
   {
-    number: "04",
+    number: "05",
     slug: "edge-logistics",
     screenshot: edgeLogisticsScreen,
     name: "Edge Logistics",
@@ -247,8 +308,8 @@ export const PROJECTS = [
     ),
     links: [
       {
-        href: "https://edge-logistics.vercel.app/",
-        label: "Visit the Edge Logistics site →",
+        href: "https://logistics.emmycodes.site/",
+        label: "Explore Edge Logistics & track a demo shipment",
         primary: true,
       },
     ],
@@ -263,7 +324,7 @@ export const PROJECTS = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
-    number: "05",
+    number: "06",
     slug: "exclusive",
     screenshot: exclusiveScreen,
     name: "Exclusive",
@@ -308,8 +369,8 @@ export const PROJECTS = [
     ),
     links: [
       {
-        href: "https://exclusivebuy.vercel.app/",
-        label: "Visit the Exclusive site →",
+        href: "https://exclusive.emmycodes.site/",
+        label: "Shop the live Exclusive store demo",
         primary: true,
       },
     ],
@@ -323,7 +384,7 @@ export const PROJECTS = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
   },
   {
-    number: "06",
+    number: "07",
     slug: "learnable",
     screenshot: learnableScreen,
     name: "Learnable",
@@ -366,11 +427,11 @@ export const PROJECTS = [
     ),
     links: [
       {
-        href: "https://learnable-landing-page.vercel.app/",
-        label: "Visit the Learnable site →",
+        href: "https://learnable.emmycodes.site/",
+        label: "See the live Learnable redesign",
         primary: true,
       },
-      { href: "https://github.com/Emmy-py/learnable-landing-page", label: "Learnable source on GitHub" },
+      { href: "https://github.com/Emmy-py/learnable-landing-page", label: "Read the Learnable source on GitHub" },
     ],
     outcomeLabel: "// Key Features",
     outcomes: [
@@ -382,7 +443,7 @@ export const PROJECTS = [
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
   },
   {
-    number: "07",
+    number: "08",
     slug: "foreverbuy",
     screenshot: foreverbuyScreen,
     name: "ForeverBuy",
@@ -425,8 +486,8 @@ export const PROJECTS = [
     ),
     links: [
       {
-        href: "https://forever-buy-ecommerce.vercel.app/",
-        label: "Visit the ForeverBuy site →",
+        href: "https://foreverbuy.emmycodes.site/",
+        label: "Browse the live ForeverBuy store",
         primary: true,
       },
     ],
@@ -440,7 +501,7 @@ export const PROJECTS = [
     stack: ["React", "React Router DOM", "Tailwind CSS", "Vite", "Node.js", "MongoDB"],
   },
   {
-    number: "08",
+    number: "09",
     slug: "cryptotracker",
     screenshot: cryptotrackerScreen,
     name: "CryptoTracker",
@@ -483,7 +544,7 @@ export const PROJECTS = [
       </>
     ),
     links: [
-      { href: "https://crypto-traccker.netlify.app/", label: "Try CryptoTracker live →", primary: true },
+      { href: "https://crypto-traccker.netlify.app/", label: "Watch live crypto prices on CryptoTracker", primary: true },
     ],
     outcomeLabel: "// KEY OUTCOMES",
     outcomes: [
@@ -496,7 +557,7 @@ export const PROJECTS = [
   },
   /* Byway — temporarily removed from display, re-enable by uncommenting
   {
-    number: "09",
+    number: "10",
     logo: bywayLogo,
     logoAlt: "Byway",
     logoClass:
