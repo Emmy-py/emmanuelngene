@@ -83,13 +83,6 @@ Here are some key projects showcasing my work:
    - **Role**: Data integration and real-time update architecture  
    - **Live**: [crypto-traccker.netlify.app](https://crypto-traccker.netlify.app/)
 
-10. **Byway Learning Management System (Backend)**  
-   Robust server for an edtech platform handling user auth, course management, progress tracking, and content delivery at scale.  
-   - **Tech**: Node.js, NestJS, PostgreSQL/MongoDB  
-   - **Role**: Core backend developer (team: DevSquad042)  
-   - **Live Frontend**: [byway1.netlify.app](https://byway1.netlify.app)  
-   - **Repo**: [github.com/DevSquad042/lmsBackend](https://github.com/DevSquad042/lmsBackend)
-
 More projects and experiments → [Full GitHub Profile](https://github.com/Emmy-py?tab=repositories)
 
 ## 🌐 Live Portfolio
