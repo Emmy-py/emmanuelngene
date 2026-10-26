@@ -43,6 +43,19 @@ export function getPages(lastmod) {
   ];
 }
 
+// What scripts/og-cards.mjs needs to draw each project's share card (projectOgImage in seo.js).
+export function ogCards() {
+  return PROJECTS.filter((project) => project.screenshot).map((project) => ({
+    slug: project.slug,
+    number: project.number,
+    name: project.name,
+    labels: project.tags.slice(1).map((tag) => tag.label),
+    stack: project.stack.slice(0, 4),
+    screenshot: project.screenshot,
+    liveHost: project.links.find((link) => link.primary)?.href.replace(/^https?:\/\/|\/$/g, ""),
+  }));
+}
+
 export function render(path) {
   return renderToString(<App path={path} />);
 }

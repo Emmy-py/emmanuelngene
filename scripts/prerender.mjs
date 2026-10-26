@@ -2,7 +2,7 @@
 // HTML in dist/, then writes the build-time files that depend on the route list: sitemap.xml
 // llms.txt and rss.xml. Fails the build if any JSON-LD block is not valid JSON.
 import { execSync } from "node:child_process";
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -10,7 +10,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dist = resolve(root, "dist");
 const ssrDir = resolve(root, "dist-ssr");
 
-const { SITE_URL, getPages, preparePosts, render, renderHead, renderResume, llmsTxt, rssXml } = await import(
+const { SITE_URL, getPages, ogCards, preparePosts, render, renderHead, renderResume, llmsTxt, rssXml } = await import(
   pathToFileURL(resolve(ssrDir, "entry-server.js")).href
 );
 
@@ -49,6 +49,12 @@ const template = readFileSync(resolve(dist, "index.html"), "utf8").replace(
     return [...preloads, `<style>${css}</style>`].join("\n    ");
   },
 );
+// Every project page points its og:image at its own card (projectOgImage in src/seo.js).
+const missingCards = ogCards().filter(({ slug }) => !existsSync(resolve(root, "public", "og", `${slug}.jpg`)));
+if (missingCards.length) {
+  throw new Error(`No share card for ${missingCards.map(({ slug }) => slug).join(", ")}: run "npm run og"`);
+}
+
 await preparePosts();
 const pages = getPages(lastmod);
 

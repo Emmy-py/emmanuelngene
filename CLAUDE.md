@@ -16,6 +16,7 @@ npm run dev       # local dev server (client-rendered, no SEO head tags)
 npm run build     # client build + SSR build + scripts/prerender.mjs -> static pages in dist/
 npm run preview   # serve the built dist/
 npm run resume    # build, then print dist/resume.html to public/emmanuel-ngene-resume.pdf with local Chrome/Edge
+npm run og        # build, then draw each project's link-preview card to public/og/<slug>.jpg with local Chrome/Edge
 npm run indexnow  # ping IndexNow with the live sitemap (also runs via GitHub Actions after prod deploys)
 ```
 
@@ -72,7 +73,7 @@ There is no lint or test tooling.
 - **Hooks** (`src/hooks/`): `useTheme` (persists to `localStorage` key `pf-theme`; starts at "dark"
   to match prerendered HTML), `useActiveSection`, `useReveal`, `useParallax`.
 - **`public/`** is copied to the site root: icons (`favicon.ico`, `apple-touch-icon.png`,
-  `icon-*.png`, all cut from the neon ">|" glass-icon render), `og-image-v3.jpg` (link-preview image; JPEG to stay under WhatsApp's ~300 KB limit), `hero-portrait.webp` (background-removed hero photo),
+  `icon-*.png`, all cut from the neon ">|" glass-icon render), `og-image-v3.jpg` (link-preview image; JPEG to stay under WhatsApp's ~300 KB limit), `og/<slug>.jpg` (per-project preview cards from `scripts/og-cards.mjs`, committed; re-run `npm run og` when a project's number, name, tags, stack or screenshot change, the build fails if one is missing), `hero-portrait.webp` (background-removed hero photo),
   `hero-bg.webp` / `hero-bg-mobile.webp` (grayscale desk photo, wide crop for desktop,
   full portrait crop for phones; shown only behind the hero text),
   `emmanuel-ngene.jpg` (schema photo), `emmanuel-ngene-resume.pdf` (generated, see Resume), `robots.txt`,

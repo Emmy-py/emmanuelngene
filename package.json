@@ -8,7 +8,8 @@
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "resume": "npm run build && node scripts/resume-pdf.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "og": "npm run build && node scripts/og-cards.mjs"
   },
   "dependencies": {
     "@fontsource/dm-mono": "^5.3.0",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.2",
     "@vitejs/plugin-react": "^4.3.4",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.2",
     "vite": "^5.4.11"
   }

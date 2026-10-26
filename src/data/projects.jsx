@@ -90,14 +90,15 @@ export const PROJECTS = [
   },
   {
     number: "02",
-    slug: "wedding-invitation",
-    screenshot: weddingInviteScreen,
-    name: "AdeEmeka Wedding Invitation",
+    slug: "exclusive",
+    screenshot: exclusiveScreen,
+    name: "Exclusive",
     summary:
-      "An animated digital wedding invitation built by Emmanuel Ngene for Amar Surprises & Event Decoration, an Enugu event planner, for her client's wedding: an envelope that opens, music, countdown and RSVP.",
-    logo: weddingInviteLogo,
-    logoAlt: "AdeEmeka Wedding Invitation",
-    logoClass: "h-11.5 w-11.5 shrink-0 rounded-full object-contain",
+      "Exclusive is a Next.js e-commerce storefront built by Emmanuel Ngene, with category filters, search, cart, wishlist and smooth animations.",
+    logo: exclusiveLogo,
+    logoAlt: "Exclusive",
+    logoClass:
+      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-white object-contain p-1",
     tags: [
       {
         tagClass:
@@ -107,48 +108,45 @@ export const PROJECTS = [
       {
         tagClass:
           "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "Event Tech",
+        label: "E-Commerce",
       },
       {
         tagClass:
-          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
-        label: "Client Project",
+          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
+        label: "Frontend",
       },
     ],
-    title: "Animated Digital Wedding Invitation",
+    title: "Exclusive E-Commerce Storefront",
     overview: (
       <>
-        Amar Surprises &amp; Event Decoration, a surprise and event planner in Enugu, reached out
-        to me to design a website for her client's wedding: a digital invitation guests open on their phones that
-        feels as special as a paper card in the post.
+        Exclusive is a multi-category online store for electronics, fashion, home, beauty and
+        more &mdash; a demo storefront built for prospective clients to explore, with a sliding
+        hero, flash sales countdown, product pages and a full shopping flow.
       </>
     ),
     contribution: (
       <>
-        I designed and built it in Next.js with GSAP animations. Guests land on a sealed envelope
-        with a wax-seal monogram and their own name on it; one tap pops the seal, swings the flap
-        open in 3D, slides the card out in a burst of petals and starts the music. Inside are the
-        couple's photos, a live countdown, both events with directions, add-to-calendar and an
-        RSVP form &mdash; mobile-first, keyboard accessible and gentle on reduced-motion settings.
+        I built the full 13-screen storefront as a responsive Next.js and Tailwind CSS app:
+        a filterable shop with search and sorting, product galleries, a persistent cart and
+        wishlist with coupons, and polished Motion animations &mdash; responsive across phone,
+        tablet and desktop.
       </>
     ),
     links: [
       {
-        href: "https://wedding.emmycodes.site/",
-        label: "Open the animated invitation",
+        href: "https://exclusive.emmycodes.site/",
+        label: "Shop the live Exclusive store demo",
         primary: true,
       },
-      { href: "https://www.tiktok.com/@amar_surprises.events", label: "See Amar Surprises & Event Decoration on TikTok" },
     ],
     outcomeLabel: "// Key Features",
     outcomes: [
-      "Animated envelope opening: wax seal, 3D flap, sliding card and canvas petal burst",
-      "Personalised links that print each guest's name on the envelope",
-      "Photo gallery with lightbox, live countdown and background music",
-      "Google Maps directions, .ics and Google Calendar export, and an RSVP flow",
-      "Custom WhatsApp link preview, fast first load on mobile data",
+      "13 screens, fully responsive from phone to desktop",
+      "Shop page with category filters, live search and sorting",
+      "Cart and wishlist that persist across visits, with coupon codes",
+      "Sliding hero, scroll reveals and countdown timers with Motion",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Canvas"],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
   },
   {
     number: "03",
@@ -211,16 +209,14 @@ export const PROJECTS = [
   },
   {
     number: "04",
-    slug: "letdap",
-    contributionOnly: true,
-    screenshot: letdapScreen,
-    name: "LetDap",
+    slug: "wedding-invitation",
+    screenshot: weddingInviteScreen,
+    name: "AdeEmeka Wedding Invitation",
     summary:
-      "LetDap is a social event management platform built and led by its founder, who is also a developer. Emmanuel Ngene contributed as a collaborating backend engineer: NestJS APIs, event scheduling and MongoDB optimization.",
-    logo: letdapLogo,
-    logoAlt: "LetDap",
-    logoClass:
-      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-[#1a8cff] object-contain p-1",
+      "An animated digital wedding invitation built by Emmanuel Ngene for Amar Surprises & Event Decoration, an Enugu event planner, for her client's wedding: an envelope that opens, music, countdown and RSVP.",
+    logo: weddingInviteLogo,
+    logoAlt: "AdeEmeka Wedding Invitation",
+    logoClass: "h-11.5 w-11.5 shrink-0 rounded-full object-contain",
     tags: [
       {
         tagClass:
@@ -235,33 +231,43 @@ export const PROJECTS = [
       {
         tagClass:
           "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
-        label: "Contributor",
+        label: "Client Project",
       },
     ],
-    title: "LetDap Event Management Platform (Contribution)",
+    title: "Animated Digital Wedding Invitation",
     overview: (
       <>
-        LetDap is a social event management platform empowering organizers to plan, promote, and
-        manage events while enabling users to connect through shared experiences. It is built and
-        led by its founder, who is also a developer.
+        Amar Surprises &amp; Event Decoration, a surprise and event planner in Enugu, reached out
+        to me to design a website for her client's wedding: a digital invitation guests open on their phones that
+        feels as special as a paper card in the post.
       </>
     ),
     contribution: (
       <>
-        My role was contribution only: I joined as a collaborating backend engineer, helping with
-        server-side features, API work and MongoDB optimization inside the founder's existing
-        codebase and roadmap.
+        I designed and built it in Next.js with GSAP animations. Guests land on a sealed envelope
+        with a wax-seal monogram and their own name on it; one tap pops the seal, swings the flap
+        open in 3D, slides the card out in a burst of petals and starts the music. Inside are the
+        couple's photos, a live countdown, both events with directions, add-to-calendar and an
+        RSVP form &mdash; mobile-first, keyboard accessible and gentle on reduced-motion settings.
       </>
     ),
-    links: [{ href: "https://letsdap.com", label: "See the live LetDap site", primary: true }],
-    outcomeLabel: "// My Contributions",
-    outcomes: [
-      "Contributed to backend modules for event scheduling & user management",
-      "Helped optimise APIs for overall platform responsiveness",
-      "Worked on MongoDB models for real-time user interactions",
-      "Delivered my assigned sprint features on schedule",
+    links: [
+      {
+        href: "https://wedding.emmycodes.site/",
+        label: "Open the animated invitation",
+        primary: true,
+      },
+      { href: "https://www.tiktok.com/@amar_surprises.events", label: "See Amar Surprises & Event Decoration on TikTok" },
     ],
-    stack: ["Node.js", "NestJS", "MongoDB", "REST API", "Real-Time"],
+    outcomeLabel: "// Key Features",
+    outcomes: [
+      "Animated envelope opening: wax seal, 3D flap, sliding card and canvas petal burst",
+      "Personalised links that print each guest's name on the envelope",
+      "Photo gallery with lightbox, live countdown and background music",
+      "Google Maps directions, .ics and Google Calendar export, and an RSVP flow",
+      "Custom WhatsApp link preview, fast first load on mobile data",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Canvas"],
   },
   {
     number: "05",
@@ -325,15 +331,16 @@ export const PROJECTS = [
   },
   {
     number: "06",
-    slug: "exclusive",
-    screenshot: exclusiveScreen,
-    name: "Exclusive",
+    slug: "letdap",
+    contributionOnly: true,
+    screenshot: letdapScreen,
+    name: "LetDap",
     summary:
-      "Exclusive is a Next.js e-commerce storefront built by Emmanuel Ngene, with category filters, search, cart, wishlist and smooth animations.",
-    logo: exclusiveLogo,
-    logoAlt: "Exclusive",
+      "LetDap is a social event management platform built and led by its founder, who is also a developer. Emmanuel Ngene contributed as a collaborating backend engineer: NestJS APIs, event scheduling and MongoDB optimization.",
+    logo: letdapLogo,
+    logoAlt: "LetDap",
     logoClass:
-      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-white object-contain p-1",
+      "h-11.5 w-11.5 shrink-0 rounded-lg border border-border bg-[#1a8cff] object-contain p-1",
     tags: [
       {
         tagClass:
@@ -343,45 +350,38 @@ export const PROJECTS = [
       {
         tagClass:
           "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
-        label: "E-Commerce",
+        label: "Event Tech",
       },
       {
         tagClass:
-          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
-        label: "Frontend",
+          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
+        label: "Contributor",
       },
     ],
-    title: "Exclusive E-Commerce Storefront",
+    title: "LetDap Event Management Platform (Contribution)",
     overview: (
       <>
-        Exclusive is a multi-category online store for electronics, fashion, home, beauty and
-        more &mdash; a demo storefront built for prospective clients to explore, with a sliding
-        hero, flash sales countdown, product pages and a full shopping flow.
+        LetDap is a social event management platform empowering organizers to plan, promote, and
+        manage events while enabling users to connect through shared experiences. It is built and
+        led by its founder, who is also a developer.
       </>
     ),
     contribution: (
       <>
-        I built the full 13-screen storefront as a responsive Next.js and Tailwind CSS app:
-        a filterable shop with search and sorting, product galleries, a persistent cart and
-        wishlist with coupons, and polished Motion animations &mdash; responsive across phone,
-        tablet and desktop.
+        My role was contribution only: I joined as a collaborating backend engineer, helping with
+        server-side features, API work and MongoDB optimization inside the founder's existing
+        codebase and roadmap.
       </>
     ),
-    links: [
-      {
-        href: "https://exclusive.emmycodes.site/",
-        label: "Shop the live Exclusive store demo",
-        primary: true,
-      },
-    ],
-    outcomeLabel: "// Key Features",
+    links: [{ href: "https://letsdap.com", label: "See the live LetDap site", primary: true }],
+    outcomeLabel: "// My Contributions",
     outcomes: [
-      "13 screens, fully responsive from phone to desktop",
-      "Shop page with category filters, live search and sorting",
-      "Cart and wishlist that persist across visits, with coupon codes",
-      "Sliding hero, scroll reveals and countdown timers with Motion",
+      "Contributed to backend modules for event scheduling & user management",
+      "Helped optimise APIs for overall platform responsiveness",
+      "Worked on MongoDB models for real-time user interactions",
+      "Delivered my assigned sprint features on schedule",
     ],
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
+    stack: ["Node.js", "NestJS", "MongoDB", "REST API", "Real-Time"],
   },
   {
     number: "07",
