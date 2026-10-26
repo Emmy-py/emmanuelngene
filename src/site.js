@@ -4,7 +4,8 @@ export const SITE_URL = "https://emmycodes.site";
 
 export const PERSON_PHOTO = "/emmanuel-ngene.jpg";
 export const HERO_PORTRAIT = "/hero-portrait.webp";
-export const OG_IMAGE = "/og-image-v2.png";
+// JPEG: the PNG was 329 KB and WhatsApp drops preview images over ~300 KB.
+export const OG_IMAGE = "/og-image-v3.jpg";
 
 export const SOCIAL_PROFILES = [
   "https://github.com/Emmy-py",

@@ -253,7 +253,7 @@ export function renderHead({ title, description, path, ogType = "website", artic
     `<meta property="og:title" content="${escapeAttr(title)}" />`,
     `<meta property="og:description" content="${escapeAttr(description)}" />`,
     `<meta property="og:image" content="${image}" />`,
-    `<meta property="og:image:type" content="image/png" />`,
+    `<meta property="og:image:type" content="image/jpeg" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
     `<meta property="og:image:alt" content="Emmanuel Ngene — Software Developer · emmycodes.site" />`,

@@ -72,7 +72,7 @@ There is no lint or test tooling.
 - **Hooks** (`src/hooks/`): `useTheme` (persists to `localStorage` key `pf-theme`; starts at "dark"
   to match prerendered HTML), `useActiveSection`, `useReveal`, `useParallax`.
 - **`public/`** is copied to the site root: icons (`favicon.ico`, `apple-touch-icon.png`,
-  `icon-*.png`, all cut from the neon ">|" glass-icon render), `og-image.png`, `hero-portrait.webp` (background-removed hero photo),
+  `icon-*.png`, all cut from the neon ">|" glass-icon render), `og-image-v3.jpg` (link-preview image; JPEG to stay under WhatsApp's ~300 KB limit), `hero-portrait.webp` (background-removed hero photo),
   `hero-bg.webp` / `hero-bg-mobile.webp` (grayscale desk photo, wide crop for desktop,
   full portrait crop for phones; shown only behind the hero text),
   `emmanuel-ngene.jpg` (schema photo), `emmanuel-ngene-resume.pdf` (generated, see Resume), `robots.txt`,
