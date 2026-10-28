@@ -39,8 +39,8 @@ export const PROJECTS = [
     tags: [
       {
         tagClass:
-          "border border-border px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-fg2 uppercase",
-        label: "\u{1F504} In Development",
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
       },
       {
         tagClass:

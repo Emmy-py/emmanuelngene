@@ -41,7 +41,7 @@ There is no lint or test tooling.
   Adding one there adds its homepage card, its `/projects/<slug>` page, sitemap entry, JSON-LD and
   llms.txt line. `LIVE_PROJECT_COUNT` feeds the "Live products shipped" stat in `About.jsx`.
 - **Live project count must always be correct.** It counts every project in `PROJECTS` with a
-  primary link (a live site), including ones tagged "In Development" (e.g. GreenVerify). Whenever a
+  primary link (a live site), including ones tagged "In Development". Whenever a
   project is added, removed, hidden or gets/loses its live link, keep it that way: give live projects
   a `primary: true` link, then build and confirm the stat in `dist/index.html` equals the number of
   live projects (9 as of 2026-10-26). Never hardcode the number.

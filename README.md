@@ -26,11 +26,11 @@ Focused on **clean code**, **performance**, **security**, and delivering busines
 
 Here are some key projects showcasing my work:
 
-1. **GreenVerify – Identity & Business Compliance Platform** (In Progress)  
+1. **GreenVerify – Identity & Business Compliance Platform**  
    One-stop platform for identity verification and business compliance in Nigeria: NIN/BVN/phone verification, NIN slips and modifications, CAC business and company registration, post-incorporation filings, EFCC SCUML registration, trademark & IP registration, Tax ID / TaxPro Max, bills & airtime, and a developer verification API.  
    - **Tech**: React, Material UI, Node.js, NestJS, PostgreSQL, exploring AI for verification accuracy  
    - **Role**: Full-stack (frontend and backend)  
-   - **Live (early)**: [greenverify.com.ng](https://greenverify.com.ng)
+   - **Live**: [greenverify.com.ng](https://greenverify.com.ng)
 
 2. **Exclusive – E-Commerce Storefront**  
    A multi-category online store for electronics, fashion, home, beauty and more: a demo storefront for prospective clients, with a sliding hero, flash sales countdown, product pages and a full shopping flow. 13 responsive screens, a shop page with category filters, live search and sorting, and a cart and wishlist that persist across visits, with coupon codes.  
