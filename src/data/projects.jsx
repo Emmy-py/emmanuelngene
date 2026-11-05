@@ -16,6 +16,8 @@ import weddingInviteLogo from "../assets/wedding-invitation-logo.png";
 import weddingInviteScreen from "../assets/screens/wedding-invitation.webp";
 import hennessyLogo from "../assets/hennessy-logo.png";
 import hennessyScreen from "../assets/screens/hennessy.webp";
+import lamborghiniLogo from "../assets/lamborghini-logo.png";
+import lamborghiniScreen from "../assets/screens/lamborghini-concept.webp";
 // import bywayLogo from "../assets/byway-logo.jpg"; — re-enable along with the Byway entry below
 
 // Each project gets a card on the homepage and its own page at /projects/<slug>.
@@ -444,6 +446,62 @@ export const PROJECTS = [
   },
   {
     number: "08",
+    slug: "lamborghini-concept",
+    screenshot: lamborghiniScreen,
+    name: "Lamborghini Aventador SVJ Concept",
+    summary:
+      "An unofficial real-time 3D concept by Emmanuel Ngene: scroll to take a Lamborghini Aventador SVJ apart into 51 parts, watch it turn 360 degrees and rebuild, or select any part to inspect it. Runs in real 3D on desktop and phones.",
+    logo: lamborghiniLogo,
+    logoAlt: "Lamborghini Aventador SVJ Concept",
+    logoClass: "h-11.5 w-11.5 shrink-0 rounded-lg object-contain",
+    tags: [
+      {
+        tagClass:
+          "border border-accent bg-accent/14 px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "● Live",
+      },
+      {
+        tagClass:
+          "border border-border-accent bg-accent-muted px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-accent uppercase",
+        label: "WebGL & Motion",
+      },
+      {
+        tagClass:
+          "border border-[rgba(96,165,250,0.3)] bg-[rgba(96,165,250,0.05)] px-2.25 py-1 font-mono text-[0.6rem] tracking-[0.08em] text-[#60a5fa] uppercase",
+        label: "Concept",
+      },
+    ],
+    title: "Lamborghini Aventador SVJ Concept: A Car You Take Apart by Scrolling",
+    overview: (
+      <>
+        A design study built as an unofficial concept (not affiliated with Automobili Lamborghini).
+        Instead of a video, it is a real-time 3D car in the browser: scrolling lifts it off the
+        floor and separates it into 51 parts, each travelling outward the way it faces. The camera
+        then circles the whole assembly before the car rebuilds itself.
+      </>
+    ),
+    contribution: (
+      <>
+        I directed the project and built it with AI assistance, in Next.js, Three.js and GSAP. The
+        car body and interior start from two free, credited CC BY models, which were split into
+        moving parts with Blender scripts. The engine, gearbox, chassis, suspension and exhaust
+        were modelled for this study and are not factory data. Around that sit a component explorer
+        for inspecting any part, real 3D on phones through a lighter model, and quality that adjusts
+        itself to the device. I tested it on a real iPhone and a real Google Pixel.
+      </>
+    ),
+    links: [{ href: "https://lamborghini.emmycodes.site/", label: "Take the car apart", primary: true }],
+    outcomeLabel: "// Highlights",
+    outcomes: [
+      "51 parts that separate, turn 360 degrees and rebuild, all driven by scroll",
+      "Component explorer to select, isolate and read about any part",
+      "Real 3D on phones, confirmed on an iPhone and a Google Pixel",
+      "Quality adjusts itself to the device, with a clear fallback when 3D can't run",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Three.js", "GSAP", "Tailwind CSS"],
+  },
+  {
+    number: "09",
     slug: "foreverbuy",
     screenshot: foreverbuyScreen,
     name: "ForeverBuy",
@@ -501,7 +559,7 @@ export const PROJECTS = [
     stack: ["React", "React Router DOM", "Tailwind CSS", "Vite", "Node.js", "MongoDB"],
   },
   {
-    number: "09",
+    number: "10",
     slug: "cryptotracker",
     screenshot: cryptotrackerScreen,
     name: "CryptoTracker",
@@ -557,7 +615,7 @@ export const PROJECTS = [
   },
   /* Byway — temporarily removed from display, re-enable by uncommenting
   {
-    number: "10",
+    number: "11",
     logo: bywayLogo,
     logoAlt: "Byway",
     logoClass:

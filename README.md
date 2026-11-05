@@ -71,13 +71,19 @@ Here are some key projects showcasing my work:
 
    [![Learnable website home page](screenshots/learnable.png)](https://learnable.emmycodes.site/)
 
-8. **ForeverBuy – E-Commerce Platform**  
+8. **Lamborghini Aventador SVJ Concept – Real-Time 3D Site**  
+   An unofficial concept (not affiliated with Automobili Lamborghini): scroll to take the car apart into 51 parts, watch it turn 360 degrees and rebuild, or select any part to inspect it. Runs in real 3D on desktop and phones. The car body and interior start from free, credited CC BY models, and the engine and mechanical parts were modelled for the study.  
+   - **Tech**: Next.js, React, TypeScript, Three.js, GSAP, Tailwind CSS  
+   - **Role**: Directed the project and built it with AI assistance  
+   - **Live**: [lamborghini.emmycodes.site](https://lamborghini.emmycodes.site/)
+
+9. **ForeverBuy – E-Commerce Platform**  
    Fashion and lifestyle storefront for discovering trends, best sellers and exclusive collections, built for fast browsing and a smooth checkout. Product listing and detail pages, search, cart, wishlist and auth flows, with a Node.js/Express/MongoDB backend in progress for orders and payments.  
    - **Tech**: React, React Router DOM, Tailwind CSS, Vite, Node.js, MongoDB  
    - **Role**: Frontend (backend in progress)  
    - **Live**: [foreverbuy.emmycodes.site](https://foreverbuy.emmycodes.site/)
 
-9. **CryptoTracker – Real-Time Market Analytics Platform**  
+10. **CryptoTracker – Real-Time Market Analytics Platform**  
    Live cryptocurrency price tracking with WebSocket-powered updates, historical candlestick charts and market insights in a clean, performance-focused interface.  
    - **Tech**: JavaScript, WebSocket, REST APIs, market data APIs, charting libraries  
    - **Role**: Data integration and real-time update architecture  
